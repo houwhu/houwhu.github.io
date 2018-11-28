@@ -17,7 +17,7 @@
 <meta property="og:site_name" content="斧子的博客专栏">
 <meta property="og:description" content="state-hook在之前的的hook 介绍里有一段代码:">
 <meta property="og:locale" content="default">
-<meta property="og:updated_time" content="2018-11-27T09:01:48.216Z">
+<meta property="og:updated_time" content="2018-11-28T07:07:01.987Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="state-hook">
 <meta name="twitter:description" content="state-hook在之前的的hook 介绍里有一段代码:">
@@ -218,8 +218,23 @@
     
     <div class="article-entry" itemprop="articleBody">
       
-        <h2 id="state-hook"><a href="#state-hook" class="headerlink" title="state-hook"></a>state-hook</h2><p>在之前的的hook 介绍里有一段代码:<br> <a id="more"></a><br>    import { useState } from ‘react’;<br>    ​<br>    function Example() {<br>      // Declare a new state variable, which we’ll call “count”<br>      const [count, setCount] = useState(0);<br>    ​<br>      return (<br>        <div><br>          <p>You clicked {count} times</p><br>          <button onclick="{()" ==""> setCount(count + 1)}&gt;<br>            Click me<br>          </button><br>        </div><br>      );<br>    }</p>
-<p>我们将通过将此代码与等效的类示例进行比较来开始学习<code>Hooks</code>。</p>
+        <h2 id="state-hook"><a href="#state-hook" class="headerlink" title="state-hook"></a>state-hook</h2><p>在之前的的hook 介绍里有一段代码:<br> <a id="more"></a></p>
+<pre><code>import { useState } from &apos;react&apos;;
+​
+function Example() {
+  // Declare a new state variable, which we&apos;ll call &quot;count&quot;
+  const [count, setCount] = useState(0);
+​
+  return (
+    &lt;div&gt;
+      &lt;p&gt;You clicked {count} times&lt;/p&gt;
+      &lt;button onClick={() =&gt; setCount(count + 1)}&gt;
+        Click me
+      &lt;/button&gt;
+    &lt;/div&gt;
+  );
+}
+</code></pre><p>我们将通过将此代码与等效的类示例进行比较来开始学习<code>Hooks</code>。</p>
 <h2 id="等价的类示例"><a href="#等价的类示例" class="headerlink" title="等价的类示例"></a>等价的类示例</h2><p>看下面的这段代码，你会觉得熟悉：<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br></pre></td><td class="code"><pre><span class="line">class Example extends Component&#123;</span><br><span class="line">   constructor(props) &#123;</span><br><span class="line">      super(props);</span><br><span class="line">      this.state = &#123;</span><br><span class="line">        count: 0</span><br><span class="line">      &#125;</span><br><span class="line">   &#125;</span><br><span class="line"></span><br><span class="line">   render()&#123;</span><br><span class="line">      return (</span><br><span class="line">          &lt;div&gt;</span><br><span class="line">          &lt;p&gt;You clicked &#123;this.state.count&#125; times&lt;/p&gt;</span><br><span class="line">            &lt;button onClick=&#123;() =&gt; this.setState(&#123; count: this.state.count + 1 &#125;)&#125;&gt;</span><br><span class="line">              Click me</span><br><span class="line">            &lt;/button&gt;</span><br><span class="line">          &lt;/div&gt;</span><br><span class="line">      )</span><br><span class="line">   &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></p>
 <p>状态以<code>{count：0}</code>开始，当用户通过调用this.setState单击按钮时，我们会增加state.count。我们将在整个页面中使用此类的片段。</p>
 <blockquote>
