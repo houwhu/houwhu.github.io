@@ -1,0 +1,479 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  
+  <title>Effect-Hook | 斧子的博客专栏</title>
+
+  <!-- keywords -->
+  
+
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+  <meta name="description" content="effect-hookEffect Hook 可以使得你在函数组件中执行一些带有副作用的方法。">
+<meta property="og:type" content="article">
+<meta property="og:title" content="Effect-Hook">
+<meta property="og:url" content="https://houwhu.github.io/hwh-blog.github.io/2018/11/27/Effect-Hook/index.html">
+<meta property="og:site_name" content="斧子的博客专栏">
+<meta property="og:description" content="effect-hookEffect Hook 可以使得你在函数组件中执行一些带有副作用的方法。">
+<meta property="og:locale">
+<meta property="article:published_time" content="2018-11-27T05:22:17.000Z">
+<meta property="article:modified_time" content="2022-03-17T12:21:16.708Z">
+<meta property="article:author" content="斧子Axe">
+<meta property="article:tag" content="react">
+<meta property="article:tag" content="react-hooks">
+<meta name="twitter:card" content="summary">
+  
+    <link rel="alternative" href="/atom.xml" title="斧子的博客专栏" type="application/atom+xml">
+  
+  
+    <link rel="icon" href="/img/favicon.ico">
+  
+  
+<link rel="stylesheet" href="/css/style.css">
+
+  
+  
+
+  
+<script src="//cdn.bootcss.com/require.js/2.3.2/require.min.js"></script>
+
+  
+<script src="//cdn.bootcss.com/jquery/3.1.1/jquery.min.js"></script>
+
+
+  
+<meta name="generator" content="Hexo 5.4.1"></head>
+<body>
+  <div id="container">
+    <div id="particles-js"></div>
+    <div class="left-col">
+    <div class="overlay"></div>
+<div class="intrude-less">
+	<header id="header" class="inner">
+		<a href="/" class="profilepic">
+			
+			<img src="/img/fuzi.jpg" class="js-avatar" style="width: 100%;height: 100%;opacity: 1;">	
+			
+		</a>
+
+		<hgroup>
+		  <h1 class="header-author"><a href="/"></a></h1>
+		</hgroup>
+
+		
+
+		
+			<div class="switch-btn">
+				<div class="icon">
+					<div class="icon-ctn">
+						<div class="icon-wrap icon-house" data-idx="0">
+							<div class="birdhouse"></div>
+							<div class="birdhouse_holes"></div>
+						</div>
+						<div class="icon-wrap icon-ribbon hide" data-idx="1">
+							<div class="ribbon"></div>
+						</div>
+						
+						
+					</div>
+					
+				</div>
+				<div class="tips-box hide">
+					<div class="tips-arrow"></div>
+					<ul class="tips-inner">
+						<li>菜单</li>
+						<li>标签</li>
+						
+						
+					</ul>
+				</div>
+			</div>
+		
+
+		<div class="switch-area">
+			<div class="switch-wrap">
+				<section class="switch-part switch-part1">
+					<nav class="header-menu">
+						<ul>
+						
+							<li><a href="/">主页</a></li>
+				        
+							<li><a href="/archives">所有文章</a></li>
+				        
+							<li><a href="/aboutMe">关于我</a></li>
+				        
+						</ul>
+					</nav>
+					<nav class="header-nav">
+						<div class="social">
+							
+								<a class="github" target="_blank" href="https://github.com/houwhu/blog" title="github">github</a>
+					        
+								<a class="zhihu" target="_blank" href="https://www.zhihu.com/people/axe-fu-zi/activities" title="zhihu">zhihu</a>
+					        
+								<a class="mail" target="_blank" href="/1065440895@qq.com" title="mail">mail</a>
+					        
+								<a class="weibo" target="_blank" href="https://weibo.com/2908056451/profile?topnav=1&wvr=6&is_all=1" title="weibo">weibo</a>
+					        
+						</div>
+					</nav>
+				</section>
+				
+				
+				<section class="switch-part switch-part2">
+					<div class="widget tagcloud" id="js-tagcloud">
+						<a href="/tags/react/" style="font-size: 20px;">react</a> <a href="/tags/react-hooks/" style="font-size: 10px;">react-hooks</a> <a href="/tags/react-native/" style="font-size: 15px;">react-native</a>
+					</div>
+				</section>
+				
+				
+				
+
+				
+			</div>
+		</div>
+	</header>				
+</div>
+    </div>
+    <div class="mid-col">
+      <nav id="mobile-nav">
+  	<div class="overlay">
+  		<div class="slider-trigger"></div>
+  		<h1 class="header-author js-mobile-header hide"></h1>
+  	</div>
+	<div class="intrude-less">
+		<header id="header" class="inner">
+			<div class="profilepic">
+				<img lazy-src="/img/fuzi.jpg" class="js-avatar">
+			</div>
+			<hgroup>
+			  <h1 class="header-author"></h1>
+			</hgroup>
+			
+			<nav class="header-menu">
+				<ul>
+				
+					<li><a href="/">主页</a></li>
+		        
+					<li><a href="/archives">所有文章</a></li>
+		        
+					<li><a href="/aboutMe">关于我</a></li>
+		        
+		        <div class="clearfix"></div>
+				</ul>
+			</nav>
+			<nav class="header-nav">
+				<div class="social">
+					
+						<a class="github" target="_blank" href="https://github.com/houwhu/blog" title="github">github</a>
+			        
+						<a class="zhihu" target="_blank" href="https://www.zhihu.com/people/axe-fu-zi/activities" title="zhihu">zhihu</a>
+			        
+						<a class="mail" target="_blank" href="/1065440895@qq.com" title="mail">mail</a>
+			        
+						<a class="weibo" target="_blank" href="https://weibo.com/2908056451/profile?topnav=1&wvr=6&is_all=1" title="weibo">weibo</a>
+			        
+				</div>
+			</nav>
+		</header>				
+	</div>
+</nav>
+      <div class="body-wrap"><article id="post-Effect-Hook" class="article article-type-post" itemscope itemprop="blogPost">
+  
+    <div class="article-meta">
+      <a href="/2018/11/27/Effect-Hook/" class="article-date">
+  	<time datetime="2018-11-27T05:22:17.000Z" itemprop="datePublished">2018-11-27</time>
+</a>
+    </div>
+  
+  <div class="article-inner">
+    
+      <input type="hidden" class="isFancy" />
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 class="article-title" itemprop="name">
+      Effect-Hook
+      
+    </h1>
+  
+
+      </header>
+      
+      <div class="article-info article-info-post">
+        
+	<div class="article-tag tagcloud">
+		<ul class="article-tag-list" itemprop="keywords"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/react/" rel="tag">react</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/react-hooks/" rel="tag">react-hooks</a></li></ul>
+	</div>
+
+        
+	<div class="article-category tagcloud">
+	<a class="article-category-link" href="/categories/react/">react</a><a class="article-category-link" href="/categories/react/react-hooks/">react-hooks</a>
+	</div>
+
+
+        
+        <div class="clearfix"></div>
+      </div>
+      
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <h2 id="effect-hook"><a href="#effect-hook" class="headerlink" title="effect-hook"></a>effect-hook</h2><p><code>Effect Hook</code> 可以使得你在函数组件中执行一些带有副作用的方法。</p>
+ <span id="more"></span>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br></pre></td><td class="code"><pre><span class="line">import &#123;useState, useEffect&#125; from &#x27;react&#x27;;</span><br><span class="line">function Example ()&#123;</span><br><span class="line">  const [count, setCount] = useState(0);</span><br><span class="line">  useEffect(()=&gt;&#123;</span><br><span class="line">    document.title = `You click $&#123;count&#125; times`</span><br><span class="line">  &#125;);</span><br><span class="line">  </span><br><span class="line">  return(</span><br><span class="line">    &lt;div&gt;</span><br><span class="line">        &lt;p&gt; you click &#123;count&#125; times &lt;/p&gt;</span><br><span class="line">        &lt;button onClick=&#123;() =&gt; setCount(count + 1)&#125;&gt;点击我&lt;/button&gt;</span><br><span class="line">    &lt;/div&gt;</span><br><span class="line">  )</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p>上面这段代码是基于上个 <a target="_blank" rel="noopener" href="http://www.baidu.com/">state hook计数器的例子</a> 的例子，但是我们现在添加了新的功能，我么讲文档的标题设置为自定义消息，包含了点击次数。</p>
+<p>数据获取，设置订阅及先手动更改 <code>React</code> 组件中的 <code>DOM</code> 都是副作用的示例。无论你是否习惯与将这些操作成为“副作用”或者仅仅是“效果”，但之前你可能已经在组件中执行了这些操作。</p>
+<blockquote>
+<p> <strong>提示：</strong> 如果你熟悉<code>React</code>类组件生命周期方法，你就可以将<code>useEffect Hook</code>视为<code>componentDidMount</code>,<code>componentDidUpdate</code>和<code>componentWillUnmount</code>的组合。</p>
+</blockquote>
+<p>React组件中有两种常见的副作用：那些需要清理的副作用和不需要清理的副作用。让我们详细的看一下两者的区别。</p>
+<hr>
+<h2 id="无需清理的副作用"><a href="#无需清理的副作用" class="headerlink" title="无需清理的副作用"></a>无需清理的副作用</h2><p>有时，我们希望在<code>React</code>更新<code>DOM</code>之后运行一些额外的代码。网络请求， 手动改变<code>DOM</code>和日志记录是不需要清理的效果（副作用，简称“效果”）的常见示例。我们这样说是因为我们可以运行他们并立即忘记他们。让我们比较一下<code>class</code>和<code>hooks</code>是如何让我们表达这样的副作用。</p>
+<h3 id="使用class的例子"><a href="#使用class的例子" class="headerlink" title="使用class的例子"></a>使用class的例子</h3><p>在<code>react</code>类组件中，<code>render</code>方法本身不应该导致副作用。这太早了，我们通常希望<code>React</code>更新<code>DOM</code>之后执行我们的效果。这就是为啥在<code>React</code>类中，我们将副作用放到<code>componentDidMount</code>和<code>componentDidUpdate</code>中。看我们的例子，这是一个<code>React</code>计数器类的组件，它在react对DOM进行更改后立即更新文档的标题。</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br></pre></td><td class="code"><pre><span class="line">import React,&#123;Component&#125; from &#x27;react&#x27;;</span><br><span class="line"></span><br><span class="line">export default class Example extends Component &#123;</span><br><span class="line">    constructor(props)&#123;</span><br><span class="line">        super(props);</span><br><span class="line">        this.state = &#123;</span><br><span class="line">            count: 0</span><br><span class="line">        &#125;;</span><br><span class="line">    &#125;</span><br><span class="line">    </span><br><span class="line">    componentDidMount() &#123;</span><br><span class="line">        document.title = `You click $&#123;this.state.count&#125; times`</span><br><span class="line">    &#125;</span><br><span class="line">    </span><br><span class="line">    componentDidUpdate() &#123;</span><br><span class="line">        document.title = `You clicked $&#123;this.state.count&#125; times`;</span><br><span class="line">    &#125;</span><br><span class="line">    </span><br><span class="line">    render() &#123;</span><br><span class="line">        return (</span><br><span class="line">          &lt;div&gt;</span><br><span class="line">            &lt;p&gt;You clicked &#123;this.state.count&#125; times&lt;/p&gt;</span><br><span class="line">            &lt;button onClick=&#123;() =&gt; this.setState(&#123; count: this.state.count + 1 &#125;)&#125;&gt;</span><br><span class="line">              Click me</span><br><span class="line">            &lt;/button&gt;</span><br><span class="line">          &lt;/div&gt;</span><br><span class="line">        );</span><br><span class="line">  &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p>请注意<strong>我们如何在类中复制这两个生命周期方法之间的代码</strong><br>这是因为在许多的情况下，我们希望执行相同的副作用，无论组件是刚安装还是已经更新。从概念上讲，我们希望它在每次渲染之后发生，但是在React类组件中没有这样的方法（render方法应该避免更重要）。我们可以提取一个单独的方法，但是我们仍然需要在这两个地方调用它。</p>
+<p>现在让我们回头再看看我们如何使用<code>useEffect Hook</code>做同样的事情。</p>
+<p><code>useEffect</code><strong>有什么作用？</strong><br>通过使用这个Hook，你告诉React你的组件需要在渲染后执行某些操作。React将记住你传递的函数（我们将其称为“效果”），并在执行DOM更新后稍后调用它。在这个效果中，我们设置文档标题，但我们也可以执行数据提取或调用其他命令式API。</p>
+<p><strong>为什么在组件内调用<code>useEffect</code>？</strong><br>在组件中使用<code>useEffect</code>让我们可以直接从效果中访问状态变量（如count或任何道具）。我们不需要特殊的API来读取它 - 它已经在函数范围内了。Hooks拥抱<code>JavaScript</code><strong>闭包</strong>，并避免在JavaScript已经提供解决方案的情况下引入特定于React的API。</p>
+<p><strong>每次渲染后useEffect都会运行吗？</strong><br>是的。默认情况下，它在第一次渲染之后和每次更新之后运行。 （我们稍后会讨论如何自定义它。）你可能会发现更容易认为效果发生在“渲染之后”，而不是考虑“挂载”和“更新”。React保证DOM在运行‘效果’时已更新。</p>
+<h3 id="详细说明"><a href="#详细说明" class="headerlink" title="详细说明"></a>详细说明</h3><p>现在我们对这个<code>hook</code>更加的了解了，那再看看下面这个例子：</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">function Example() &#123;</span><br><span class="line">    const[count, setCount] = useState(0);</span><br><span class="line">    </span><br><span class="line">    useEffect(() =&gt; &#123;</span><br><span class="line">        document.title = `You clicked $&#123;count&#125; times`;</span><br><span class="line">    &#125;);</span><br><span class="line">&#125;    </span><br></pre></td></tr></table></figure>
+<p>我们声明了<code>count</code>状态变量，然后告诉<code>React</code>我们需要使用效果。我们将一个函数传递给<code>useEffect Hook</code>，这个函数式就是效果（副作用）。在我们的效果中，我们使用<code>document.title</code>浏览器<code>API</code>设置文档标题。我们可以读取效果中的最新<code>count</code>，因为它在我们的函数范围内。当<code>React</code>渲染我们的组件时，它会记住我们是用的效果，然后在更新<code>DOM</code>后运行我们的效果。每次渲染都会发生这种情况，包括第一次渲染。</p>
+<blockquote>
+<p><strong>注意：</strong> 与<code>componentDidMount</code>或<code>componentDidUpdate</code>不同，使用<code>useEffect</code>的效果不会阻止浏览器更新屏幕。这使应用感觉更具响应性。大多数效果不需要同步发生。在他们这样做的不常见情况下（例如测量布局），有一个单独的<code>useLayoutEffect Hook</code>，其<code>API</code>与<code>useEffect</code>相同。</p>
+</blockquote>
+<h2 id="需要清理的副作用"><a href="#需要清理的副作用" class="headerlink" title="需要清理的副作用"></a>需要清理的副作用</h2><p>之前，我们研究了如何表达不需要任何清理的副作用。但是，有些效果需要清理。例如，我们可能希望设置对某些外部数据源的订阅。在这种情况下，清理是非常重要的，这样我们就不会引入内存泄漏！让我们比较一下我们如何使用类和<code>Hooks</code>来实现它。</p>
+<h3 id="使用-class-的例子"><a href="#使用-class-的例子" class="headerlink" title="使用 **class**的例子"></a>使用 **<code>class</code>**的例子</h3><p>在<code>React</code>类中，通常会在<code>componentDidMount</code>中设置订阅，并在<code>componentWillUnmount</code>中清除它。例如，假设我们有一个ChatAPI`模块，可以让我们订阅朋友的在线状态。以下是我们如何使用类订阅和显示该状态：</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br></pre></td><td class="code"><pre><span class="line">class FriendStatus extends React.Component &#123;</span><br><span class="line">  constructor(props) &#123;</span><br><span class="line">    super(props);</span><br><span class="line">    this.state = &#123; </span><br><span class="line">        isOnline: null </span><br><span class="line">    &#125;;</span><br><span class="line">    this.handleStatusChange = this.handleStatusChange.bind(this);</span><br><span class="line">  &#125;</span><br><span class="line">​</span><br><span class="line">  componentDidMount() &#123;</span><br><span class="line">    ChatAPI.subscribeToFriendStatus(</span><br><span class="line">      this.props.friend.id,</span><br><span class="line">      this.handleStatusChange</span><br><span class="line">    );</span><br><span class="line">  &#125;</span><br><span class="line">​</span><br><span class="line">  componentWillUnmount() &#123;</span><br><span class="line">    ChatAPI.unsubscribeFromFriendStatus(</span><br><span class="line">      this.props.friend.id,</span><br><span class="line">      this.handleStatusChange</span><br><span class="line">    );</span><br><span class="line">  &#125;</span><br><span class="line">​</span><br><span class="line">  handleStatusChange(status) &#123;</span><br><span class="line">    this.setState(&#123;</span><br><span class="line">      isOnline: status.isOnline</span><br><span class="line">    &#125;);</span><br><span class="line">  &#125;</span><br><span class="line">​</span><br><span class="line">  render() &#123;</span><br><span class="line">    if (this.state.isOnline === null) &#123;</span><br><span class="line">      return &#x27;Loading...&#x27;;</span><br><span class="line">    &#125;</span><br><span class="line">    return this.state.isOnline ? &#x27;Online&#x27; : &#x27;Offline&#x27;;</span><br><span class="line">  &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p>请注意<code>componentDidMount</code>和<code>componentWillUnmount</code>如何相互作用。生命周期方法迫使我们拆分这个逻辑，即使它们中的概念代码都与相同的效果有关。</p>
+<blockquote>
+<p><strong>注意：</strong> 眼尖的你可能会注意到这个例子还需要一个<code>componentDidUpdate</code>方法才能完全正确。我们暂时忽略这一点，但会在本页的后面部分再回过头来讨论它。</p>
+</blockquote>
+<h3 id="使用-hooks-的例子"><a href="#使用-hooks-的例子" class="headerlink" title="使用**hooks**的例子"></a>使用**<code>hooks</code>**的例子</h3><p>你可能认为我们需要单独的效果来执行清理。但是添加和删除订阅的代码是如此紧密相关，以至于<code>useEffect</code>旨在将它保持在一起。如果你的效果返回一个函数，<code>React</code>将在清理时运行它：</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br></pre></td><td class="code"><pre><span class="line">import &#123; useState, useEffect &#125; from &#x27;react&#x27;;</span><br><span class="line">​</span><br><span class="line">function FriendStatus(props) &#123;</span><br><span class="line">  const [isOnline, setIsOnline] = useState(null);</span><br><span class="line">​</span><br><span class="line">  function handleStatusChange(status) &#123;</span><br><span class="line">    setIsOnline(status.isOnline);</span><br><span class="line">  &#125;</span><br><span class="line">​</span><br><span class="line">  useEffect(() =&gt; &#123;</span><br><span class="line">    ChatAPI.subscribeToFriendStatus(props.friend.id, handleStatusChange);</span><br><span class="line">    // 指定如何在这种效果之后清理</span><br><span class="line">    return function cleanup() &#123;</span><br><span class="line">      ChatAPI.unsubscribeFromFriendStatus(props.friend.id, handleStatusChange);</span><br><span class="line">    &#125;;</span><br><span class="line">  &#125;);</span><br><span class="line">​</span><br><span class="line">  if (isOnline === null) &#123;</span><br><span class="line">    return &#x27;Loading...&#x27;;</span><br><span class="line">  &#125;</span><br><span class="line">  return isOnline ? &#x27;Online&#x27; : &#x27;Offline&#x27;;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<p><strong>为什么我们从效果中返回一个函数？</strong> 这是效果的可选清理机制。每个效果都可能返回一个在它之后清理的函数。这使我们可以保持添加和删除彼此接近的订阅的逻辑。</p>
+<p><strong>React什么时候清理效果？</strong> 当组件卸载时，React执行清理。但是，正如我们之前所了解的那样，效果会针对每个渲染运行而不仅仅是一次。这就是React在下次运行效果之前还清除前一渲染效果的原因。我们将讨论为什么这有助于避免错误以及如何在以后发生性能问题时选择退出此行为。</p>
+<blockquote>
+<p><strong>注意:</strong> 我们不必从效果中返回命名函数。我们在这里只是为了说明才加的命名，但你可以返回箭头函数。</p>
+</blockquote>
+<h2 id="概述"><a href="#概述" class="headerlink" title="概述"></a>概述</h2><p>我们已经了解到useEffect让我们在组件渲染后表达不同类型的副作用。某些效果可能需要清理，因此它们返回一个函数：</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">useEffect(() =&gt; &#123;</span><br><span class="line">    ChatAPI.subscribeToFriendStatus(props.friend.id, handleStatusChange);</span><br><span class="line">    return () =&gt; &#123;</span><br><span class="line">      ChatAPI.unsubscribeFromFriendStatus(props.friend.id, handleStatusChange);</span><br><span class="line">    &#125;;</span><br><span class="line">&#125;);</span><br></pre></td></tr></table></figure>
+<p>其他效果可能没有清理阶段，也不会返回任何内容。比如：</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">useEffect(() =&gt; &#123;</span><br><span class="line">    document.title = `You clicked $&#123;count&#125; times`;</span><br><span class="line">&#125;);</span><br></pre></td></tr></table></figure>
+<p>如果你觉得你对Effect Hook的工作方式有了很好的把握，或者你感到不知所措，那么现在就可以跳转到关于Hooks规则。</p>
+<hr>
+<h2 id="使用效果的提示"><a href="#使用效果的提示" class="headerlink" title="使用效果的提示"></a>使用效果的提示</h2><p>我们将继续深入了解使用<code>React</code>用户可能会产生好奇心的<code>useEffect</code>的某些方面。</p>
+<blockquote>
+<p><strong>提示：使用多重效果分离问题</strong></p>
+</blockquote>
+<p>这是一个组合了前面示例中的计数器和朋友状态指示器逻辑的组件:</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br></pre></td><td class="code"><pre><span class="line">class FriendStatusWithCounter extends React.Component &#123;</span><br><span class="line">  constructor(props) &#123;</span><br><span class="line">    super(props);</span><br><span class="line">    this.state = &#123; count: 0, isOnline: null &#125;;</span><br><span class="line">    this.handleStatusChange = this.handleStatusChange.bind(this);</span><br><span class="line">  &#125;</span><br><span class="line">​</span><br><span class="line">  componentDidMount() &#123;</span><br><span class="line">    document.title = `You clicked $&#123;this.state.count&#125; times`;</span><br><span class="line">    ChatAPI.subscribeToFriendStatus(</span><br><span class="line">      this.props.friend.id,</span><br><span class="line">      this.handleStatusChange</span><br><span class="line">    );</span><br><span class="line">  &#125;</span><br><span class="line">​</span><br><span class="line">  componentDidUpdate() &#123;</span><br><span class="line">    document.title = `You clicked $&#123;this.state.count&#125; times`;</span><br><span class="line">  &#125;</span><br><span class="line">​</span><br><span class="line">  componentWillUnmount() &#123;</span><br><span class="line">    ChatAPI.unsubscribeFromFriendStatus(</span><br><span class="line">      this.props.friend.id,</span><br><span class="line">      this.handleStatusChange</span><br><span class="line">    );</span><br><span class="line">  &#125;</span><br><span class="line">​</span><br><span class="line">  handleStatusChange(status) &#123;</span><br><span class="line">    this.setState(&#123;</span><br><span class="line">      isOnline: status.isOnline</span><br><span class="line">    &#125;);</span><br><span class="line">  &#125;</span><br><span class="line">  // ...</span><br></pre></td></tr></table></figure>
+<p>请注意设置 <code>document.title</code> 的逻辑如何在<code>componentDidMount</code> 和<code>componentDidUpdate</code> 之间拆分。订阅逻辑也在<code>componentDidMount</code> 和 <code>componentWillUnmount</code>之间传播。<code>componentDidMount</code> 包含两个任务的代码。</p>
+<p>那么，<code>Hooks</code>如何解决这个问题呢？就像你可以多次使用状态挂钩一样，你也可以使用多种效果。这让我们将不相关的逻辑分成不同的效果：</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br></pre></td><td class="code"><pre><span class="line">function FriendStatusWithCounter(props) &#123;</span><br><span class="line">  const [count, setCount] = useState(0);</span><br><span class="line">  useEffect(() =&gt; &#123;</span><br><span class="line">    document.title = `You clicked $&#123;count&#125; times`;</span><br><span class="line">  &#125;);</span><br><span class="line">​</span><br><span class="line">  const [isOnline, setIsOnline] = useState(null);</span><br><span class="line">  useEffect(() =&gt; &#123;</span><br><span class="line">    ChatAPI.subscribeToFriendStatus(props.friend.id, handleStatusChange);</span><br><span class="line">    return () =&gt; &#123;</span><br><span class="line">      ChatAPI.unsubscribeFromFriendStatus(props.friend.id, handleStatusChange);</span><br><span class="line">    &#125;;</span><br><span class="line">  &#125;);</span><br><span class="line">​</span><br><span class="line">  function handleStatusChange(status) &#123;</span><br><span class="line">    setIsOnline(status.isOnline);</span><br><span class="line">  &#125;</span><br><span class="line">  // ...</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p>**<code>Hooks</code>**允许我们根据它正在做的事情而不是生命周期方法名称来拆分代码。 React将按照指定的顺序应用组件使用的每个效果。</p>
+<p><strong>说明：为什么效果在每个更新上运行</strong><br>如果你习惯了类，你可能想知道为什么每次重新渲染后效果的清理阶段都会发生，而不是在卸载过程中只发生一次。让我们看一个实际的例子，看看为什么这个设计可以帮助我们创建更少bug的组件。</p>
+<p>在上面介绍了一个示例FriendStatus组件，该组件显示朋友是否在线。我们的类从this.props读取friend.id，在组件挂载后订阅朋友状态，并在卸载期间取消订阅：</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br></pre></td><td class="code"><pre><span class="line">componentDidMount() &#123;</span><br><span class="line">    ChatAPI.subscribeToFriendStatus(</span><br><span class="line">      this.props.friend.id,</span><br><span class="line">      this.handleStatusChange</span><br><span class="line">    );</span><br><span class="line">  &#125;</span><br><span class="line">​</span><br><span class="line">  componentWillUnmount() &#123;</span><br><span class="line">    ChatAPI.unsubscribeFromFriendStatus(</span><br><span class="line">      this.props.friend.id,</span><br><span class="line">      this.handleStatusChange</span><br><span class="line">    );</span><br><span class="line">  &#125;</span><br></pre></td></tr></table></figure>
+<p><strong>但是如果friend prop在组件出现在屏幕上时发生了变化，会发生什么？</strong> 我们的组件将继续显示不同朋友的在线状态。这是一个错误。卸载时我们还会导致内存泄漏或崩溃，因为取消订阅会使用错误的朋友ID。</p>
+<p>在类组件中，我们需要添加componentDidUpdate来处理这种情况:</p>
+<pre><code>componentDidMount() &#123;
+    ChatAPI.subscribeToFriendStatus(
+      this.props.friend.id,
+      this.handleStatusChange
+    );
+  &#125;
+​
+  componentDidUpdate(prevProps) &#123;
+    // 取消之前订阅的朋友
+    ChatAPI.unsubscribeFromFriendStatus(
+      prevProps.friend.id,
+      this.handleStatusChange
+    );
+    // 订阅下一个朋友
+    ChatAPI.subscribeToFriendStatus(
+      this.props.friend.id,
+      this.handleStatusChange
+    );
+  &#125;
+​
+  componentWillUnmount() &#123;
+    ChatAPI.unsubscribeFromFriendStatus(
+      this.props.friend.id,
+      this.handleStatusChange
+    );
+  &#125;
+  
+</code></pre>
+<p>忘记正确处理<code>componentDidUpdate</code>是<code>React</code>应用程序中常见的<code>bug</code>漏洞。<br>现在考虑使用Hooks的这个组件的版本：</p>
+<pre><code>function FriendStatus(props) &#123;
+  // ...
+  useEffect(() =&gt; &#123;
+    ChatAPI.subscribeToFriendStatus(props.friend.id, handleStatusChange);
+    return () =&gt; &#123;
+      ChatAPI.unsubscribeFromFriendStatus(props.friend.id, handleStatusChange);
+    &#125;;
+  &#125;);
+</code></pre>
+<p>它不会受到这个bug的影响。 （但我们也没有对它做任何改动。）</p>
+<p>没有用于处理更新的特殊代码，因为默认情况下useEffect会处理它们。它会在应用下一个效果之前清除之前的效果。为了说明这一点，这里是一个订阅和取消订阅调用的序列，该组件可以随着时间的推移产生：</p>
+<pre><code>// Mount with &#123; friend: &#123; id: 100 &#125; &#125; props
+ChatAPI.subscribeToFriendStatus(100, handleStatusChange);     // Run first effect
+​
+// Update with &#123; friend: &#123; id: 200 &#125; &#125; props
+ChatAPI.unsubscribeFromFriendStatus(100, handleStatusChange); // Clean up previous effect
+ChatAPI.subscribeToFriendStatus(200, handleStatusChange);     // Run next effect
+​
+// Update with &#123; friend: &#123; id: 300 &#125; &#125; props
+ChatAPI.unsubscribeFromFriendStatus(200, handleStatusChange); // Clean up previous effect
+ChatAPI.subscribeToFriendStatus(300, handleStatusChange);     // Run next effect
+​
+// Unmount
+ChatAPI.unsubscribeFromFriendStatus(300, handleStatusChange); // Clean up last effect
+</code></pre>
+<p>此行为默认确保一致性，并防止由于缺少更新逻辑而导致类组件中常见的错误。</p>
+<p><strong>提示：通过跳过效果优化性能</strong></p>
+<p>在某些情况下，在每次渲染后清理或应用效果可能会产生性能问题。在类组件中，我们可以通过在<code>componentDidUpdate</code>中编写与<code>prevProps</code>或<code>prevState</code>的额外比较来解决这个问题：</p>
+<pre><code>componentDidUpdate(prevProps, prevState) &#123;
+  if (prevState.count !== this.state.count) &#123;
+    document.title = `You clicked $&#123;this.state.count&#125; times`;
+  &#125;
+&#125;
+</code></pre>
+<p>这个要求很常见，它被内置到<code>useEffect Hook</code> API中。如果在重新渲染之间没有更改某些值，则可以告诉<code>React</code>跳过应用效果。为此，将数组作为可选的第二个参数传递给useEffect：</p>
+<pre><code>useEffect(() =&gt; &#123;
+  document.title = `You clicked $&#123;count&#125; times`;
+&#125;, [count]); // 当count改变的时候回再次运行这个效果
+</code></pre>
+<p>在上面的例子中，我们传递<code>[count]</code>作为第二个参数。这是什么意思？如果 <code>count</code> 为5，然后我们的组件重新渲染，<code>count</code>仍然等于5，则<code>React</code>将比较前一个渲染的[5]和下一个渲染的[5]。因为数组中的所有项都是相同的（<code>5 === 5</code>），所以<code>React</code>会跳过这个效果。这是我们的优化。</p>
+<p>当我们使用<code>count</code>更新为6渲染时，React会将前一渲染中[5]数组中的项目与下一渲染中[6]数组中的项目进行比较。这次，<code>React</code>将重新运行效果，因为<code>5！== 6</code>。<strong>如果数组中有多个项目，<code>React</code>将重新运行效果，即使其中只有一个不同。</strong></p>
+<p>这也适用于具有清理阶段的效果：</p>
+<pre><code>useEffect(() =&gt; &#123;
+  ChatAPI.subscribeToFriendStatus(props.friend.id, handleStatusChange);
+  return () =&gt; &#123;
+    ChatAPI.unsubscribeFromFriendStatus(props.friend.id, handleStatusChange);
+  &#125;;
+&#125;, [props.friend.id]); // 只有朋友id改变重新订阅
+</code></pre>
+<p>将来， 第二个参数可能会通过构建时转换自动添加。</p>
+<blockquote>
+<p><strong>注意:</strong> 如果使用此优化，请确保该数组包含外部作用域中随时间变化且效果使用的任何值，换句话说就是要在这个效果函数里有意义。 否则，代码将引用先前渲染中的旧值。我们还将讨论<code>Hooks API</code>参考中的其他优化选项。 </p>
+</blockquote>
+<blockquote>
+<p>如果要<strong>运行效果并仅将其清理一次（在装载和卸载时），则可以将空数组（[]）作为第二个参数传递。</strong> 这告诉React你的效果不依赖于来自props或 state的任何值，所以它永远不需要重新运行。这不作为特殊情况处理 - 它直接遵循输入数组的工作方式。虽然传递[]更接近熟悉的<code>componentDidMount</code>和 <code>componentWillUnmount</code>生命周期，但我们建议不要将它作为一种习惯，因为它经常会导致错误，除非你明确你自己在做什么， 如上所述。 不要忘记<code>React</code>推迟运行<code>useEffect</code>直到浏览器绘制完成后，所以做额外的工作不是问题。  </p>
+</blockquote>
+
+      
+    </div>
+    
+  </div>
+  
+    
+<nav id="article-nav">
+  
+    <a href="/2018/11/27/state-hook/" id="article-nav-newer" class="article-nav-link-wrap">
+      <strong class="article-nav-caption">&lt;</strong>
+      <div class="article-nav-title">
+        
+          state-hook
+        
+      </div>
+    </a>
+  
+  
+    <a href="/2018/11/27/setState/" id="article-nav-older" class="article-nav-link-wrap">
+      <div class="article-nav-title">setState</div>
+      <strong class="article-nav-caption">&gt;</strong>
+    </a>
+  
+</nav>
+
+  
+</article>
+
+
+<div class="ds-share share" data-thread-key="Effect-Hook" data-title="Effect-Hook" data-url="https://houwhu.github.io/hwh-blog.github.io/2018/11/27/Effect-Hook/"  data-images="/img/fuzi.jpg" data-content="Effect-Hook">
+    <div class="ds-share-inline">
+      <ul  class="ds-share-icons-16">
+      	<li data-toggle="ds-share-icons-more"><a class="ds-more" href="javascript:void(0);">分享到：</a></li>
+        <li><a class="ds-weibo" href="javascript:void(0);" data-service="weibo">微博</a></li>
+        <li><a class="ds-qzone" href="javascript:void(0);" data-service="qzone">QQ空间</a></li>
+        <li><a class="ds-qqt" href="javascript:void(0);" data-service="qqt">腾讯微博</a></li>
+        <li><a class="ds-wechat" href="javascript:void(0);" data-service="wechat">微信</a></li>
+      </ul>
+      <div class="ds-share-icons-more">
+      </div>
+    </div>
+ </div>
+ 
+
+
+
+
+
+</div>
+      <footer id="footer">
+  <div class="outer">
+    <div id="footer-info">
+      <div class="footer-left">
+        &copy; 2022 斧子Axe
+      </div>
+        <div class="footer-right">
+          <a href="http://hexo.io/" target="_blank">Hexo</a>  Github <a href="https://github.com/houwhu/blog" target="_blank">houwh</a>
+        </div>
+    </div>
+  </div>
+</footer>
+    </div>
+    
+  
+<link rel="stylesheet" href="/fancybox/jquery.fancybox.css">
+
+
+
+<script>
+	var yiliaConfig = {
+		fancybox: true,
+		mathjax: true,
+		animate: false,
+		isHome: false,
+		isPost: true,
+		isArchive: false,
+		isTag: false,
+		isCategory: false,
+		open_in_new: false
+	}
+</script>
+
+<script src="/js/main.js"></script>
+
+
+
+
+<script type="text/x-mathjax-config">
+MathJax.Hub.Config({
+    tex2jax: {
+        inlineMath: [ ['$','$'], ["\\(","\\)"]  ],
+        processEscapes: true,
+        skipTags: ['script', 'noscript', 'style', 'textarea', 'pre', 'code']
+    }
+});
+
+MathJax.Hub.Queue(function() {
+    var all = MathJax.Hub.getAllJax(), i;
+    for(i=0; i < all.length; i += 1) {
+        all[i].SourceElement().parentNode.className += ' has-jax';                 
+    }       
+});
+</script>
+
+<script src="//cdn.bootcss.com/mathjax/2.7.0/MathJax.js"></script>
+
+
+  </div>
+</body>
+</html>
