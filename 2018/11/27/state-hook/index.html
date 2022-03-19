@@ -7,17 +7,17 @@
 
   <!-- keywords -->
   
-
+	<meta name="referrer" content="no-referrer"/>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta name="description" content="state-hook在之前的的hook 介绍里有一段代码: import &amp;#123; useState &amp;#125; from &#39;react&#39;; ​ function Example() &amp;#123;   &#x2F;&#x2F; Declare a new state variable, which we&#39;ll call &quot;count&quot;   const [count,">
+  <meta name="description" content="state-hookHook 是 React 16.8 的新增特性。它可以让你在不编写 class 的情况下使用 state 以及其他的 React 特性。 在之前的的hook 介绍里有一段代码:">
 <meta property="og:type" content="article">
 <meta property="og:title" content="state-hook">
 <meta property="og:url" content="https://houwhu.github.io/hwh-blog.github.io/2018/11/27/state-hook/index.html">
 <meta property="og:site_name" content="small_Axe的博客专栏">
-<meta property="og:description" content="state-hook在之前的的hook 介绍里有一段代码: import &amp;#123; useState &amp;#125; from &#39;react&#39;; ​ function Example() &amp;#123;   &#x2F;&#x2F; Declare a new state variable, which we&#39;ll call &quot;count&quot;   const [count,">
+<meta property="og:description" content="state-hookHook 是 React 16.8 的新增特性。它可以让你在不编写 class 的情况下使用 state 以及其他的 React 特性。 在之前的的hook 介绍里有一段代码:">
 <meta property="og:locale">
 <meta property="article:published_time" content="2018-11-27T08:58:47.000Z">
-<meta property="article:modified_time" content="2022-03-17T12:21:16.715Z">
+<meta property="article:modified_time" content="2022-03-19T08:52:02.249Z">
 <meta property="article:author" content="Axe">
 <meta property="article:tag" content="react">
 <meta property="article:tag" content="react-hooks">
@@ -40,6 +40,12 @@
   
 <script src="//cdn.bootcss.com/jquery/3.1.1/jquery.min.js"></script>
 
+
+  
+      <script src="https://cdn1.lncld.net/static/js/av-core-mini-0.6.1.js"></script>
+<script>AV.initialize("KdxmGsjUCHH01zuMe0zV6J3D-gzGzoHsz", "Xnftl9O2DyYmzb4fRRIbw5rL");</script>
+
+<script src="/js/Counter.js"></script>
 
   
 <meta name="generator" content="Hexo 5.4.1"></head>
@@ -132,6 +138,7 @@
 				
 			</div>
 		</div>
+		
 	</header>				
 </div>
     </div>
@@ -215,32 +222,30 @@
 
 
         
+          
+<div class="counter-tag counter">
+    <span id="/2018/11/27/state-hook/" class="leancloud_visitors post-title-link"
+          style="font-size: 12px" data-flag-title="state-hook">
+         &nbsp;
+        阅读
+    </span>
+</div>
+
+        
         <div class="clearfix"></div>
       </div>
       
     
     <div class="article-entry" itemprop="articleBody">
       
-        <h2 id="state-hook"><a href="#state-hook" class="headerlink" title="state-hook"></a>state-hook</h2><p>在之前的的hook 介绍里有一段代码:</p>
-<pre><code>import &#123; useState &#125; from &#39;react&#39;;
-​
-function Example() &#123;
-  // Declare a new state variable, which we&#39;ll call &quot;count&quot;
-  const [count, setCount] = useState(0);
-​
-  return (
-    &lt;div&gt;
-      &lt;p&gt;You clicked &#123;count&#125; times&lt;/p&gt;
-      &lt;button onClick=&#123;() =&gt; setCount(count + 1)&#125;&gt;
-        Click me
-      &lt;/button&gt;
-    &lt;/div&gt;
-  );
-&#125;
-</code></pre>
+        <h2 id="state-hook"><a href="#state-hook" class="headerlink" title="state-hook"></a>state-hook</h2><p>Hook 是 React 16.8 的新增特性。它可以让你在不编写 class 的情况下使用 state 以及其他的 React 特性。</p>
+<p>在之前的的hook 介绍里有一段代码:</p>
+<span id="more"></span>
+ <figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">import</span> &#123; useState &#125; <span class="keyword">from</span> <span class="string">&#x27;react&#x27;</span>;</span><br><span class="line">   ​</span><br><span class="line">   <span class="keyword">function</span> <span class="title function_">Example</span>(<span class="params"></span>) &#123;</span><br><span class="line">     <span class="comment">// Declare a new state variable, which we&#x27;ll call &quot;count&quot;</span></span><br><span class="line">     <span class="keyword">const</span> [count, setCount] = <span class="title function_">useState</span>(<span class="number">0</span>);</span><br><span class="line">     <span class="keyword">return</span> (</span><br><span class="line">       <span class="language-xml"><span class="tag">&lt;<span class="name">div</span>&gt;</span></span></span><br><span class="line"><span class="language-xml">         <span class="tag">&lt;<span class="name">p</span>&gt;</span>You clicked &#123;count&#125; times<span class="tag">&lt;/<span class="name">p</span>&gt;</span></span></span><br><span class="line"><span class="language-xml">         <span class="tag">&lt;<span class="name">button</span> <span class="attr">onClick</span>=<span class="string">&#123;()</span> =&gt;</span> setCount(count + 1)&#125;&gt;</span></span><br><span class="line"><span class="language-xml">           Click me</span></span><br><span class="line"><span class="language-xml">         <span class="tag">&lt;/<span class="name">button</span>&gt;</span></span></span><br><span class="line"><span class="language-xml">       <span class="tag">&lt;/<span class="name">div</span>&gt;</span></span></span><br><span class="line">     );</span><br><span class="line">   &#125;</span><br></pre></td></tr></table></figure>
+
 <p>我们将通过将此代码与等效的类示例进行比较来开始学习<code>Hooks</code>。</p>
 <h2 id="等价的类示例"><a href="#等价的类示例" class="headerlink" title="等价的类示例"></a>等价的类示例</h2><p>看下面的这段代码，你会觉得熟悉：</p>
-<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br></pre></td><td class="code"><pre><span class="line">class Example extends Component&#123;</span><br><span class="line">   constructor(props) &#123;</span><br><span class="line">      super(props);</span><br><span class="line">      this.state = &#123;</span><br><span class="line">        count: 0</span><br><span class="line">      &#125;</span><br><span class="line">   &#125;</span><br><span class="line"></span><br><span class="line">   render()&#123;</span><br><span class="line">      return (</span><br><span class="line">          &lt;div&gt;</span><br><span class="line">          &lt;p&gt;You clicked &#123;this.state.count&#125; times&lt;/p&gt;</span><br><span class="line">            &lt;button onClick=&#123;() =&gt; this.setState(&#123; count: this.state.count + 1 &#125;)&#125;&gt;</span><br><span class="line">              Click me</span><br><span class="line">            &lt;/button&gt;</span><br><span class="line">          &lt;/div&gt;</span><br><span class="line">      )</span><br><span class="line">   &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">class</span> <span class="title class_">Example</span> <span class="keyword">extends</span> <span class="title class_ inherited__">Component</span>&#123;</span><br><span class="line">   <span class="title function_">constructor</span>(<span class="params">props</span>) &#123;</span><br><span class="line">      <span class="variable language_">super</span>(props);</span><br><span class="line">      <span class="variable language_">this</span>.<span class="property">state</span> = &#123;</span><br><span class="line">        <span class="attr">count</span>: <span class="number">0</span></span><br><span class="line">      &#125;</span><br><span class="line">   &#125;</span><br><span class="line"></span><br><span class="line">   <span class="title function_">render</span>(<span class="params"></span>)&#123;</span><br><span class="line">      <span class="keyword">return</span> (</span><br><span class="line">          <span class="language-xml"><span class="tag">&lt;<span class="name">div</span>&gt;</span></span></span><br><span class="line"><span class="language-xml">          <span class="tag">&lt;<span class="name">p</span>&gt;</span>You clicked &#123;this.state.count&#125; times<span class="tag">&lt;/<span class="name">p</span>&gt;</span></span></span><br><span class="line"><span class="language-xml">            <span class="tag">&lt;<span class="name">button</span> <span class="attr">onClick</span>=<span class="string">&#123;()</span> =&gt;</span> this.setState(&#123; count: this.state.count + 1 &#125;)&#125;&gt;</span></span><br><span class="line"><span class="language-xml">              Click me</span></span><br><span class="line"><span class="language-xml">            <span class="tag">&lt;/<span class="name">button</span>&gt;</span></span></span><br><span class="line"><span class="language-xml">          <span class="tag">&lt;/<span class="name">div</span>&gt;</span></span></span><br><span class="line">      )</span><br><span class="line">   &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
 <p>状态以<code>&#123;count：0&#125;</code>开始，当用户通过调用this.setState单击按钮时，我们会增加state.count。我们将在整个页面中使用此类的片段。</p>
 <blockquote>
 <p><strong>注意</strong> 你可能想知道为什么我们在这里使用计数器而不是更现实的例子。这是为了帮助我们专注于<code>API</code>，同时我们仍在使用<code>Hooks</code>迈出第一步。</p>
@@ -424,6 +429,10 @@ var setFruit = fruitStateVariable[1];
         </div>
     </div>
   </div>
+  <script async src="//busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script>
+	<span id="busuanzi_container_site_pv">
+		本站总访问量<span id="busuanzi_value_site_pv"></span>次
+	</span>
 </footer>
     </div>
     
