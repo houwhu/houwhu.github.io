@@ -1039,17 +1039,17 @@ a {
 .article-entry li code {
   padding: 3px 3px;
   margin: 0 3px;
-  background: #f8f8f8;
-  border: 1px solid #ccc;
+  background: #ff945c;
   font-family: Menlo, Monaco, "Andale Mono", "lucida console", "Courier New", monospace;
   word-wrap: break-word;
   font-size: 14px;
-  color: #d63200;
+  color: #fff;
 }
 .article-entry blockquote {
   padding: 15px 20px;
   margin-top: 10px;
-  border-left: 5px solid #657b83;
+  border-left: 5px solid #ffa500;
+  background: rgba(255,165,0,0.2);
 }
 .article-entry blockquote p {
   margin-top: 0;
@@ -1412,7 +1412,6 @@ a {
 }
 .article-entry code {
   background: #eee;
-  text-shadow: 0 1px #fff;
   padding: 0 0.3em;
   border: none;
 }
