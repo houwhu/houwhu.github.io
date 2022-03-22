@@ -1,3 +1,29 @@
+.common {
+  display: flex;
+  background-size: 1.5rem;
+  opacity: 0.85;
+  background-position: center;
+  background-repeat: no-repeat;
+  height: 1.5rem;
+  width: 1.5rem;
+  border-radius: 0rem;
+/*鼠标停留在图标上时，图标呈现发光效果*/
+}
+.common:hover {
+  opacity: 1;
+}
+.csdn {
+  background-image: url("/images/csdn.svg");
+}
+.github {
+  background-image: url("/images/GitHub.svg");
+}
+.jianshu {
+  background-image: url("/images/jianshu.svg");
+}
+.juejin {
+  background-image: url("/images/juejin.svg");
+}
 :root {
   --body-bg-color: #eee;
   --content-bg-color: #fff;
@@ -178,16 +204,19 @@ template {
 }
 html,
 body {
-  height: 100%;
+  height: 100vh;
 }
 body {
-  background: var(--body-bg-color);
+  background: #000;
   box-sizing: border-box;
   color: var(--text-color);
   font-family: Lato, 'PingFang SC', 'Microsoft YaHei', sans-serif;
   font-size: 1em;
   line-height: 2;
-  min-height: 100%;
+  background-image: url("/images/kebi.jpeg");
+  background-repeat: no-repeat;
+  background-size: 130%;
+  background-position: -10px 0px;
   position: relative;
   transition: padding 0.2s ease-in-out;
 }
@@ -1493,6 +1522,7 @@ pre code {
   color: #999;
   font-size: 0.875em;
   padding: 20px 0;
+  height: 124px;
 }
 .footer.footer-fixed {
   bottom: 0;
@@ -2375,6 +2405,14 @@ ul.breadcrumb li:last-child {
 .tag-cloud-10 {
   border-bottom-color: #111;
   color: #111;
+}
+.gt-header a,
+.gt-comments a,
+.gt-popup a {
+  border-bottom: 0;
+}
+.gt-container .gt-popup .gt-action.is--active::before {
+  top: 0.7em;
 }
 .use-motion .animated {
   animation-fill-mode: none;
