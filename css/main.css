@@ -290,8 +290,7 @@ p {
   margin: 0 0 20px;
 }
 a {
-  border-bottom: 1px solid #999;
-  color: var(--link-color);
+  color: #4ea1db;
   cursor: pointer;
   outline: 0;
   text-decoration: none;
@@ -299,7 +298,7 @@ a {
 }
 a:hover {
   border-bottom-color: var(--link-hover-color);
-  color: var(--link-hover-color);
+  color: #ca0c16;
 }
 iframe,
 img,
@@ -317,7 +316,8 @@ hr {
   margin: 40px 0;
 }
 blockquote {
-  border-left: 4px solid #ddd;
+  border-left: 4px solid #c7254e;
+  background-color: #f9f2f4;
   color: var(--blockquote-color);
   margin: 0;
   padding: 0 15px;
@@ -490,6 +490,8 @@ code {
   font-family: consolas, Menlo, monospace, 'PingFang SC', 'Microsoft YaHei';
 }
 code {
+  color: #c7254e;
+  background-color: #f9f2f4;
   border-radius: 3px;
   font-size: 0.875em;
   padding: 2px 4px;
@@ -1520,12 +1522,27 @@ pre code {
 }
 .post-toc ol a {
   transition: all 0.2s ease-in-out;
+  color: var(--link-color);
+}
+.post-toc ol a:hover,
+.post-toc ol a.menu-item-active {
+  color: #fc6423;
+  background: rgba(252,100,35,0.1);
 }
 .post-toc .nav-item {
   line-height: 1.8;
   overflow: hidden;
   text-overflow: ellipsis;
   white-space: nowrap;
+}
+.post-toc .nav-item a {
+  transition: all 0.2s ease-in-out;
+  color: var(--link-color);
+}
+.post-toc .nav-item a:hover,
+.post-toc .nav-item a.menu-item-active {
+  color: #fc6423;
+  background: rgba(252,100,35,0.1);
 }
 .post-toc .nav .nav-child {
   display: none;
@@ -2638,6 +2655,12 @@ ul.breadcrumb li:last-child {
   position: relative;
   text-align: left;
   transition-property: background-color;
+  color: var(--link-color);
+}
+.menu .menu-item a:hover,
+.menu .menu-item a.menu-item-active {
+  color: #fc6423;
+  background: rgba(252,100,35,0.1);
 }
 @media (max-width: 991px) {
   .menu .menu-item.menu-item-search {
