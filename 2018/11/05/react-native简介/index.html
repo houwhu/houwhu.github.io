@@ -3,7 +3,10 @@
 <head>
   <!-- hexo-inject:begin --><!-- hexo-inject:end --><meta charset="UTF-8">
 <meta name="viewport" content="width=device-width">
-<meta name="theme-color" content="#222"><meta name="generator" content="Hexo 5.1.1">
+<meta http-equiv="Content-Security-Policy" content="upgrade-insecure-requests">
+<meta name="referrer" content="no-referrer">
+<meta name="theme-color" content="#222" media="(prefers-color-scheme: light)">
+<meta name="theme-color" content="#222" media="(prefers-color-scheme: dark)"><meta name="generator" content="Hexo 5.1.1">
 
 
   <link rel="apple-touch-icon" sizes="180x180" href="/images/apple-touch-icon-next.png">
@@ -18,14 +21,14 @@
 <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@6.0.0/css/all.min.css" integrity="sha256-jTIdiMuX/e3DGJUGwl3pKSxuc6YOuqtJYkM0bGQESA4=" crossorigin="anonymous">
   <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/animate.css@3.1.1/animate.min.css" integrity="sha256-PR7ttpcvz8qrF57fur/yAx1qXMFJeJFiA6pSzWi0OIE=" crossorigin="anonymous">
 
-<script class="next-config" data-name="main" type="application/json">{"hostname":"houwhu.github.io","root":"/","images":"/images","scheme":"Gemini","darkmode":false,"version":"8.10.1","exturl":false,"sidebar":{"position":"left","display":"post","padding":18,"offset":12},"copycode":false,"bookmark":{"enable":false,"color":"#222","save":"auto"},"mediumzoom":false,"lazyload":false,"pangu":false,"comments":{"style":"tabs","active":"gitalk","storage":true,"lazyload":false,"nav":{"gitalk":{"order":-1}},"activeClass":"gitalk"},"stickytabs":false,"motion":{"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"fadeInDown","post_body":"fadeInDown","coll_header":"fadeInLeft","sidebar":"fadeInUp"}},"prism":false,"i18n":{"placeholder":"搜索...","empty":"没有找到任何搜索结果：${query}","hits_time":"找到 ${hits} 个搜索结果（用时 ${time} 毫秒）","hits":"找到 ${hits} 个搜索结果"}}</script><script src="/js/config.js"></script>
+<script class="next-config" data-name="main" type="application/json">{"hostname":"houwhu.github.io","root":"/","images":"/images","scheme":"Pisces","darkmode":true,"version":"8.10.1","exturl":false,"sidebar":{"position":"left","display":"post","padding":18,"offset":12},"copycode":false,"bookmark":{"enable":false,"color":"#222","save":"auto"},"mediumzoom":false,"lazyload":false,"pangu":false,"comments":{"style":"tabs","active":"gitalk","storage":true,"lazyload":false,"nav":{"gitalk":{"order":-1}},"activeClass":"gitalk"},"stickytabs":false,"motion":{"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"fadeInDown","post_body":"fadeInDown","coll_header":"fadeInLeft","sidebar":"fadeInUp"}},"prism":false,"i18n":{"placeholder":"搜索...","empty":"没有找到任何搜索结果：${query}","hits_time":"找到 ${hits} 个搜索结果（用时 ${time} 毫秒）","hits":"找到 ${hits} 个搜索结果"}}</script><script src="/js/config.js"></script>
 
-    <meta name="description" content="用 React 编写移动应用 React Native **ReactNative ** 可以基于目前大热的开源JavaScript库React.js来开发iOS和Android原生App。而且React Native已经用于生产环境——Facebook Groups iOS 应用就是基于它开发的。">
+    <meta name="description" content="用 React 编写移动应用 React Native  **ReactNative ** 可以基于目前大热的开源JavaScript库React.js来开发iOS和Android原生App。而且React Native已经用于生产环境——Facebook Groups iOS 应用就是基于它开发的。">
 <meta property="og:type" content="article">
 <meta property="og:title" content="react-native简介">
 <meta property="og:url" content="https://houwhu.github.io/hwh-blog.github.io/2018/11/05/react-native%E7%AE%80%E4%BB%8B/index.html">
 <meta property="og:site_name" content="small_Axe的博客专栏">
-<meta property="og:description" content="用 React 编写移动应用 React Native **ReactNative ** 可以基于目前大热的开源JavaScript库React.js来开发iOS和Android原生App。而且React Native已经用于生产环境——Facebook Groups iOS 应用就是基于它开发的。">
+<meta property="og:description" content="用 React 编写移动应用 React Native  **ReactNative ** 可以基于目前大热的开源JavaScript库React.js来开发iOS和Android原生App。而且React Native已经用于生产环境——Facebook Groups iOS 应用就是基于它开发的。">
 <meta property="og:locale">
 <meta property="og:image" content="https://www.oschina.net/build/oschina/project/stylesheets/imgs/badge_recommend.svg">
 <meta property="og:image" content="http://static.oschina.net/uploads/img/201503/28132016_EqCq.jpg">
@@ -62,19 +65,6 @@
   border-radius: 3px;
   display: initial;
   padding: 1px 4px;
-}
-</style><style>
-#needsharebutton-float {
-  bottom: 88px;
-  cursor: pointer;
-  left: -8px;
-  position: fixed;
-  z-index: 9999;
-}
-#needsharebutton-float .btn {
-  border: 1px solid $btn-default-border-color;
-  border-radius: 4px;
-  padding: 0 10px 0 14px;
 }
 </style>
   <noscript>
@@ -115,7 +105,7 @@
 
 
 <nav class="site-nav">
-  <ul class="main-menu menu"><li class="menu-item menu-item-home"><a href="/" rel="section"><i class="fa fa-home fa-fw"></i>首页</a></li><li class="menu-item menu-item-about"><a href="/about/" rel="section"><i class="fa fa-user fa-fw"></i>关于</a></li><li class="menu-item menu-item-tags"><a href="/tags/" rel="section"><i class="fa fa-tags fa-fw"></i>标签<span class="badge">4</span></a></li><li class="menu-item menu-item-categories"><a href="/categories/" rel="section"><i class="fa fa-th fa-fw"></i>分类<span class="badge">4</span></a></li><li class="menu-item menu-item-archives"><a href="/archives/" rel="section"><i class="fa fa-archive fa-fw"></i>归档<span class="badge">7</span></a></li><li class="menu-item menu-item-schedule"><a href="/schedule/" rel="section"><i class="fa fa-calendar fa-fw"></i>日程表</a></li><li class="menu-item menu-item-sitemap"><a href="/sitemap.xml" rel="section"><i class="fa fa-sitemap fa-fw"></i>站点地图</a></li>
+  <ul class="main-menu menu"><li class="menu-item menu-item-home"><a href="/" rel="section"><i class="fa fa-home fa-fw"></i>首页</a></li><li class="menu-item menu-item-about"><a href="/about/" rel="section"><i class="fa fa-user fa-fw"></i>关于</a></li><li class="menu-item menu-item-tags"><a href="/tags/" rel="section"><i class="fa fa-tags fa-fw"></i>标签<span class="badge">4</span></a></li><li class="menu-item menu-item-categories"><a href="/categories/" rel="section"><i class="fa fa-th fa-fw"></i>分类<span class="badge">4</span></a></li><li class="menu-item menu-item-archives"><a href="/archives/" rel="section"><i class="fa fa-archive fa-fw"></i>归档<span class="badge">7</span></a></li><li class="menu-item menu-item-schedule"><a href="/schedule/" rel="section"><i class="fa fa-calendar fa-fw"></i>日程表</a></li><li class="menu-item menu-item-sitemap"><a href="/sitemap.xml" rel="section"><i class="fa fa-sitemap fa-fw"></i>站点地图</a></li><li class="menu-item menu-item-guestbook"><a href="/guestbook/" rel="section"><i class="fa fa-commenting fa-fw"></i>留言板</a></li>
   </ul>
 </nav>
 
@@ -146,7 +136,7 @@
       <div class="sidebar-panel-container">
         <!--noindex-->
         <div class="post-toc-wrap sidebar-panel">
-            <div class="post-toc animated"><ol class="nav"><li class="nav-item nav-level-3"><a class="nav-link" href="#%E7%94%A8-React-%E7%BC%96%E5%86%99%E7%A7%BB%E5%8A%A8%E5%BA%94%E7%94%A8-React-Native"><span class="nav-number">1.</span> <span class="nav-text">用 React 编写移动应用 React Native </span></a></li></ol></div>
+            <div class="post-toc animated"><ol class="nav"><li class="nav-item nav-level-3"><a class="nav-link" href="#%E7%94%A8-React-%E7%BC%96%E5%86%99%E7%A7%BB%E5%8A%A8%E5%BA%94%E7%94%A8-React-Native-img-src-https-www-oschina-net-build-oschina-project-stylesheets-imgs-badge-recommend-svg-width-20-height-20"><span class="nav-number">1.</span> <span class="nav-text">用 React 编写移动应用 React Native </span></a></li></ol></div>
         </div>
         <!--/noindex-->
 
@@ -166,12 +156,14 @@
         </a>
       </div>
       <div class="site-state-item site-state-categories">
+          <a href="/categories/">
         <span class="site-state-item-count">4</span>
-        <span class="site-state-item-name">分类</span>
+        <span class="site-state-item-name">分类</span></a>
       </div>
       <div class="site-state-item site-state-tags">
+          <a href="/tags/">
         <span class="site-state-item-count">4</span>
-        <span class="site-state-item-name">标签</span>
+        <span class="site-state-item-name">标签</span></a>
       </div>
   </nav>
 </div>
@@ -209,6 +201,7 @@
     <i class="fa fa-arrow-up"></i>
     <span>0%</span>
   </div>
+  <div class="reading-progress-bar"></div>
 
 <noscript>
   <div class="noscript-warning">Theme NexT works best with JavaScript enabled</div>
@@ -291,14 +284,18 @@
     
     
     <div class="post-body" itemprop="articleBody">
-        <h3 id="用-React-编写移动应用-React-Native"><a href="#用-React-编写移动应用-React-Native" class="headerlink" title="用 React 编写移动应用 React Native "></a>用 React 编写移动应用 React Native <img src='https://www.oschina.net/build/oschina/project/stylesheets/imgs/badge_recommend.svg' width="20" height="20"/></h3><p>**ReactNative ** 可以基于目前大热的开源JavaScript库React.js来开发iOS和Android原生App。而且React Native已经用于生产环境——Facebook Groups iOS 应用就是基于它开发的。</p>
+        <h3 id="用-React-编写移动应用-React-Native-img-src-https-www-oschina-net-build-oschina-project-stylesheets-imgs-badge-recommend-svg-width-20-height-20">用 React 编写移动应用 React Native <img src='https://www.oschina.net/build/oschina/project/stylesheets/imgs/badge_recommend.svg' width="20" height="20"/></h3>
+<p>**ReactNative ** 可以基于目前大热的开源JavaScript库React.js来开发iOS和Android原生App。而且React Native已经用于生产环境——Facebook Groups iOS 应用就是基于它开发的。</p>
  <a id="more"></a>
 <p><img src="http://static.oschina.net/uploads/img/201503/28132016_EqCq.jpg" alt="react-native"></p>
 <p>React Native的原理是在JavaScript中用React抽象操作系统原生的UI组件，代替DOM元素来渲染，比如以 <code>&lt;View&gt;</code> 取代 <code>&lt;div&gt;</code>，以<code>&lt;Image&gt;</code>替代<code>&lt;img&gt;</code>等。</p>
 <p>在幕后，React Native在主线程之外，在另一个背景线程里运行JavaScript引擎，两个线程之间通过一批量化的async消息协议来通信（有一个专门的React插件）。</p>
 <p>UI方面React Native提供跨平台的类似Flexbox的布局系统，还支持CSS子集。可以用JSX或者普通JavaScript语言，还有<a target="_blank" rel="noopener" href="https://coffeescript.org/" title="CoffeeScript">CoffeeScript</a> 和 <a target="_blank" rel="noopener" href="http://www.typescriptlang.org/" title="TypeScript">TypeScript</a> 来开发。</p>
 <p>更好的是，由于基于Web技术，开发起来可以像在浏览器里那样随时在仿真程序中查看应用运行情况，刷新一下就行，无需编译，爽吧。</p>
-<p>React Native比起标准Web开发或原生开发能够带来的三大好处：<br>1.手势识别：基于Web技术（HTML5/JavaScript）构建的移动应用经常被抱怨缺乏及时响应。而基于原生UI的React Native能避免这些问题从而实现实时响应。<br>2.原生组件：使用HTML5/JavaScript实现的组件比起原生组件总是让人感觉差一截，而React Native由于采用了原生UI组件自然没有此问题。<br>3.样式和布局：iOS、Android和基于Web的应用各自有不同的样式和布局机制。React Native通过一个基于FlexBox的布局引擎在所有移动平台上实现了一致的跨平台样式和布局方案。</p>
+<p>React Native比起标准Web开发或原生开发能够带来的三大好处：<br>
+1.手势识别：基于Web技术（HTML5/JavaScript）构建的移动应用经常被抱怨缺乏及时响应。而基于原生UI的React Native能避免这些问题从而实现实时响应。<br>
+2.原生组件：使用HTML5/JavaScript实现的组件比起原生组件总是让人感觉差一截，而React Native由于采用了原生UI组件自然没有此问题。<br>
+3.样式和布局：iOS、Android和基于Web的应用各自有不同的样式和布局机制。React Native通过一个基于FlexBox的布局引擎在所有移动平台上实现了一致的跨平台样式和布局方案。</p>
 <p>触摸事件处理：</p>
 <figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br></pre></td><td class="code"><pre><span class="line">import React, &#123; Component &#125; from &#x27;react&#x27;;</span><br><span class="line">import &#123; ScrollView, TouchableHighlight, Text, StyleSheet &#125; from &#x27;react-native&#x27;;</span><br><span class="line"></span><br><span class="line">class TouchDemo extends Component&#123;</span><br><span class="line">  render() &#123;</span><br><span class="line">    return (</span><br><span class="line">      &lt;ScrollView&gt;</span><br><span class="line">        &lt;TouchableHighlight onPress=&#123;() =&gt; console.log(&#x27;pressed&#x27;)&#125;&gt;</span><br><span class="line">          &lt;Text style=&#123;styles.txt&#125;&gt;Proper Touch Handling&lt;/Text&gt;</span><br><span class="line">        &lt;/TouchableHighlight&gt;</span><br><span class="line">      &lt;/ScrollView&gt;</span><br><span class="line">    );</span><br><span class="line">  &#125;,</span><br><span class="line">&#125;;</span><br><span class="line">const styles = StyleSheet.create(&#123;</span><br><span class="line">  txt:&#123;</span><br><span class="line">    fontSize: 14,</span><br><span class="line">    color: &#x27;#333333&#x27;</span><br><span class="line">  &#125;</span><br><span class="line">&#125;)</span><br><span class="line"></span><br></pre></td></tr></table></figure>
 
@@ -316,7 +313,7 @@
       </div>
     </div>
           <div class="reward-container">
-  <div></div>
+  <div>坚持原创技术分享，您的支持将鼓励我继续创作！</div>
   <button>
     赞赏
   </button>
@@ -341,11 +338,11 @@
 
           <div class="post-nav">
             <div class="post-nav-item">
+                <a href="/2018/11/07/react-native%E7%8E%AF%E5%A2%83%E9%85%8D%E7%BD%AE/" rel="prev" title="react-native环境配置">
+                  <i class="fa fa-chevron-left"></i> react-native环境配置
+                </a>
             </div>
             <div class="post-nav-item">
-                <a href="/2018/11/07/react-native%E7%8E%AF%E5%A2%83%E9%85%8D%E7%BD%AE/" rel="next" title="react-native环境配置">
-                  react-native环境配置 <i class="fa fa-chevron-right"></i>
-                </a>
             </div>
           </div>
     </footer>
@@ -391,7 +388,7 @@
       </span>
     </span>
 </div>
-  <div class="powered-by">由 <a href="https://hexo.io/" rel="noopener" target="_blank">Hexo</a> & <a href="https://theme-next.js.org/" rel="noopener" target="_blank">NexT.Gemini</a> 强力驱动
+  <div class="powered-by">由 <a href="https://hexo.io/" rel="noopener" target="_blank">Hexo</a> & <a href="https://theme-next.js.org/pisces/" rel="noopener" target="_blank">NexT.Pisces</a> 强力驱动
   </div>
 
     </div>
@@ -413,11 +410,7 @@
 
 
 
-<div id="needsharebutton-float">
-      <span class="btn">
-        <i class="fa fa-share-alt" aria-hidden="true"></i>
-      </span>
-    </div>
+
   <script src="//cdn.jsdelivr.net/gh/theme-next/theme-next-needmoreshare2@1/needsharebutton.min.js"></script>
   <script>
       pbOptions = {};
@@ -426,12 +419,6 @@
         pbOptions.position = "bottomCenter";
         pbOptions.networks = "Wechat,QQZone,Weibo,Douban,Twitter,Facebook";
       new needShareButton('#needsharebutton-postbottom', pbOptions);
-      flOptions = {};
-        flOptions.iconStyle = "box";
-        flOptions.boxForm = "horizontal";
-        flOptions.position = "middleRight";
-        flOptions.networks = "Wechat, QQZone, Weibo, Douban, Twitter, Facebook";
-      new needShareButton('#needsharebutton-float', flOptions);
   </script> <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/gitalk@1.7.2/dist/gitalk.css" integrity="sha256-AJnUHL7dBv6PGaeyPQJcgQPDjt/Hn/PvYZde1iqfp8U=" crossorigin="anonymous">
 
 <script class="next-config" data-name="gitalk" type="application/json">{"enable":true,"github_id":"houwhu","repo":"blog-comment","client_id":"6167b7e007511e729a12","client_secret":"07aaf16fd37a83a77d259d9a0344fa8489855be8","admin_user":"houwhu","distraction_free_mode":true,"proxy":"https://cors-anywhere.azm.workers.dev/https://github.com/login/oauth/access_token","language":"zh-Hans","js":{"url":"https://cdn.jsdelivr.net/npm/gitalk@1.7.2/dist/gitalk.min.js","integrity":"sha256-Pmj85ojLaPOWwRtlMJwmezB/Qg8BzvJp5eTzvXaYAfA="},"path_md5":"68f26bc69ab9923e9cd6820a7d74ef7e"}</script>
@@ -439,4 +426,4 @@
 
 </body>
 </html>
-<script src="https://cdn.jsdelivr.net/gh/houwhu/live2d-widget/autoload.js"></script>
+<script src="https://cdn.jsdelivr.net/gh/houwhu/live2d-widget@v1.0.1/autoload.js"></script>

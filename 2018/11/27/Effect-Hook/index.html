@@ -3,7 +3,10 @@
 <head>
   <!-- hexo-inject:begin --><!-- hexo-inject:end --><meta charset="UTF-8">
 <meta name="viewport" content="width=device-width">
-<meta name="theme-color" content="#222"><meta name="generator" content="Hexo 5.1.1">
+<meta http-equiv="Content-Security-Policy" content="upgrade-insecure-requests">
+<meta name="referrer" content="no-referrer">
+<meta name="theme-color" content="#222" media="(prefers-color-scheme: light)">
+<meta name="theme-color" content="#222" media="(prefers-color-scheme: dark)"><meta name="generator" content="Hexo 5.1.1">
 
 
   <link rel="apple-touch-icon" sizes="180x180" href="/images/apple-touch-icon-next.png">
@@ -18,14 +21,14 @@
 <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@6.0.0/css/all.min.css" integrity="sha256-jTIdiMuX/e3DGJUGwl3pKSxuc6YOuqtJYkM0bGQESA4=" crossorigin="anonymous">
   <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/animate.css@3.1.1/animate.min.css" integrity="sha256-PR7ttpcvz8qrF57fur/yAx1qXMFJeJFiA6pSzWi0OIE=" crossorigin="anonymous">
 
-<script class="next-config" data-name="main" type="application/json">{"hostname":"houwhu.github.io","root":"/","images":"/images","scheme":"Gemini","darkmode":false,"version":"8.10.1","exturl":false,"sidebar":{"position":"left","display":"post","padding":18,"offset":12},"copycode":false,"bookmark":{"enable":false,"color":"#222","save":"auto"},"mediumzoom":false,"lazyload":false,"pangu":false,"comments":{"style":"tabs","active":"gitalk","storage":true,"lazyload":false,"nav":{"gitalk":{"order":-1}},"activeClass":"gitalk"},"stickytabs":false,"motion":{"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"fadeInDown","post_body":"fadeInDown","coll_header":"fadeInLeft","sidebar":"fadeInUp"}},"prism":false,"i18n":{"placeholder":"搜索...","empty":"没有找到任何搜索结果：${query}","hits_time":"找到 ${hits} 个搜索结果（用时 ${time} 毫秒）","hits":"找到 ${hits} 个搜索结果"}}</script><script src="/js/config.js"></script>
+<script class="next-config" data-name="main" type="application/json">{"hostname":"houwhu.github.io","root":"/","images":"/images","scheme":"Pisces","darkmode":true,"version":"8.10.1","exturl":false,"sidebar":{"position":"left","display":"post","padding":18,"offset":12},"copycode":false,"bookmark":{"enable":false,"color":"#222","save":"auto"},"mediumzoom":false,"lazyload":false,"pangu":false,"comments":{"style":"tabs","active":"gitalk","storage":true,"lazyload":false,"nav":{"gitalk":{"order":-1}},"activeClass":"gitalk"},"stickytabs":false,"motion":{"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"fadeInDown","post_body":"fadeInDown","coll_header":"fadeInLeft","sidebar":"fadeInUp"}},"prism":false,"i18n":{"placeholder":"搜索...","empty":"没有找到任何搜索结果：${query}","hits_time":"找到 ${hits} 个搜索结果（用时 ${time} 毫秒）","hits":"找到 ${hits} 个搜索结果"}}</script><script src="/js/config.js"></script>
 
-    <meta name="description" content="effect-hookEffect Hook 可以使得你在函数组件中执行一些带有副作用的方法。">
+    <meta name="description" content="effect-hook Effect Hook 可以使得你在函数组件中执行一些带有副作用的方法。">
 <meta property="og:type" content="article">
 <meta property="og:title" content="Effect-Hook">
 <meta property="og:url" content="https://houwhu.github.io/hwh-blog.github.io/2018/11/27/Effect-Hook/index.html">
 <meta property="og:site_name" content="small_Axe的博客专栏">
-<meta property="og:description" content="effect-hookEffect Hook 可以使得你在函数组件中执行一些带有副作用的方法。">
+<meta property="og:description" content="effect-hook Effect Hook 可以使得你在函数组件中执行一些带有副作用的方法。">
 <meta property="og:locale">
 <meta property="article:published_time" content="2018-11-27T05:22:17.000Z">
 <meta property="article:modified_time" content="2022-03-17T12:21:16.708Z">
@@ -60,19 +63,6 @@
   border-radius: 3px;
   display: initial;
   padding: 1px 4px;
-}
-</style><style>
-#needsharebutton-float {
-  bottom: 88px;
-  cursor: pointer;
-  left: -8px;
-  position: fixed;
-  z-index: 9999;
-}
-#needsharebutton-float .btn {
-  border: 1px solid $btn-default-border-color;
-  border-radius: 4px;
-  padding: 0 10px 0 14px;
 }
 </style>
   <noscript>
@@ -113,7 +103,7 @@
 
 
 <nav class="site-nav">
-  <ul class="main-menu menu"><li class="menu-item menu-item-home"><a href="/" rel="section"><i class="fa fa-home fa-fw"></i>首页</a></li><li class="menu-item menu-item-about"><a href="/about/" rel="section"><i class="fa fa-user fa-fw"></i>关于</a></li><li class="menu-item menu-item-tags"><a href="/tags/" rel="section"><i class="fa fa-tags fa-fw"></i>标签<span class="badge">4</span></a></li><li class="menu-item menu-item-categories"><a href="/categories/" rel="section"><i class="fa fa-th fa-fw"></i>分类<span class="badge">4</span></a></li><li class="menu-item menu-item-archives"><a href="/archives/" rel="section"><i class="fa fa-archive fa-fw"></i>归档<span class="badge">7</span></a></li><li class="menu-item menu-item-schedule"><a href="/schedule/" rel="section"><i class="fa fa-calendar fa-fw"></i>日程表</a></li><li class="menu-item menu-item-sitemap"><a href="/sitemap.xml" rel="section"><i class="fa fa-sitemap fa-fw"></i>站点地图</a></li>
+  <ul class="main-menu menu"><li class="menu-item menu-item-home"><a href="/" rel="section"><i class="fa fa-home fa-fw"></i>首页</a></li><li class="menu-item menu-item-about"><a href="/about/" rel="section"><i class="fa fa-user fa-fw"></i>关于</a></li><li class="menu-item menu-item-tags"><a href="/tags/" rel="section"><i class="fa fa-tags fa-fw"></i>标签<span class="badge">4</span></a></li><li class="menu-item menu-item-categories"><a href="/categories/" rel="section"><i class="fa fa-th fa-fw"></i>分类<span class="badge">4</span></a></li><li class="menu-item menu-item-archives"><a href="/archives/" rel="section"><i class="fa fa-archive fa-fw"></i>归档<span class="badge">7</span></a></li><li class="menu-item menu-item-schedule"><a href="/schedule/" rel="section"><i class="fa fa-calendar fa-fw"></i>日程表</a></li><li class="menu-item menu-item-sitemap"><a href="/sitemap.xml" rel="section"><i class="fa fa-sitemap fa-fw"></i>站点地图</a></li><li class="menu-item menu-item-guestbook"><a href="/guestbook/" rel="section"><i class="fa fa-commenting fa-fw"></i>留言板</a></li>
   </ul>
 </nav>
 
@@ -144,7 +134,7 @@
       <div class="sidebar-panel-container">
         <!--noindex-->
         <div class="post-toc-wrap sidebar-panel">
-            <div class="post-toc animated"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#effect-hook"><span class="nav-number">1.</span> <span class="nav-text">effect-hook</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E6%97%A0%E9%9C%80%E6%B8%85%E7%90%86%E7%9A%84%E5%89%AF%E4%BD%9C%E7%94%A8"><span class="nav-number">2.</span> <span class="nav-text">无需清理的副作用</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#%E4%BD%BF%E7%94%A8class%E7%9A%84%E4%BE%8B%E5%AD%90"><span class="nav-number">2.1.</span> <span class="nav-text">使用class的例子</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E8%AF%A6%E7%BB%86%E8%AF%B4%E6%98%8E"><span class="nav-number">2.2.</span> <span class="nav-text">详细说明</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E9%9C%80%E8%A6%81%E6%B8%85%E7%90%86%E7%9A%84%E5%89%AF%E4%BD%9C%E7%94%A8"><span class="nav-number">3.</span> <span class="nav-text">需要清理的副作用</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#%E4%BD%BF%E7%94%A8-class-%E7%9A%84%E4%BE%8B%E5%AD%90"><span class="nav-number">3.1.</span> <span class="nav-text">使用 **class**的例子</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E4%BD%BF%E7%94%A8-hooks-%E7%9A%84%E4%BE%8B%E5%AD%90"><span class="nav-number">3.2.</span> <span class="nav-text">使用**hooks**的例子</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E6%A6%82%E8%BF%B0"><span class="nav-number">4.</span> <span class="nav-text">概述</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E4%BD%BF%E7%94%A8%E6%95%88%E6%9E%9C%E7%9A%84%E6%8F%90%E7%A4%BA"><span class="nav-number">5.</span> <span class="nav-text">使用效果的提示</span></a></li></ol></div>
+            <div class="post-toc animated"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#effect-hook"><span class="nav-number">1.</span> <span class="nav-text">effect-hook</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E6%97%A0%E9%9C%80%E6%B8%85%E7%90%86%E7%9A%84%E5%89%AF%E4%BD%9C%E7%94%A8"><span class="nav-number">2.</span> <span class="nav-text">无需清理的副作用</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#%E4%BD%BF%E7%94%A8class%E7%9A%84%E4%BE%8B%E5%AD%90"><span class="nav-number">2.1.</span> <span class="nav-text">使用class的例子</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E8%AF%A6%E7%BB%86%E8%AF%B4%E6%98%8E"><span class="nav-number">2.2.</span> <span class="nav-text">详细说明</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E9%9C%80%E8%A6%81%E6%B8%85%E7%90%86%E7%9A%84%E5%89%AF%E4%BD%9C%E7%94%A8"><span class="nav-number">3.</span> <span class="nav-text">需要清理的副作用</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#%E4%BD%BF%E7%94%A8-class-%E7%9A%84%E4%BE%8B%E5%AD%90"><span class="nav-number">3.1.</span> <span class="nav-text">使用 **class**的例子</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E4%BD%BF%E7%94%A8-hooks-%E7%9A%84%E4%BE%8B%E5%AD%90"><span class="nav-number">3.2.</span> <span class="nav-text">使用**hooks**的例子</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E6%A6%82%E8%BF%B0-2"><span class="nav-number">4.</span> <span class="nav-text">概述</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E4%BD%BF%E7%94%A8%E6%95%88%E6%9E%9C%E7%9A%84%E6%8F%90%E7%A4%BA"><span class="nav-number">5.</span> <span class="nav-text">使用效果的提示</span></a></li></ol></div>
         </div>
         <!--/noindex-->
 
@@ -164,12 +154,14 @@
         </a>
       </div>
       <div class="site-state-item site-state-categories">
+          <a href="/categories/">
         <span class="site-state-item-count">4</span>
-        <span class="site-state-item-name">分类</span>
+        <span class="site-state-item-name">分类</span></a>
       </div>
       <div class="site-state-item site-state-tags">
+          <a href="/tags/">
         <span class="site-state-item-count">4</span>
-        <span class="site-state-item-name">标签</span>
+        <span class="site-state-item-name">标签</span></a>
       </div>
   </nav>
 </div>
@@ -207,6 +199,7 @@
     <i class="fa fa-arrow-up"></i>
     <span>0%</span>
   </div>
+  <div class="reading-progress-bar"></div>
 
 <noscript>
   <div class="noscript-warning">Theme NexT works best with JavaScript enabled</div>
@@ -293,52 +286,64 @@
     
     
     <div class="post-body" itemprop="articleBody">
-        <h2 id="effect-hook"><a href="#effect-hook" class="headerlink" title="effect-hook"></a>effect-hook</h2><p><code>Effect Hook</code> 可以使得你在函数组件中执行一些带有副作用的方法。</p>
+        <h2 id="effect-hook">effect-hook</h2>
+<p><code>Effect Hook</code> 可以使得你在函数组件中执行一些带有副作用的方法。</p>
  <a id="more"></a>
 <figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br></pre></td><td class="code"><pre><span class="line">import &#123;useState, useEffect&#125; from &#x27;react&#x27;;</span><br><span class="line">function Example ()&#123;</span><br><span class="line">  const [count, setCount] = useState(0);</span><br><span class="line">  useEffect(()=&gt;&#123;</span><br><span class="line">    document.title = `You click $&#123;count&#125; times`</span><br><span class="line">  &#125;);</span><br><span class="line">  </span><br><span class="line">  return(</span><br><span class="line">    &lt;div&gt;</span><br><span class="line">        &lt;p&gt; you click &#123;count&#125; times &lt;/p&gt;</span><br><span class="line">        &lt;button onClick=&#123;() =&gt; setCount(count + 1)&#125;&gt;点击我&lt;/button&gt;</span><br><span class="line">    &lt;/div&gt;</span><br><span class="line">  )</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-<p>上面这段代码是基于上个 <a target="_blank" rel="noopener" href="http://www.baidu.com/">state hook计数器的例子</a> 的例子，但是我们现在添加了新的功能，我么讲文档的标题设置为自定义消息，包含了点击次数。</p>
+<p>上面这段代码是基于上个 <a target="_blank" rel="noopener" href="http://www.baidu.com">state hook计数器的例子</a> 的例子，但是我们现在添加了新的功能，我么讲文档的标题设置为自定义消息，包含了点击次数。</p>
 <p>数据获取，设置订阅及先手动更改 <code>React</code> 组件中的 <code>DOM</code> 都是副作用的示例。无论你是否习惯与将这些操作成为“副作用”或者仅仅是“效果”，但之前你可能已经在组件中执行了这些操作。</p>
 <blockquote>
-<p> <strong>提示：</strong> 如果你熟悉<code>React</code>类组件生命周期方法，你就可以将<code>useEffect Hook</code>视为<code>componentDidMount</code>,<code>componentDidUpdate</code>和<code>componentWillUnmount</code>的组合。</p>
+<p><strong>提示：</strong> 如果你熟悉<code>React</code>类组件生命周期方法，你就可以将<code>useEffect Hook</code>视为<code>componentDidMount</code>,<code>componentDidUpdate</code>和<code>componentWillUnmount</code>的组合。</p>
 </blockquote>
 <p>React组件中有两种常见的副作用：那些需要清理的副作用和不需要清理的副作用。让我们详细的看一下两者的区别。</p>
 <hr>
-<h2 id="无需清理的副作用"><a href="#无需清理的副作用" class="headerlink" title="无需清理的副作用"></a>无需清理的副作用</h2><p>有时，我们希望在<code>React</code>更新<code>DOM</code>之后运行一些额外的代码。网络请求， 手动改变<code>DOM</code>和日志记录是不需要清理的效果（副作用，简称“效果”）的常见示例。我们这样说是因为我们可以运行他们并立即忘记他们。让我们比较一下<code>class</code>和<code>hooks</code>是如何让我们表达这样的副作用。</p>
-<h3 id="使用class的例子"><a href="#使用class的例子" class="headerlink" title="使用class的例子"></a>使用class的例子</h3><p>在<code>react</code>类组件中，<code>render</code>方法本身不应该导致副作用。这太早了，我们通常希望<code>React</code>更新<code>DOM</code>之后执行我们的效果。这就是为啥在<code>React</code>类中，我们将副作用放到<code>componentDidMount</code>和<code>componentDidUpdate</code>中。看我们的例子，这是一个<code>React</code>计数器类的组件，它在react对DOM进行更改后立即更新文档的标题。</p>
+<h2 id="无需清理的副作用">无需清理的副作用</h2>
+<p>有时，我们希望在<code>React</code>更新<code>DOM</code>之后运行一些额外的代码。网络请求， 手动改变<code>DOM</code>和日志记录是不需要清理的效果（副作用，简称“效果”）的常见示例。我们这样说是因为我们可以运行他们并立即忘记他们。让我们比较一下<code>class</code>和<code>hooks</code>是如何让我们表达这样的副作用。</p>
+<h3 id="使用class的例子">使用class的例子</h3>
+<p>在<code>react</code>类组件中，<code>render</code>方法本身不应该导致副作用。这太早了，我们通常希望<code>React</code>更新<code>DOM</code>之后执行我们的效果。这就是为啥在<code>React</code>类中，我们将副作用放到<code>componentDidMount</code>和<code>componentDidUpdate</code>中。看我们的例子，这是一个<code>React</code>计数器类的组件，它在react对DOM进行更改后立即更新文档的标题。</p>
 <figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br></pre></td><td class="code"><pre><span class="line">import React,&#123;Component&#125; from &#x27;react&#x27;;</span><br><span class="line"></span><br><span class="line">export default class Example extends Component &#123;</span><br><span class="line">    constructor(props)&#123;</span><br><span class="line">        super(props);</span><br><span class="line">        this.state = &#123;</span><br><span class="line">            count: 0</span><br><span class="line">        &#125;;</span><br><span class="line">    &#125;</span><br><span class="line">    </span><br><span class="line">    componentDidMount() &#123;</span><br><span class="line">        document.title = `You click $&#123;this.state.count&#125; times`</span><br><span class="line">    &#125;</span><br><span class="line">    </span><br><span class="line">    componentDidUpdate() &#123;</span><br><span class="line">        document.title = `You clicked $&#123;this.state.count&#125; times`;</span><br><span class="line">    &#125;</span><br><span class="line">    </span><br><span class="line">    render() &#123;</span><br><span class="line">        return (</span><br><span class="line">          &lt;div&gt;</span><br><span class="line">            &lt;p&gt;You clicked &#123;this.state.count&#125; times&lt;/p&gt;</span><br><span class="line">            &lt;button onClick=&#123;() =&gt; this.setState(&#123; count: this.state.count + 1 &#125;)&#125;&gt;</span><br><span class="line">              Click me</span><br><span class="line">            &lt;/button&gt;</span><br><span class="line">          &lt;/div&gt;</span><br><span class="line">        );</span><br><span class="line">  &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-<p>请注意<strong>我们如何在类中复制这两个生命周期方法之间的代码</strong><br>这是因为在许多的情况下，我们希望执行相同的副作用，无论组件是刚安装还是已经更新。从概念上讲，我们希望它在每次渲染之后发生，但是在React类组件中没有这样的方法（render方法应该避免更重要）。我们可以提取一个单独的方法，但是我们仍然需要在这两个地方调用它。</p>
+<p>请注意<strong>我们如何在类中复制这两个生命周期方法之间的代码</strong><br>
+这是因为在许多的情况下，我们希望执行相同的副作用，无论组件是刚安装还是已经更新。从概念上讲，我们希望它在每次渲染之后发生，但是在React类组件中没有这样的方法（render方法应该避免更重要）。我们可以提取一个单独的方法，但是我们仍然需要在这两个地方调用它。</p>
 <p>现在让我们回头再看看我们如何使用<code>useEffect Hook</code>做同样的事情。</p>
-<p><code>useEffect</code><strong>有什么作用？</strong><br>通过使用这个Hook，你告诉React你的组件需要在渲染后执行某些操作。React将记住你传递的函数（我们将其称为“效果”），并在执行DOM更新后稍后调用它。在这个效果中，我们设置文档标题，但我们也可以执行数据提取或调用其他命令式API。</p>
-<p><strong>为什么在组件内调用<code>useEffect</code>？</strong><br>在组件中使用<code>useEffect</code>让我们可以直接从效果中访问状态变量（如count或任何道具）。我们不需要特殊的API来读取它 - 它已经在函数范围内了。Hooks拥抱<code>JavaScript</code><strong>闭包</strong>，并避免在JavaScript已经提供解决方案的情况下引入特定于React的API。</p>
-<p><strong>每次渲染后useEffect都会运行吗？</strong><br>是的。默认情况下，它在第一次渲染之后和每次更新之后运行。 （我们稍后会讨论如何自定义它。）你可能会发现更容易认为效果发生在“渲染之后”，而不是考虑“挂载”和“更新”。React保证DOM在运行‘效果’时已更新。</p>
-<h3 id="详细说明"><a href="#详细说明" class="headerlink" title="详细说明"></a>详细说明</h3><p>现在我们对这个<code>hook</code>更加的了解了，那再看看下面这个例子：</p>
+<p><code>useEffect</code><strong>有什么作用？</strong><br>
+通过使用这个Hook，你告诉React你的组件需要在渲染后执行某些操作。React将记住你传递的函数（我们将其称为“效果”），并在执行DOM更新后稍后调用它。在这个效果中，我们设置文档标题，但我们也可以执行数据提取或调用其他命令式API。</p>
+<p><strong>为什么在组件内调用<code>useEffect</code>？</strong><br>
+在组件中使用<code>useEffect</code>让我们可以直接从效果中访问状态变量（如count或任何道具）。我们不需要特殊的API来读取它 - 它已经在函数范围内了。Hooks拥抱<code>JavaScript</code><strong>闭包</strong>，并避免在JavaScript已经提供解决方案的情况下引入特定于React的API。</p>
+<p><strong>每次渲染后useEffect都会运行吗？</strong><br>
+是的。默认情况下，它在第一次渲染之后和每次更新之后运行。 （我们稍后会讨论如何自定义它。）你可能会发现更容易认为效果发生在“渲染之后”，而不是考虑“挂载”和“更新”。React保证DOM在运行‘效果’时已更新。</p>
+<h3 id="详细说明">详细说明</h3>
+<p>现在我们对这个<code>hook</code>更加的了解了，那再看看下面这个例子：</p>
 <figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">function Example() &#123;</span><br><span class="line">    const[count, setCount] = useState(0);</span><br><span class="line">    </span><br><span class="line">    useEffect(() =&gt; &#123;</span><br><span class="line">        document.title = `You clicked $&#123;count&#125; times`;</span><br><span class="line">    &#125;);</span><br><span class="line">&#125;    </span><br></pre></td></tr></table></figure>
 <p>我们声明了<code>count</code>状态变量，然后告诉<code>React</code>我们需要使用效果。我们将一个函数传递给<code>useEffect Hook</code>，这个函数式就是效果（副作用）。在我们的效果中，我们使用<code>document.title</code>浏览器<code>API</code>设置文档标题。我们可以读取效果中的最新<code>count</code>，因为它在我们的函数范围内。当<code>React</code>渲染我们的组件时，它会记住我们是用的效果，然后在更新<code>DOM</code>后运行我们的效果。每次渲染都会发生这种情况，包括第一次渲染。</p>
 <blockquote>
 <p><strong>注意：</strong> 与<code>componentDidMount</code>或<code>componentDidUpdate</code>不同，使用<code>useEffect</code>的效果不会阻止浏览器更新屏幕。这使应用感觉更具响应性。大多数效果不需要同步发生。在他们这样做的不常见情况下（例如测量布局），有一个单独的<code>useLayoutEffect Hook</code>，其<code>API</code>与<code>useEffect</code>相同。</p>
 </blockquote>
-<h2 id="需要清理的副作用"><a href="#需要清理的副作用" class="headerlink" title="需要清理的副作用"></a>需要清理的副作用</h2><p>之前，我们研究了如何表达不需要任何清理的副作用。但是，有些效果需要清理。例如，我们可能希望设置对某些外部数据源的订阅。在这种情况下，清理是非常重要的，这样我们就不会引入内存泄漏！让我们比较一下我们如何使用类和<code>Hooks</code>来实现它。</p>
-<h3 id="使用-class-的例子"><a href="#使用-class-的例子" class="headerlink" title="使用 **class**的例子"></a>使用 **<code>class</code>**的例子</h3><p>在<code>React</code>类中，通常会在<code>componentDidMount</code>中设置订阅，并在<code>componentWillUnmount</code>中清除它。例如，假设我们有一个ChatAPI`模块，可以让我们订阅朋友的在线状态。以下是我们如何使用类订阅和显示该状态：</p>
+<h2 id="需要清理的副作用">需要清理的副作用</h2>
+<p>之前，我们研究了如何表达不需要任何清理的副作用。但是，有些效果需要清理。例如，我们可能希望设置对某些外部数据源的订阅。在这种情况下，清理是非常重要的，这样我们就不会引入内存泄漏！让我们比较一下我们如何使用类和<code>Hooks</code>来实现它。</p>
+<h3 id="使用-class-的例子">使用 **<code>class</code>**的例子</h3>
+<p>在<code>React</code>类中，通常会在<code>componentDidMount</code>中设置订阅，并在<code>componentWillUnmount</code>中清除它。例如，假设我们有一个ChatAPI`模块，可以让我们订阅朋友的在线状态。以下是我们如何使用类订阅和显示该状态：</p>
 <figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br></pre></td><td class="code"><pre><span class="line">class FriendStatus extends React.Component &#123;</span><br><span class="line">  constructor(props) &#123;</span><br><span class="line">    super(props);</span><br><span class="line">    this.state = &#123; </span><br><span class="line">        isOnline: null </span><br><span class="line">    &#125;;</span><br><span class="line">    this.handleStatusChange = this.handleStatusChange.bind(this);</span><br><span class="line">  &#125;</span><br><span class="line">​</span><br><span class="line">  componentDidMount() &#123;</span><br><span class="line">    ChatAPI.subscribeToFriendStatus(</span><br><span class="line">      this.props.friend.id,</span><br><span class="line">      this.handleStatusChange</span><br><span class="line">    );</span><br><span class="line">  &#125;</span><br><span class="line">​</span><br><span class="line">  componentWillUnmount() &#123;</span><br><span class="line">    ChatAPI.unsubscribeFromFriendStatus(</span><br><span class="line">      this.props.friend.id,</span><br><span class="line">      this.handleStatusChange</span><br><span class="line">    );</span><br><span class="line">  &#125;</span><br><span class="line">​</span><br><span class="line">  handleStatusChange(status) &#123;</span><br><span class="line">    this.setState(&#123;</span><br><span class="line">      isOnline: status.isOnline</span><br><span class="line">    &#125;);</span><br><span class="line">  &#125;</span><br><span class="line">​</span><br><span class="line">  render() &#123;</span><br><span class="line">    if (this.state.isOnline === null) &#123;</span><br><span class="line">      return &#x27;Loading...&#x27;;</span><br><span class="line">    &#125;</span><br><span class="line">    return this.state.isOnline ? &#x27;Online&#x27; : &#x27;Offline&#x27;;</span><br><span class="line">  &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
 <p>请注意<code>componentDidMount</code>和<code>componentWillUnmount</code>如何相互作用。生命周期方法迫使我们拆分这个逻辑，即使它们中的概念代码都与相同的效果有关。</p>
 <blockquote>
 <p><strong>注意：</strong> 眼尖的你可能会注意到这个例子还需要一个<code>componentDidUpdate</code>方法才能完全正确。我们暂时忽略这一点，但会在本页的后面部分再回过头来讨论它。</p>
 </blockquote>
-<h3 id="使用-hooks-的例子"><a href="#使用-hooks-的例子" class="headerlink" title="使用**hooks**的例子"></a>使用**<code>hooks</code>**的例子</h3><p>你可能认为我们需要单独的效果来执行清理。但是添加和删除订阅的代码是如此紧密相关，以至于<code>useEffect</code>旨在将它保持在一起。如果你的效果返回一个函数，<code>React</code>将在清理时运行它：</p>
+<h3 id="使用-hooks-的例子">使用**<code>hooks</code>**的例子</h3>
+<p>你可能认为我们需要单独的效果来执行清理。但是添加和删除订阅的代码是如此紧密相关，以至于<code>useEffect</code>旨在将它保持在一起。如果你的效果返回一个函数，<code>React</code>将在清理时运行它：</p>
 <figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br></pre></td><td class="code"><pre><span class="line">import &#123; useState, useEffect &#125; from &#x27;react&#x27;;</span><br><span class="line">​</span><br><span class="line">function FriendStatus(props) &#123;</span><br><span class="line">  const [isOnline, setIsOnline] = useState(null);</span><br><span class="line">​</span><br><span class="line">  function handleStatusChange(status) &#123;</span><br><span class="line">    setIsOnline(status.isOnline);</span><br><span class="line">  &#125;</span><br><span class="line">​</span><br><span class="line">  useEffect(() =&gt; &#123;</span><br><span class="line">    ChatAPI.subscribeToFriendStatus(props.friend.id, handleStatusChange);</span><br><span class="line">    // 指定如何在这种效果之后清理</span><br><span class="line">    return function cleanup() &#123;</span><br><span class="line">      ChatAPI.unsubscribeFromFriendStatus(props.friend.id, handleStatusChange);</span><br><span class="line">    &#125;;</span><br><span class="line">  &#125;);</span><br><span class="line">​</span><br><span class="line">  if (isOnline === null) &#123;</span><br><span class="line">    return &#x27;Loading...&#x27;;</span><br><span class="line">  &#125;</span><br><span class="line">  return isOnline ? &#x27;Online&#x27; : &#x27;Offline&#x27;;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-
 <p><strong>为什么我们从效果中返回一个函数？</strong> 这是效果的可选清理机制。每个效果都可能返回一个在它之后清理的函数。这使我们可以保持添加和删除彼此接近的订阅的逻辑。</p>
 <p><strong>React什么时候清理效果？</strong> 当组件卸载时，React执行清理。但是，正如我们之前所了解的那样，效果会针对每个渲染运行而不仅仅是一次。这就是React在下次运行效果之前还清除前一渲染效果的原因。我们将讨论为什么这有助于避免错误以及如何在以后发生性能问题时选择退出此行为。</p>
 <blockquote>
 <p><strong>注意:</strong> 我们不必从效果中返回命名函数。我们在这里只是为了说明才加的命名，但你可以返回箭头函数。</p>
 </blockquote>
-<h2 id="概述"><a href="#概述" class="headerlink" title="概述"></a>概述</h2><p>我们已经了解到useEffect让我们在组件渲染后表达不同类型的副作用。某些效果可能需要清理，因此它们返回一个函数：</p>
+<h2 id="概述-2">概述</h2>
+<p>我们已经了解到useEffect让我们在组件渲染后表达不同类型的副作用。某些效果可能需要清理，因此它们返回一个函数：</p>
 <figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">useEffect(() =&gt; &#123;</span><br><span class="line">    ChatAPI.subscribeToFriendStatus(props.friend.id, handleStatusChange);</span><br><span class="line">    return () =&gt; &#123;</span><br><span class="line">      ChatAPI.unsubscribeFromFriendStatus(props.friend.id, handleStatusChange);</span><br><span class="line">    &#125;;</span><br><span class="line">&#125;);</span><br></pre></td></tr></table></figure>
 <p>其他效果可能没有清理阶段，也不会返回任何内容。比如：</p>
 <figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">useEffect(() =&gt; &#123;</span><br><span class="line">    document.title = `You clicked $&#123;count&#125; times`;</span><br><span class="line">&#125;);</span><br></pre></td></tr></table></figure>
 <p>如果你觉得你对Effect Hook的工作方式有了很好的把握，或者你感到不知所措，那么现在就可以跳转到关于Hooks规则。</p>
 <hr>
-<h2 id="使用效果的提示"><a href="#使用效果的提示" class="headerlink" title="使用效果的提示"></a>使用效果的提示</h2><p>我们将继续深入了解使用<code>React</code>用户可能会产生好奇心的<code>useEffect</code>的某些方面。</p>
+<h2 id="使用效果的提示">使用效果的提示</h2>
+<p>我们将继续深入了解使用<code>React</code>用户可能会产生好奇心的<code>useEffect</code>的某些方面。</p>
 <blockquote>
 <p><strong>提示：使用多重效果分离问题</strong></p>
 </blockquote>
@@ -348,8 +353,9 @@
 <p>那么，<code>Hooks</code>如何解决这个问题呢？就像你可以多次使用状态挂钩一样，你也可以使用多种效果。这让我们将不相关的逻辑分成不同的效果：</p>
 <figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br></pre></td><td class="code"><pre><span class="line">function FriendStatusWithCounter(props) &#123;</span><br><span class="line">  const [count, setCount] = useState(0);</span><br><span class="line">  useEffect(() =&gt; &#123;</span><br><span class="line">    document.title = `You clicked $&#123;count&#125; times`;</span><br><span class="line">  &#125;);</span><br><span class="line">​</span><br><span class="line">  const [isOnline, setIsOnline] = useState(null);</span><br><span class="line">  useEffect(() =&gt; &#123;</span><br><span class="line">    ChatAPI.subscribeToFriendStatus(props.friend.id, handleStatusChange);</span><br><span class="line">    return () =&gt; &#123;</span><br><span class="line">      ChatAPI.unsubscribeFromFriendStatus(props.friend.id, handleStatusChange);</span><br><span class="line">    &#125;;</span><br><span class="line">  &#125;);</span><br><span class="line">​</span><br><span class="line">  function handleStatusChange(status) &#123;</span><br><span class="line">    setIsOnline(status.isOnline);</span><br><span class="line">  &#125;</span><br><span class="line">  // ...</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
 <p>**<code>Hooks</code>**允许我们根据它正在做的事情而不是生命周期方法名称来拆分代码。 React将按照指定的顺序应用组件使用的每个效果。</p>
-<p><strong>说明：为什么效果在每个更新上运行</strong><br>如果你习惯了类，你可能想知道为什么每次重新渲染后效果的清理阶段都会发生，而不是在卸载过程中只发生一次。让我们看一个实际的例子，看看为什么这个设计可以帮助我们创建更少bug的组件。</p>
-<p>在上面介绍了一个示例FriendStatus组件，该组件显示朋友是否在线。我们的类从this.props读取friend.id，在组件挂载后订阅朋友状态，并在卸载期间取消订阅：</p>
+<p><strong>说明：为什么效果在每个更新上运行</strong><br>
+如果你习惯了类，你可能想知道为什么每次重新渲染后效果的清理阶段都会发生，而不是在卸载过程中只发生一次。让我们看一个实际的例子，看看为什么这个设计可以帮助我们创建更少bug的组件。</p>
+<p>在上面介绍了一个示例FriendStatus组件，该组件显示朋友是否在线。<a target="_blank" rel="noopener" href="http://xn--this-z25f8fm33kvg8axhl.xn--propsfriend-x82s6259c.id">我们的类从this.props读取friend.id</a>，在组件挂载后订阅朋友状态，并在卸载期间取消订阅：</p>
 <figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br></pre></td><td class="code"><pre><span class="line">componentDidMount() &#123;</span><br><span class="line">    ChatAPI.subscribeToFriendStatus(</span><br><span class="line">      this.props.friend.id,</span><br><span class="line">      this.handleStatusChange</span><br><span class="line">    );</span><br><span class="line">  &#125;</span><br><span class="line">​</span><br><span class="line">  componentWillUnmount() &#123;</span><br><span class="line">    ChatAPI.unsubscribeFromFriendStatus(</span><br><span class="line">      this.props.friend.id,</span><br><span class="line">      this.handleStatusChange</span><br><span class="line">    );</span><br><span class="line">  &#125;</span><br></pre></td></tr></table></figure>
 <p><strong>但是如果friend prop在组件出现在屏幕上时发生了变化，会发生什么？</strong> 我们的组件将继续显示不同朋友的在线状态。这是一个错误。卸载时我们还会导致内存泄漏或崩溃，因为取消订阅会使用错误的朋友ID。</p>
 <p>在类组件中，我们需要添加componentDidUpdate来处理这种情况:</p>
@@ -381,14 +387,15 @@
   &#125;
   
 </code></pre>
-<p>忘记正确处理<code>componentDidUpdate</code>是<code>React</code>应用程序中常见的<code>bug</code>漏洞。<br>现在考虑使用Hooks的这个组件的版本：</p>
+<p>忘记正确处理<code>componentDidUpdate</code>是<code>React</code>应用程序中常见的<code>bug</code>漏洞。<br>
+现在考虑使用Hooks的这个组件的版本：</p>
 <pre><code>function FriendStatus(props) &#123;
   // ...
   useEffect(() =&gt; &#123;
-    ChatAPI.subscribeToFriendStatus(props.friend.id, handleStatusChange);
-    return () =&gt; &#123;
-      ChatAPI.unsubscribeFromFriendStatus(props.friend.id, handleStatusChange);
-    &#125;;
+	ChatAPI.subscribeToFriendStatus(props.friend.id, handleStatusChange);
+	return () =&gt; &#123;
+	  ChatAPI.unsubscribeFromFriendStatus(props.friend.id, handleStatusChange);
+	&#125;;
   &#125;);
 </code></pre>
 <p>它不会受到这个bug的影响。 （但我们也没有对它做任何改动。）</p>
@@ -412,7 +419,7 @@ ChatAPI.unsubscribeFromFriendStatus(300, handleStatusChange); // Clean up last e
 <p>在某些情况下，在每次渲染后清理或应用效果可能会产生性能问题。在类组件中，我们可以通过在<code>componentDidUpdate</code>中编写与<code>prevProps</code>或<code>prevState</code>的额外比较来解决这个问题：</p>
 <pre><code>componentDidUpdate(prevProps, prevState) &#123;
   if (prevState.count !== this.state.count) &#123;
-    document.title = `You clicked $&#123;this.state.count&#125; times`;
+	document.title = `You clicked $&#123;this.state.count&#125; times`;
   &#125;
 &#125;
 </code></pre>
@@ -427,16 +434,16 @@ ChatAPI.unsubscribeFromFriendStatus(300, handleStatusChange); // Clean up last e
 <pre><code>useEffect(() =&gt; &#123;
   ChatAPI.subscribeToFriendStatus(props.friend.id, handleStatusChange);
   return () =&gt; &#123;
-    ChatAPI.unsubscribeFromFriendStatus(props.friend.id, handleStatusChange);
+	ChatAPI.unsubscribeFromFriendStatus(props.friend.id, handleStatusChange);
   &#125;;
 &#125;, [props.friend.id]); // 只有朋友id改变重新订阅
 </code></pre>
 <p>将来， 第二个参数可能会通过构建时转换自动添加。</p>
 <blockquote>
-<p><strong>注意:</strong> 如果使用此优化，请确保该数组包含外部作用域中随时间变化且效果使用的任何值，换句话说就是要在这个效果函数里有意义。 否则，代码将引用先前渲染中的旧值。我们还将讨论<code>Hooks API</code>参考中的其他优化选项。 </p>
+<p><strong>注意:</strong> 如果使用此优化，请确保该数组包含外部作用域中随时间变化且效果使用的任何值，换句话说就是要在这个效果函数里有意义。 否则，代码将引用先前渲染中的旧值。我们还将讨论<code>Hooks API</code>参考中的其他优化选项。</p>
 </blockquote>
 <blockquote>
-<p>如果要<strong>运行效果并仅将其清理一次（在装载和卸载时），则可以将空数组（[]）作为第二个参数传递。</strong> 这告诉React你的效果不依赖于来自props或 state的任何值，所以它永远不需要重新运行。这不作为特殊情况处理 - 它直接遵循输入数组的工作方式。虽然传递[]更接近熟悉的<code>componentDidMount</code>和 <code>componentWillUnmount</code>生命周期，但我们建议不要将它作为一种习惯，因为它经常会导致错误，除非你明确你自己在做什么， 如上所述。 不要忘记<code>React</code>推迟运行<code>useEffect</code>直到浏览器绘制完成后，所以做额外的工作不是问题。  </p>
+<p>如果要<strong>运行效果并仅将其清理一次（在装载和卸载时），则可以将空数组（[]）作为第二个参数传递。</strong> 这告诉React你的效果不依赖于来自props或 state的任何值，所以它永远不需要重新运行。这不作为特殊情况处理 - 它直接遵循输入数组的工作方式。虽然传递[]更接近熟悉的<code>componentDidMount</code>和 <code>componentWillUnmount</code>生命周期，但我们建议不要将它作为一种习惯，因为它经常会导致错误，除非你明确你自己在做什么， 如上所述。 不要忘记<code>React</code>推迟运行<code>useEffect</code>直到浏览器绘制完成后，所以做额外的工作不是问题。</p>
 </blockquote>
 
     </div>
@@ -453,7 +460,7 @@ ChatAPI.unsubscribeFromFriendStatus(300, handleStatusChange); // Clean up last e
       </div>
     </div>
           <div class="reward-container">
-  <div></div>
+  <div>坚持原创技术分享，您的支持将鼓励我继续创作！</div>
   <button>
     赞赏
   </button>
@@ -479,13 +486,13 @@ ChatAPI.unsubscribeFromFriendStatus(300, handleStatusChange); // Clean up last e
 
           <div class="post-nav">
             <div class="post-nav-item">
-                <a href="/2018/11/27/setState/" rel="prev" title="setState">
-                  <i class="fa fa-chevron-left"></i> setState
+                <a href="/2018/11/27/state-hook/" rel="prev" title="state-hook">
+                  <i class="fa fa-chevron-left"></i> state-hook
                 </a>
             </div>
             <div class="post-nav-item">
-                <a href="/2018/11/27/state-hook/" rel="next" title="state-hook">
-                  state-hook <i class="fa fa-chevron-right"></i>
+                <a href="/2018/11/27/setState/" rel="next" title="setState">
+                  setState <i class="fa fa-chevron-right"></i>
                 </a>
             </div>
           </div>
@@ -532,7 +539,7 @@ ChatAPI.unsubscribeFromFriendStatus(300, handleStatusChange); // Clean up last e
       </span>
     </span>
 </div>
-  <div class="powered-by">由 <a href="https://hexo.io/" rel="noopener" target="_blank">Hexo</a> & <a href="https://theme-next.js.org/" rel="noopener" target="_blank">NexT.Gemini</a> 强力驱动
+  <div class="powered-by">由 <a href="https://hexo.io/" rel="noopener" target="_blank">Hexo</a> & <a href="https://theme-next.js.org/pisces/" rel="noopener" target="_blank">NexT.Pisces</a> 强力驱动
   </div>
 
     </div>
@@ -554,11 +561,7 @@ ChatAPI.unsubscribeFromFriendStatus(300, handleStatusChange); // Clean up last e
 
 
 
-<div id="needsharebutton-float">
-      <span class="btn">
-        <i class="fa fa-share-alt" aria-hidden="true"></i>
-      </span>
-    </div>
+
   <script src="//cdn.jsdelivr.net/gh/theme-next/theme-next-needmoreshare2@1/needsharebutton.min.js"></script>
   <script>
       pbOptions = {};
@@ -567,12 +570,6 @@ ChatAPI.unsubscribeFromFriendStatus(300, handleStatusChange); // Clean up last e
         pbOptions.position = "bottomCenter";
         pbOptions.networks = "Wechat,QQZone,Weibo,Douban,Twitter,Facebook";
       new needShareButton('#needsharebutton-postbottom', pbOptions);
-      flOptions = {};
-        flOptions.iconStyle = "box";
-        flOptions.boxForm = "horizontal";
-        flOptions.position = "middleRight";
-        flOptions.networks = "Wechat, QQZone, Weibo, Douban, Twitter, Facebook";
-      new needShareButton('#needsharebutton-float', flOptions);
   </script> <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/gitalk@1.7.2/dist/gitalk.css" integrity="sha256-AJnUHL7dBv6PGaeyPQJcgQPDjt/Hn/PvYZde1iqfp8U=" crossorigin="anonymous">
 
 <script class="next-config" data-name="gitalk" type="application/json">{"enable":true,"github_id":"houwhu","repo":"blog-comment","client_id":"6167b7e007511e729a12","client_secret":"07aaf16fd37a83a77d259d9a0344fa8489855be8","admin_user":"houwhu","distraction_free_mode":true,"proxy":"https://cors-anywhere.azm.workers.dev/https://github.com/login/oauth/access_token","language":"zh-Hans","js":{"url":"https://cdn.jsdelivr.net/npm/gitalk@1.7.2/dist/gitalk.min.js","integrity":"sha256-Pmj85ojLaPOWwRtlMJwmezB/Qg8BzvJp5eTzvXaYAfA="},"path_md5":"9539c65bad9805ce92c195ed806c8351"}</script>
@@ -580,4 +577,4 @@ ChatAPI.unsubscribeFromFriendStatus(300, handleStatusChange); // Clean up last e
 
 </body>
 </html>
-<script src="https://cdn.jsdelivr.net/gh/houwhu/live2d-widget/autoload.js"></script>
+<script src="https://cdn.jsdelivr.net/gh/houwhu/live2d-widget@v1.0.1/autoload.js"></script>
