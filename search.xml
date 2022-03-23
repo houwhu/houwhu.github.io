@@ -1,0 +1,919 @@
+<?xml version="1.0" encoding="utf-8"?>
+<search>
+  <entry>
+    <title>Markdown的基本用法</title>
+    <url>/posts/23402.html</url>
+    <content><![CDATA[<h1>1、标题</h1>
+<h2 id="1-1、使用-和-标记一级和二级标题">1.1、使用 = 和 - 标记一级和二级标题</h2>
+<p>一级标题：</p>
+<a id="more"></a>
+<h2 id="二级标题">二级标题</h2>
+<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">## 1.2、使用#标记</span><br><span class="line"># 一级标题</span><br><span class="line">## 二级标题</span><br><span class="line">### 三级标题</span><br><span class="line">...</span><br><span class="line">###### 六级标题</span><br></pre></td></tr></table></figure>
+<h1>2、字体</h1>
+<p><em>斜体</em><br>
+<em>斜体文本</em><br>
+<strong>粗体</strong><br>
+<strong>粗体文本</strong><br>
+<em><strong>粗斜体</strong></em><br>
+<em><strong>粗斜体文本</strong></em></p>
+<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">*斜体*  </span><br><span class="line">_斜体文本_    </span><br><span class="line">**粗体**  </span><br><span class="line">__粗体文本__  </span><br><span class="line">***粗斜体***  </span><br><span class="line">___粗斜体文本___</span><br></pre></td></tr></table></figure>
+<h1>3、分割线</h1>
+<p>你可以在一行中用三个以上的星号、减号、底线来建立一个分隔线，行内不能有其他东西。你也可以在星号或是减号中间任意插入空格。下面每种写法都可以建立分隔线：</p>
+<hr>
+<hr>
+<hr>
+<hr>
+<hr>
+<hr>
+<figure class="highlight md"><table><tr><td class="code"><pre><span class="line"><span class="section"><span class="strong">**<span class="emphasis">*</span></span></span></span><br><span class="line"><span class="emphasis"><span class="strong"><span class="section">---</span></span></span></span><br><span class="line"><span class="emphasis"><span class="strong"><span class="section">___</span></span></span></span><br><span class="line"><span class="emphasis"><span class="strong"><span class="section">*</span>  <span class="emphasis">*  *</span></span></span></span><br><span class="line"><span class="strong"><span class="section">_<span class="emphasis">_ _</span><span class="emphasis">_</span></span></span></span><br><span class="line"><span class="emphasis"><span class="strong"><span class="section">- - - </span></span></span></span><br></pre></td></tr></table></figure>
+<h1>4、删除线</h1>
+<p>如果段落上的文字要添加删除线，只需要在文字的两端加上两个波浪线 ~~ ：<br>
+<s>足球</s><br>
+<s>保龄球</s><br>
+篮球</p>
+<figure class="highlight md"><table><tr><td class="code"><pre><span class="line">~~足球~~  </span><br><span class="line">~~保龄球~~   </span><br><span class="line">篮球</span><br></pre></td></tr></table></figure>
+<h1>5、下划线</h1>
+<p><u>下划线</u></p>
+<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">&lt;u&gt;下划线&lt;/u&gt;</span><br></pre></td></tr></table></figure>
+<h1>6、脚注</h1>
+<p>脚注是对文本的补充说明。<br>
+Markdown 脚注的格式如下:</p>
+<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">[^注明的文本]</span><br></pre></td></tr></table></figure>
+<p>这是一个例子 <a href="%E5%AD%A6%E7%9A%84%E4%B8%8D%E4%BB%85%E6%98%AF%E6%8A%80%E6%9C%AF%EF%BC%8C%E6%9B%B4%E6%98%AF%E6%A2%A6%E6%83%B3">^1</a>。</p>
+<h1>7、列表</h1>
+<p>markdown支持无序列表和有序列表。<br>
+（1）无序列表用（*）、+、- 作为列表标记。</p>
+<ul>
+<li>无序列表</li>
+</ul>
+<ul>
+<li>无序列表</li>
+</ul>
+<ul>
+<li>无序列表</li>
+</ul>
+<figure class="highlight md"><table><tr><td class="code"><pre><span class="line"><span class="bullet">*</span> 无序列表</span><br><span class="line"><span class="bullet">+</span> 无序列表</span><br><span class="line"><span class="bullet">-</span> 无序列表</span><br></pre></td></tr></table></figure>
+<p>（2）有序列表用数字加“.” 表示：</p>
+<ol>
+<li>第一</li>
+<li>第二</li>
+</ol>
+<p>（3）列表嵌套:<br>
+列表嵌套只需在子列表中的选项前面添加四个空格即可：</p>
+<ol>
+<li>第一
+<ul>
+<li>1-1</li>
+</ul>
+<ul>
+<li>1-2</li>
+</ul>
+</li>
+</ol>
+<figure class="highlight md"><table><tr><td class="code"><pre><span class="line"><span class="bullet">1.</span> 第一</span><br><span class="line"><span class="bullet">    +</span> 1-1</span><br><span class="line"><span class="bullet">    -</span> 1-2</span><br></pre></td></tr></table></figure>
+<h1>8、区块</h1>
+<p>1、区块引用是在段落开头使用 <code>&gt;</code> 符号:</p>
+<blockquote>
+<p>区块引用</p>
+</blockquote>
+<figure class="highlight md"><table><tr><td class="code"><pre><span class="line"><span class="quote">&gt; 区块引用  </span></span><br></pre></td></tr></table></figure>
+<p>2、区块嵌套用多个 <code>&gt;</code> 表示：</p>
+<blockquote>
+<p>区块最外层</p>
+<blockquote>
+<p>第一层区块嵌套</p>
+<blockquote>
+<p>第二层区块嵌套</p>
+</blockquote>
+</blockquote>
+</blockquote>
+<figure class="highlight js"><table><tr><td class="code"><pre><span class="line">&gt; 区块最外层</span><br><span class="line">&gt;&gt; 第一层区块嵌套</span><br><span class="line">&gt;&gt;&gt; 第二层区块嵌套</span><br></pre></td></tr></table></figure>
+<p>3、区块中使用列表:</p>
+<blockquote>
+<p>区块列表</p>
+<ol>
+<li>第一列</li>
+<li>第二列</li>
+</ol>
+<ul>
+<li>无序列</li>
+</ul>
+</blockquote>
+<figure class="highlight js"><table><tr><td class="code"><pre><span class="line">&gt; 区块列表</span><br><span class="line">&gt; <span class="number">1.</span> 第一列</span><br><span class="line">&gt; <span class="number">2.</span> 第二列</span><br><span class="line">&gt; + 无序列</span><br></pre></td></tr></table></figure>
+<p>4、列表中使用区块</p>
+<ol>
+<li>列表
+<blockquote>
+<p>区块需要在 <code>&gt;</code> 前加四个空格</p>
+</blockquote>
+</li>
+</ol>
+<h1>9、代码</h1>
+<p>1、如果是段落上的一个函数或片段的代码可以用反引号把它包起来（`），例如：</p>
+<p><code>printf()</code> 函数</p>
+<p>2、代码区块使用 4 个空格或者一个制表符（Tab 键）：</p>
+<pre><code>这是一段代码啊！！！！
+</code></pre>
+<p>也可以用 <kbd>```</kbd>包裹一段代码，并指定一种语言（也可不指定）：</p>
+<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">var a = 1;</span><br><span class="line">alert(a);</span><br></pre></td></tr></table></figure>
+<h1>10、链接</h1>
+<p>链接使用方法如下：</p>
+<pre><code>[链接名称](链接地址)
+</code></pre>
+<p>例如：<br>
+<a href="www.baidu.com">百度</a></p>
+<p>直接显示链接地址：<br>
+<a href="http://baidu.com">http://baidu.com</a></p>
+<h3 id="高级链接">高级链接</h3>
+<figure class="highlight md"><table><tr><td class="code"><pre><span class="line">//  用法：</span><br><span class="line">这个链接用 <span class="code">`度娘`</span> 作为变量 [<span class="string">百度</span>][<span class="symbol">度娘</span>]</span><br><span class="line"></span><br><span class="line">[<span class="symbol">度娘</span>]: <span class="link">http://baidu.com</span></span><br></pre></td></tr></table></figure>
+<p>这个链接用 <code>度娘</code> 作为变量 <a href="http://baidu.com">百度</a></p>
+<h1>11、图片</h1>
+<p>Markdown 图片语法格式如下：</p>
+<figure class="highlight md"><table><tr><td class="code"><pre><span class="line">![<span class="string">alt 属性文本</span>](<span class="link">图片地址</span>)</span><br><span class="line"></span><br><span class="line">![<span class="string">alt 属性文本</span>](<span class="link">图片地址 &quot;可选标题&quot;</span>)</span><br></pre></td></tr></table></figure>
+<ul>
+<li>开头一个感叹号 !</li>
+</ul>
+<ul>
+<li>接着一个方括号，里面放上图片的替代文字</li>
+</ul>
+<ul>
+<li>接着一个普通括号，里面放上图片的网址，最后还可以用引号包住并加上选择性的 ‘title’ 属性的文字。</li>
+</ul>
+<p><img src="https://img-blog.csdnimg.cn/b21c918305d24ac5b166cb6d2160d569.png" alt="在这里插入图片描述"><br>
+也可以像链接一样用变量定义</p>
+<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">这个链接用 1 作为网址变量 [RUNOOB][1].</span><br><span class="line">然后在文档的结尾为变量赋值（网址）</span><br><span class="line"></span><br><span class="line">[1]: http://********.png</span><br></pre></td></tr></table></figure>
+<p>Markdown 还没有办法指定图片的高度与宽度，如果你需要的话，你可以使用普通的 <img> 标签。</p>
+<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">&lt;img src=&quot;http://static.runoob.com/images/runoob-logo.png&quot; width=&quot;50%&quot;&gt;</span><br></pre></td></tr></table></figure>
+<h1>12、表格</h1>
+<p>Markdown 制作表格使用 | 来分隔不同的单元格，使用 - 来分隔表头和其他行。</p>
+<p>语法格式如下：</p>
+<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">|  表头   | 表头  |</span><br><span class="line">|  ----  | ----  |</span><br><span class="line">| 单元格  | 单元格 |</span><br><span class="line">| 单元格  | 单元格 |</span><br></pre></td></tr></table></figure>
+<table>
+<thead>
+<tr>
+<th>表头</th>
+<th>表头</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>单元格</td>
+<td>单元格</td>
+</tr>
+<tr>
+<td>单元格</td>
+<td>单元格</td>
+</tr>
+</tbody>
+</table>
+<h2 id="对齐方式：">对齐方式：</h2>
+<p>我们可以设置表格的对齐方式：</p>
+<p>-: 设置内容和标题栏居右对齐。</p>
+<p>:- 设置内容和标题栏居左对齐。</p>
+<p>:-: 设置内容和标题栏居中对齐</p>
+<table>
+<thead>
+<tr>
+<th style="text-align:left">左对齐</th>
+<th style="text-align:right">右对齐</th>
+<th style="text-align:center">居中对齐</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align:left">单元格</td>
+<td style="text-align:right">单元格</td>
+<td style="text-align:center">单元格</td>
+</tr>
+<tr>
+<td style="text-align:left">单元格</td>
+<td style="text-align:right">单元格</td>
+<td style="text-align:center">单元格</td>
+</tr>
+</tbody>
+</table>
+<h1>13、高级技巧</h1>
+<p>不在 Markdown 涵盖范围之内的标签，都可以直接在文档里面用 HTML 撰写。</p>
+<p>目前支持的 HTML 元素有：<code>&lt;kbd&gt; &lt;b&gt; &lt;i&gt; &lt;em&gt; &lt;sup&gt; &lt;sub&gt; &lt;br&gt;</code>等 ，如：</p>
+<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">使用 &lt;kbd&gt;Ctrl&lt;/kbd&gt;+&lt;kbd&gt;Alt&lt;/kbd&gt;+&lt;kbd&gt;Del&lt;/kbd&gt; 重启电脑</span><br></pre></td></tr></table></figure>
+<blockquote>
+<p>使用 <kbd>Ctrl</kbd>+<kbd>Alt</kbd>+<kbd>Del</kbd> 重启电脑.</p>
+</blockquote>
+<p>Markdown 使用反斜杠转义特殊字符：</p>
+<p><em>斜了</em><br>
+*斜了*</p>
+<pre><code>*斜了*  
+\*斜了\*
+</code></pre>
+]]></content>
+      <categories>
+        <category>markdown</category>
+      </categories>
+      <tags>
+        <tag>markdown</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>react-native环境配置</title>
+    <url>/posts/1455.html</url>
+    <content><![CDATA[<h3 id="react-native-window开发环境搭建">react-native window开发环境搭建</h3>
+<p>一、安装JDK</p>
+<ol>
+<li>
+<p>从 <a href="https://www.oracle.com/technetwork/java/javase/downloads/jdk8-downloads-2133151.html">Java官网</a> 下载JDK并安装。</p>
+</li>
+<li>
+<p>安装成功可以用java -version查看版本信息，或用 java -c 检测是否安装成功</p>
+</li>
+</ol>
+ <a id="more"></a>
+<ol start="3">
+<li>
+<p>配置Java的环境变量</p>
+<ul>
+<li>
+<p>添加环境变量JAVA_HOME = C:\Program Files\Java\jdk1.8.0_45;</p>
+</li>
+<li>
+<p>Path+=%JAVA_HOME%\bin;%JAVA_HOME%\jre\bin;</p>
+</li>
+<li>
+<p>CLASSPATH+=%JAVA_HOME%\lib\dt.jar;%JAVA_HOME%\lib\tools.jar;</p>
+</li>
+</ul>
+</li>
+</ol>
+<p>JAVA_HOME变量：</p>
+<p><img src="http://images2015.cnblogs.com/blog/546421/201607/546421-20160709102408874-1736443714.png" alt="JAVA_HOME"></p>
+<p>​</p>
+<p>CLASSPATH变量</p>
+<p><img src="http://images2015.cnblogs.com/blog/546421/201607/546421-20160709102528280-1866646025.png" alt="CLASSPATH变量"></p>
+<p>二、安装 android SDK</p>
+<ol>
+<li>
+<p>下载 android sdk 并安装；</p>
+</li>
+<li>
+<p>安装完成后根据 react-native官网 安装 SDK Tools;</p>
+</li>
+<li>
+<p>配置android环境变量</p>
+</li>
+</ol>
+<ul>
+<li>
+<p>添加 ANDROID_HOME 变量<br>
+<img src="http://images2015.cnblogs.com/blog/546421/201607/546421-20160709103101952-2112122131.png" alt="android-home"></p>
+</li>
+<li>
+<p>在 Path 变量里添加 %ANDROID_HOME%\tools;%ANDROID_HOME%\platform-tools;</p>
+</li>
+</ul>
+<p>三、安装node.js git 环境</p>
+<p>四、安装react-native 的命令行工具 react-native-cli</p>
+<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">npm install react-native-cli -g</span><br></pre></td></tr></table></figure>
+<p><em><strong>备注：</strong></em> 官网讲需要安装 python 环境，但是个人感觉好像没用，一直也没安装过，所以安不安装看个人；</p>
+<h3 id="创建我们的项目">创建我们的项目</h3>
+<ol>
+<li>生成项目</li>
+</ol>
+<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">react-native init myApp</span><br></pre></td></tr></table></figure>
+<ol start="2">
+<li>安装项目依赖包</li>
+</ol>
+<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">npm install</span><br></pre></td></tr></table></figure>
+<ol start="3">
+<li>
+<p>连接真机或者模拟机，在终端运行 adb devices 查看是否连接设备，真机需要打开开发者模式，然后运行 react-native run-android 生成 apk 安装包。</p>
+</li>
+<li>
+<p>运行 package.json ，命令行运行</p>
+</li>
+</ol>
+<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">react-native start 或者  npm start</span><br></pre></td></tr></table></figure>
+<ol start="5">
+<li>打开手机上我们安装的app，会出现如下所示的情况 :</li>
+</ol>
+<p><img src="http://images2015.cnblogs.com/blog/546421/201607/546421-20160709113415499-1546806111.png" alt="error"></p>
+<p>这时候摇一摇手机，点击Dev Settings后，点击Debug server host &amp; port for device,设置IP和端口</p>
+<p><img src="http://images2015.cnblogs.com/blog/546421/201607/546421-20160709114104467-1570314774.jpg" alt="reload"></p>
+<p>再次摇一摇手机，选择Reload ，程序就运行起来，出现Welcome to React Native！</p>
+<p><img src="http://images2015.cnblogs.com/blog/546421/201607/546421-20160709114253046-223755573.png" alt="sucess"></p>
+<p>现在就可以尽情的写我们的 code 了。。。</p>
+]]></content>
+      <categories>
+        <category>react-native</category>
+      </categories>
+      <tags>
+        <tag>react-native</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>react-native组件的生命周期</title>
+    <url>/posts/64393.html</url>
+    <content><![CDATA[<h2 id="概述">概述</h2>
+<p>所谓生命周期，就是一个对象从开始生成到最后消亡所经历的状态，理解生命周期，是合理开发的关键。RN 组件的生命周期整理如下图：</p>
+<a id="more"></a>
+<p><img src="https://img.race604.com/3-3-component-lifecycle.jpg" alt="生命周期"></p>
+<p>如图，可以把组件生命周期大致分为三个阶段：</p>
+<ul>
+<li>第一阶段：是组件第一次绘制阶段，如图中的上面虚线框内，在这里完成了组件的加载和初始化；</li>
+<li>第二阶段：是组件在运行和交互阶段，如图中左下角虚线框，这个阶段组件可以处理用户交互，或者接收事件更新界面；</li>
+<li>第三阶段：是组件卸载消亡的阶段，如图中右下角的虚线框中，这里做一些组件的清理工作。</li>
+</ul>
+<h2 id="生命周期回调函数">生命周期回调函数</h2>
+<p>下面来详细介绍生命周期中的各回调函数。</p>
+<h5 id="getDefaultProps"><em>getDefaultProps</em></h5>
+<p>在组件创建之前，会先调用 getDefaultProps()，这是全局调用一次，严格地来说，这不是组件的生命周期的一部分。在组件被创建并加载候，首先调用 getInitialState()，来初始化组件的状态。</p>
+<h5 id="componentWillMount"><em>componentWillMount</em></h5>
+<p>然后，准备加载组件，会调用 componentWillMount(), 这个函数调用时机是在组件创建，并初始化了状态之后，在第一次绘制 render() 之前。可以在这里做一些业务初始化操作，也可以设置组件状态。这个函数在整个生命周期中只被调用一次。</p>
+<h5 id="componentDidMount"><em>componentDidMount</em></h5>
+<p>在组件第一次绘制之后，会调用 componentDidMount()，通知组件已经加载完成。这个函数调用的时候，其虚拟 DOM 已经构建完成，你可以在这个函数开始获取其中的元素或者子组件了。需要注意的是，RN 框架是先调用子组件的 componentDidMount()，然后调用父组件的函数。从这个函数开始，就可以和 JS 其他框架交互了，例如设置计时 setTimeout 或者 setInterval，或者发起网络请求。这个函数也是只被调用一次。这个函数之后，就进入了稳定运行状态，等待事件触发.</p>
+<h5 id="componentWillReceiveProps"><em>componentWillReceiveProps</em></h5>
+<p>如果组件收到新的属性（props），就会调用 componentWillReceiveProps(),输入参数 nextProps 是即将被设置的属性，旧的属性还是可以通过 this.props 来获取。在这个回调函数里面，你可以根据属性的变化，通过调用 this.setState() 来更新你的组件状态，这里调用更新状态是安全的，并不会触发额外的 render() 调用。如下：</p>
+<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">componentWillReceiveProps(nextProps) &#123;  </span><br><span class="line">  this.setState(&#123;</span><br><span class="line">    oldProps: nextProps</span><br><span class="line">  &#125;);</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<h5 id="shouldComponentUpdate"><em>shouldComponentUpdate</em></h5>
+<p>当组件接收到新的属性和状态改变的话，都会触发调用 shouldComponentUpdate(…)，输入参数 nextProps 和上面的 componentWillReceiveProps 函数一样，nextState 表示组件即将更新的状态值。这个函数的返回值决定是否需要更新组件，如果 true 表示需要更新，继续走后面的更新流程。否者，则不更新，直接进入等待状态。</p>
+<p>默认情况下，这个函数永远返回 true 用来保证数据变化的时候 UI 能够同步更新。在大型项目中，你可以自己重载这个函数，通过检查变化前后属性和状态，来决定 UI 是否需要更新，能有效提高应用性能。</p>
+<h5 id="componentWillUpdate"><em>componentWillUpdate</em></h5>
+<p>如果组件状态或者属性改变，并且上面的 shouldComponentUpdate(…) 返回为 true，就会开始准更新组件，并调用 componentWillUpdate()，输入参数与 shouldComponentUpdate 一样，在这个回调中，可以做一些在更新界面之前要做的事情。需要特别注意的是，在这个函数里面，你就不能使用 this.setState 来修改状态。这个函数调用之后，就会把 nextProps 和 nextState 分别设置到 this.props 和 this.state 中。紧接着这个函数，就会调用 render() 来更新界面了。</p>
+<h5 id="componentDidUpdate"><em>componentDidUpdate</em></h5>
+<p>调用了 render() 更新完成界面之后，会调用 componentDidUpdate() 来得到通知，因为到这里已经完成了属性和状态的更新了，此函数的输入参数变成了 prevProps 和 prevState。</p>
+<h5 id="componentWillUnmount"><em>componentWillUnmount</em></h5>
+<p>当组件要被从界面上移除的时候，就会调用 componentWillUnmount(),在这个函数中，可以做一些组件相关的清理工作，例如取消计时器、网络请求等.</p>
+<h2 id="总结">总结</h2>
+<p>到这里，RN 的组件的完整的生命都介绍完了，在回头来看一下前面的图，就比较清晰了，把生命周期的回调函数总结成如下表格：</p>
+<table>
+<thead>
+<tr>
+<th>生命周期</th>
+<th>调用次数</th>
+<th>能否使用 setSate()</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>getDefaultProps</td>
+<td>1(全局调用一次)</td>
+<td>否</td>
+</tr>
+<tr>
+<td>getInitialState</td>
+<td>1</td>
+<td>否</td>
+</tr>
+<tr>
+<td>componentWillMount</td>
+<td>1</td>
+<td>是</td>
+</tr>
+<tr>
+<td>render</td>
+<td>&gt;=1</td>
+<td>否</td>
+</tr>
+<tr>
+<td>componentDidMount</td>
+<td>1</td>
+<td>是</td>
+</tr>
+<tr>
+<td>componentWillReceiveProps</td>
+<td>&gt;=0</td>
+<td>是</td>
+</tr>
+<tr>
+<td>shouldComponentUpdate</td>
+<td>&gt;=0</td>
+<td>否</td>
+</tr>
+<tr>
+<td>componentWillUpdate</td>
+<td>&gt;=0</td>
+<td>否</td>
+</tr>
+<tr>
+<td>componentDidUpdate</td>
+<td>&gt;=0</td>
+<td>否</td>
+</tr>
+<tr>
+<td>componentWillUnmount</td>
+<td>1</td>
+<td>否</td>
+</tr>
+</tbody>
+</table>
+]]></content>
+      <categories>
+        <category>react-native</category>
+      </categories>
+      <tags>
+        <tag>react-native</tag>
+        <tag>react</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>setState</title>
+    <url>/posts/35409.html</url>
+    <content><![CDATA[<h2 id="setState">setState</h2>
+<p>react中的状态state通过 setState() 方法来改变促进页面的重新渲染，但是在使用的时候每个人都会遇到各种不同的问题，我在网上看到很多人说setState的坑，吐槽的人也比较多，类似于下面这种问题，在我刚开始的时候也遇到过：</p>
+ <a id="more"></a>
+<h3 id="1-setState不会立即改变数据">1. setState不会立即改变数据</h3>
+<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">// name is &#x27;&#x27;</span><br><span class="line">this.setState(&#123;</span><br><span class="line">     name: &#x27;myName&#x27;</span><br><span class="line">&#125;)</span><br><span class="line">console.log(&#x27;name is&#x27;, this.state.name) // 输出 ？？？</span><br></pre></td></tr></table></figure>
+<p>这里当然是期望打印出改变后的state值，但是却并不能得到期望的值，为什么会这样呢？因为 setState 是一个异步执行的函数，所以这里输出的依然是改变之前的 state 值，其实 setState 提供给我们两个参数，第二个参数是一个回调函数，所以我们可以通过回调函数来获取到正确的值。</p>
+<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">this.setState(&#123;</span><br><span class="line">    name: &#x27;myName&#x27;</span><br><span class="line">&#125;, () =&gt; &#123;</span><br><span class="line">    console.log(`name is $&#123;this.state.name&#125;`)</span><br><span class="line">&#125;)</span><br></pre></td></tr></table></figure>
+<h3 id="2-setState多次，Re-render-一次">2. setState多次，Re-render 一次</h3>
+<p>以前刚接触react的时候，我一度认为每次 setState 都会造成一次 re-render ，其实并不是这样：</p>
+<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">componentDidMount() &#123;</span><br><span class="line">    this.setState((prevState, props) =&gt; (&#123;count: this.state.count + 1&#125;)) // 1</span><br><span class="line">    this.setState((prevState, props) =&gt; (&#123;count: this.state.count + 1&#125;)) // 2</span><br><span class="line">    this.setState((prevState, props) =&gt; (&#123;count: this.state.count + 1&#125;)) // 3</span><br><span class="line">    this.setState(&#123;name: &quot;xiaohesong&quot;&#125;) // 4</span><br><span class="line">&#125;</span><br><span class="line">render() &#123;</span><br><span class="line">    console.log(&#x27;render&#x27;)</span><br><span class="line">    return(</span><br><span class="line">	// ...</span><br><span class="line">    )</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p>可以发现，这里打印出 ‘render’ 仅为两次，并不是 4+1 次，为什么？<br>
+我们之前说 <code>setState</code> 是一个异步执行的方法，其实是说当我们调用 <code>setState</code> 的时候，<code>setState</code> 是放在一个队列中异步处理的，也就是说他会把我们这四个 <code>setState</code>操作放到一个队列中，然后batch处理。</p>
+<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">this.setState((prevState, props) =&gt; (&#123;count: this.state.count + 1&#125;)) // 1</span><br><span class="line">this.setState((prevState, props) =&gt; (&#123;count: this.state.count + 1&#125;)) // 2</span><br><span class="line">this.setState((prevState, props) =&gt; (&#123;count: this.state.count + 1&#125;)) // 3</span><br><span class="line">this.setState(&#123;name: &quot;xiaohesong&quot;&#125;) // 4</span><br></pre></td></tr></table></figure>
+<p>如何批量操作的？？？setState方法是将传入的参数对象或函数返回的对象与现有的state对象进行合并，非常类似于使用Object.assign(prevState, newState)的效果</p>
+<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">Object.assign(state,&#123;count: this.state.count + 1&#125;,&#123;count: this.state.count + 1&#125;...&#123;name: &quot;xiaohesong&quot;&#125;)</span><br></pre></td></tr></table></figure>
+<h3 id="3-setState-造成没必要的渲染">3. setState 造成没必要的渲染</h3>
+<p>第二点也告诉我们 setState 每次都会造成页面的重新渲染，但是很多时候，有些渲染不是必要的，不必要的渲染有以下几个原因：</p>
+<ul>
+<li>新的 state 其实和之前的是一样的。这个问题通常可以通过 shouldComponentUpdate 来解决。</li>
+<li>通常发生改变的 state 是和渲染有关的，但是也有例外。比如，有些数据是根据某些状态来显示的。</li>
+<li>第三，有些 state 和渲染一点关系都没有。有一些 state 可能是和事件、 timer ID 有关的。</li>
+</ul>
+<h4 id="总结-：">总结 ：</h4>
+<ol>
+<li>
+<p>setState操作,默认情况下是每次调用, 都会re-render一次,除非你手动shouldComponentUpdate为false. react为了减少rerender的次数,会进行一个浅合并.将多次re-render减少到一次re-render.</p>
+</li>
+<li>
+<p>setState之后,无法立即获取到this.state的值,是因为在setState的时候,他只会把操作放到队列里.</p>
+</li>
+<li>
+<p>和渲染无关的状态尽量不要放在 state 中来管理。</p>
+</li>
+</ol>
+]]></content>
+      <categories>
+        <category>react</category>
+      </categories>
+      <tags>
+        <tag>react</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>state-hook</title>
+    <url>/posts/21683.html</url>
+    <content><![CDATA[<h2 id="state-hook">state-hook</h2>
+<p>Hook 是 React 16.8 的新增特性。它可以让你在不编写 class 的情况下使用 state 以及其他的 React 特性。</p>
+<p>在之前的的hook 介绍里有一段代码:</p>
+<a id="more"></a>
+ <figure class="highlight js"><table><tr><td class="code"><pre><span class="line"><span class="keyword">import</span> &#123; useState &#125; <span class="keyword">from</span> <span class="string">&#x27;react&#x27;</span>;</span><br><span class="line">   ​</span><br><span class="line">   <span class="keyword">function</span> <span class="title function_">Example</span>(<span class="params"></span>) &#123;</span><br><span class="line">     <span class="comment">// Declare a new state variable, which we&#x27;ll call &quot;count&quot;</span></span><br><span class="line">     <span class="keyword">const</span> [count, setCount] = <span class="title function_">useState</span>(<span class="number">0</span>);</span><br><span class="line">     <span class="keyword">return</span> (</span><br><span class="line">       <span class="language-xml"><span class="tag">&lt;<span class="name">div</span>&gt;</span></span></span><br><span class="line"><span class="language-xml">         <span class="tag">&lt;<span class="name">p</span>&gt;</span>You clicked &#123;count&#125; times<span class="tag">&lt;/<span class="name">p</span>&gt;</span></span></span><br><span class="line"><span class="language-xml">         <span class="tag">&lt;<span class="name">button</span> <span class="attr">onClick</span>=<span class="string">&#123;()</span> =&gt;</span> setCount(count + 1)&#125;&gt;</span></span><br><span class="line"><span class="language-xml">           Click me</span></span><br><span class="line"><span class="language-xml">         <span class="tag">&lt;/<span class="name">button</span>&gt;</span></span></span><br><span class="line"><span class="language-xml">       <span class="tag">&lt;/<span class="name">div</span>&gt;</span></span></span><br><span class="line">     );</span><br><span class="line">   &#125;</span><br></pre></td></tr></table></figure>
+<p>我们将通过将此代码与等效的类示例进行比较来开始学习<code>Hooks</code>。</p>
+<h2 id="等价的类示例">等价的类示例</h2>
+<p>看下面的这段代码，你会觉得熟悉：</p>
+<figure class="highlight js"><table><tr><td class="code"><pre><span class="line"><span class="keyword">class</span> <span class="title class_">Example</span> <span class="keyword">extends</span> <span class="title class_ inherited__">Component</span>&#123;</span><br><span class="line">   <span class="title function_">constructor</span>(<span class="params">props</span>) &#123;</span><br><span class="line">      <span class="variable language_">super</span>(props);</span><br><span class="line">      <span class="variable language_">this</span>.<span class="property">state</span> = &#123;</span><br><span class="line">        <span class="attr">count</span>: <span class="number">0</span></span><br><span class="line">      &#125;</span><br><span class="line">   &#125;</span><br><span class="line"></span><br><span class="line">   <span class="title function_">render</span>(<span class="params"></span>)&#123;</span><br><span class="line">      <span class="keyword">return</span> (</span><br><span class="line">          <span class="language-xml"><span class="tag">&lt;<span class="name">div</span>&gt;</span></span></span><br><span class="line"><span class="language-xml">          <span class="tag">&lt;<span class="name">p</span>&gt;</span>You clicked &#123;this.state.count&#125; times<span class="tag">&lt;/<span class="name">p</span>&gt;</span></span></span><br><span class="line"><span class="language-xml">            <span class="tag">&lt;<span class="name">button</span> <span class="attr">onClick</span>=<span class="string">&#123;()</span> =&gt;</span> this.setState(&#123; count: this.state.count + 1 &#125;)&#125;&gt;</span></span><br><span class="line"><span class="language-xml">              Click me</span></span><br><span class="line"><span class="language-xml">            <span class="tag">&lt;/<span class="name">button</span>&gt;</span></span></span><br><span class="line"><span class="language-xml">          <span class="tag">&lt;/<span class="name">div</span>&gt;</span></span></span><br><span class="line">      )</span><br><span class="line">   &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p>状态以<code>&#123;count：0&#125;</code>开始，当用户通过调用this.setState单击按钮时，我们会增加state.count。我们将在整个页面中使用此类的片段。</p>
+<blockquote>
+<p><strong>注意</strong> 你可能想知道为什么我们在这里使用计数器而不是更现实的例子。这是为了帮助我们专注于<code>API</code>，同时我们仍在使用<code>Hooks</code>迈出第一步。</p>
+</blockquote>
+<h2 id="Hooks和函数组件">Hooks和函数组件</h2>
+<p>提醒一下，React中的函数组件如下所示：</p>
+<figure class="highlight js"><table><tr><td class="code"><pre><span class="line"><span class="keyword">const</span> <span class="title function_">Example</span> = (<span class="params">props</span>) =&gt; &#123;</span><br><span class="line">  <span class="comment">// You can use Hooks here!</span></span><br><span class="line">  <span class="keyword">return</span> <span class="language-xml"><span class="tag">&lt;<span class="name">div</span> /&gt;</span></span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p>或者是下面这样的：</p>
+<figure class="highlight js"><table><tr><td class="code"><pre><span class="line"><span class="keyword">function</span> <span class="title function_">Example</span>(<span class="params">props</span>) &#123;</span><br><span class="line">  <span class="comment">// You can use Hooks here!</span></span><br><span class="line">  <span class="keyword">return</span> <span class="language-xml"><span class="tag">&lt;<span class="name">div</span> /&gt;</span></span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p>你可能以前将这些称为“无状态组件”。我们现在介绍的这些中具有使用<code>React</code>状态的能力，所以我们更喜欢名称<code>function components</code>。</p>
+<p><code>Hook</code>在<code>class</code>内 不起 作用。但是你可以使用它们而不是编写类。</p>
+<h2 id="什么是Hook">什么是Hook</h2>
+<p>我们的新示例首先从<code>React</code>导入<code>useState Hook</code>：</p>
+<figure class="highlight js"><table><tr><td class="code"><pre><span class="line"><span class="keyword">import</span> &#123; useState &#125; <span class="keyword">from</span> <span class="string">&#x27;react&#x27;</span>;</span><br><span class="line"><span class="keyword">function</span> <span class="title function_">Example</span>(<span class="params"></span>) &#123;</span><br><span class="line">    <span class="comment">// ...</span></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p><strong>什么是Hook?</strong> <code>Hook</code>是一种特殊功能，可让你“挂钩”<code>React</code>功能。例如，<code>useState</code>是一个<code>Hook</code>，允许你将<code>React</code>状态添加到函数组件。我们稍后会学习其他的<code>Hooks</code>。</p>
+<p>我什么时候使用<code>Hook</code>? 如果你编写一个函数组件并意识到你需要为它添加一些状态，那么之前你必须将它转换为一个类。但是现在，你可以在现有功能组件中使用<code>Hook</code>。我们现在要做到这一点！</p>
+<blockquote>
+<p><strong>注意：</strong> 关于在何处可以使用Hook并且不能在组件中使用<code>Hook</code>，有一些特殊规则。我们将在<a href="">“钩子规则”</a>中学习它们。</p>
+</blockquote>
+<h2 id="声明一个状态变量">声明一个状态变量</h2>
+<p>在<code>class</code>组建中，我们声明一个状态需要像下面这样：<br>
+<figure class="highlight js"><table><tr><td class="code"><pre><span class="line"><span class="keyword">class</span> <span class="title class_">Example</span> <span class="keyword">extends</span> <span class="title class_ inherited__">Component</span> &#123;</span><br><span class="line">       <span class="title function_">constructor</span>(<span class="params">props</span>) &#123;</span><br><span class="line">           <span class="variable language_">super</span>(props);</span><br><span class="line">           <span class="variable language_">this</span>.<span class="property">state</span> = &#123;</span><br><span class="line">               <span class="attr">count</span>: <span class="number">0</span></span><br><span class="line">           &#125;</span><br><span class="line">       &#125;</span><br><span class="line">       <span class="comment">// ...</span></span><br><span class="line">   &#125;</span><br></pre></td></tr></table></figure><br>
+在函数组件中，我们没有<code>this</code>，所以我们不能分配或读取<code>this.state</code>。相反，我们直接在组件内部调用<code>useState Hook</code>：</p>
+<figure class="highlight js"><table><tr><td class="code"><pre><span class="line">    <span class="keyword">import</span> &#123; useState &#125; <span class="keyword">from</span> <span class="string">&#x27;react&#x27;</span>;</span><br><span class="line">    ​</span><br><span class="line">    <span class="keyword">function</span> <span class="title function_">Example</span>(<span class="params"></span>) &#123;</span><br><span class="line">      <span class="keyword">const</span> [count, setCount] = <span class="title function_">useState</span>(<span class="number">0</span>);</span><br><span class="line">      <span class="comment">// ...</span></span><br><span class="line">    &#125;</span><br><span class="line"><span class="string">``</span><span class="string">`	</span></span><br><span class="line"><span class="string">**调用`</span>useState<span class="string">`有什么作用？** 他声明了一个&quot;状态变量&quot;。我们的变量叫做`</span>count<span class="string">`，但我们可以称之为其他任何东西，比如`</span>banana<span class="string">`。这是一种在函数调用之间“保留”某些值的方法 - `</span>useState<span class="string">`是一种使用`</span><span class="variable language_">this</span>.<span class="property">state</span><span class="string">`在类中提供的完全相同功能的新方法。通常，当函数退出时变量“消失”但`</span><span class="title class_">React</span><span class="string">`保留状态变量。</span></span><br><span class="line"><span class="string"></span></span><br><span class="line"><span class="string">**我们传递给`</span>useState<span class="string">`的参数是什么？** `</span>useState <span class="title class_">Hook</span><span class="string">`的唯一参数是初始状态。与类不同，状态不必是对象。他可以是任何我们需要的内容，比如数字，字符串等。在我们的示例中，我们只需要一个数字来表示用户点击的次数，因此将0作为变量的初始状态。（如果我们想在状态中存储两个不同的值，我们将调用`</span>useState<span class="string">`两次。）</span></span><br><span class="line"><span class="string"></span></span><br><span class="line"><span class="string">`</span>useState<span class="string">`返回的是什么？ 它返回一对值：当前状态和更新状态的函数。这就是我们编写`</span><span class="keyword">const</span> [count，setCount] = <span class="title function_">useState</span>(<span class="number">0</span>)<span class="string">`的原因。这与类中的 `</span><span class="variable language_">this</span>.<span class="property">state</span>.<span class="property">count</span><span class="string">`和`</span><span class="variable language_">this</span>.<span class="property">setState</span><span class="string">`类似，只不过现在它们是成对的。</span></span><br><span class="line"><span class="string"></span></span><br><span class="line"><span class="string">现在我们知道了`</span>useState <span class="title class_">Hook</span><span class="string">`的作用，我们的例子应该更有意义</span></span><br><span class="line"><span class="string">`</span><span class="string">``</span><span class="variable constant_">JS</span></span><br><span class="line">    <span class="keyword">import</span> &#123; useState &#125; <span class="keyword">from</span> <span class="string">&#x27;react&#x27;</span>;</span><br><span class="line">    ​</span><br><span class="line">    <span class="keyword">function</span> <span class="title function_">Example</span>(<span class="params"></span>) &#123;</span><br><span class="line">      <span class="keyword">const</span> [count, setCount] = <span class="title function_">useState</span>(<span class="number">0</span>);</span><br><span class="line">      <span class="comment">// ...</span></span><br><span class="line">    &#125;</span><br></pre></td></tr></table></figure>
+<p>我们声明一个名为<code>count</code>的状态变量，并将其设置为0。<code>React</code>将记住重新渲染之间的当前值，并为我们的函数提供最新的值。如果我们想要更新当前<code>count</code>，我们可以调用<code>setCount</code>。</p>
+<blockquote>
+<p><strong>注意</strong> 你可能想知道：为什么<code>useState</code>没有命名为<code>createState</code>？“<code>create</code>”不会非常准确，因为状态仅在我们的组件第一次呈现时创建。在下一次渲染期间，useState为我们提供了当前状态。否则它根本不会是“状态”！<code>Hook</code>名称总是从<code>use</code>开始也是有原因的。我们将在后来的<code>rules hooks</code>中了解原因。</p>
+</blockquote>
+<h2 id="读取状态">读取状态</h2>
+<p>当我们想要在类中显示当前计数时，我们读取<code>this.state.count</code>：</p>
+<figure class="highlight html"><table><tr><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">p</span>&gt;</span>You clicked &#123;this.state.count&#125; times<span class="tag">&lt;/<span class="name">p</span>&gt;</span></span><br></pre></td></tr></table></figure>
+<p>在函数中，我们可以直接使用<code>count</code>：</p>
+<figure class="highlight html"><table><tr><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">p</span>&gt;</span>You clicked &#123;count&#125; times<span class="tag">&lt;/<span class="name">p</span>&gt;</span></span><br></pre></td></tr></table></figure>
+<h2 id="更新状态">更新状态</h2>
+<p>在一个类中，我们需要调用<code>this.setState</code>来更新<code>count</code>状态:</p>
+<figure class="highlight js"><table><tr><td class="code"><pre><span class="line">&lt;button onClick=&#123;<span class="function">() =&gt;</span> <span class="variable language_">this</span>.<span class="title function_">setState</span>(&#123; <span class="attr">count</span>: <span class="variable language_">this</span>.<span class="property">state</span>.<span class="property">count</span> + <span class="number">1</span> &#125;)&#125;&gt;</span><br><span class="line">    <span class="title class_">Click</span> me</span><br><span class="line">&lt;/button&gt;</span><br></pre></td></tr></table></figure>
+<p>在函数中，我们已经将<code>setCount</code>和<code>count</code>作为变量，因此我们不需要<code>this</code>：</p>
+<figure class="highlight js"><table><tr><td class="code"><pre><span class="line">&lt;button onClick=&#123;<span class="function">() =&gt;</span> <span class="title function_">setCount</span>(count + <span class="number">1</span>)&#125;&gt;</span><br><span class="line">    <span class="title class_">Click</span> me</span><br><span class="line">&lt;/button&gt;</span><br></pre></td></tr></table></figure>
+<h2 id="概括">概括</h2>
+<p>现在让我们回顾一下我们逐行学习的内容并检查我们的理解。</p>
+<figure class="highlight js"><table><tr><td class="code"><pre><span class="line"><span class="keyword">import</span> &#123; useState &#125; <span class="keyword">from</span> <span class="string">&#x27;react&#x27;</span>;</span><br><span class="line"></span><br><span class="line"><span class="keyword">function</span> <span class="title function_">Example</span>(<span class="params"></span>) &#123;</span><br><span class="line">   <span class="keyword">const</span> [count, setCount] = <span class="title function_">useState</span>(<span class="number">0</span>);</span><br><span class="line"></span><br><span class="line">   <span class="keyword">return</span> (</span><br><span class="line">      <span class="language-xml"><span class="tag">&lt;<span class="name">div</span>&gt;</span></span></span><br><span class="line"><span class="language-xml">        <span class="tag">&lt;<span class="name">p</span>&gt;</span>You clicked &#123;count&#125; times<span class="tag">&lt;/<span class="name">p</span>&gt;</span></span></span><br><span class="line"><span class="language-xml">          <span class="tag">&lt;<span class="name">button</span> <span class="attr">onClick</span>=<span class="string">&#123;()</span> =&gt;</span> setCount(count + 1)&#125;&gt;</span></span><br><span class="line"><span class="language-xml">               Click me</span></span><br><span class="line"><span class="language-xml">          <span class="tag">&lt;/<span class="name">button</span>&gt;</span></span></span><br><span class="line"><span class="language-xml">      <span class="tag">&lt;/<span class="name">div</span>&gt;</span></span></span><br><span class="line">     );</span><br><span class="line">   &#125;</span><br></pre></td></tr></table></figure>
+<ul>
+<li>
+<p><strong>第1行：</strong> 我们从<code>React</code>导入<code>useState Hook</code>。它允许我们将本地状态保存在功能组件中。</p>
+</li>
+<li>
+<p><strong>第2行：</strong> 在<code>Example</code>组件中，我们通过调用<code>useState Hook</code>来声明一个新的状态变量。它返回一对值，我们给它们命名。我们调用变量<code>count</code>，因为它包含按钮点击次数。<br>
+我们通过传递<code>0</code>作为唯一的<code>useState</code>参数将其初始化为零。第二个返回的项本身就是一个函数。它允许我们更新<code>count</code>，因此我们将其命名为<code>setCount</code>。</p>
+</li>
+<li>
+<p><strong>第9行：</strong> 当用户点击时，我们使用新值调用<code>setCount</code>。然后，<code>React</code>将重新呈现<code>Example</code>组件，并将新<code>count</code>值传递给它。</p>
+</li>
+</ul>
+<p>一开始看起来似乎有很多东西需要考虑。不要急于求成！如果你在解释有不了解的，请再次查看上面的代码并尝试从上到下阅读。我们保证，一旦你试图“忘记”状态如何在<code>class</code>上工作，并以新的角度看待这个代码，它就会有意义。</p>
+<h3 id="提示：方括号意味着什么？"><strong>提示：方括号意味着什么？</strong></h3>
+<p>当我们声明一个状态变量时，你可能已经注意到方括号：</p>
+<figure class="highlight js"><table><tr><td class="code"><pre><span class="line"><span class="keyword">const</span> [count, setCount] = <span class="title function_">useState</span>(<span class="number">0</span>);</span><br></pre></td></tr></table></figure>
+<p>左侧的名称不是<code>React API</code>的一部分。你可以命名自己觉得合适的状态变量：</p>
+<figure class="highlight js"><table><tr><td class="code"><pre><span class="line"><span class="keyword">const</span> [fruit, setFruit] = <span class="title function_">useState</span>(<span class="string">&#x27;banana&#x27;</span>);</span><br></pre></td></tr></table></figure>
+<p>此<code>JavaScript</code>语法称为“数组解构”。这意味着我们正在创建两个新变量<code>fruit</code>和<code>setFruit</code>，其中<code>fruit</code>设置为<code>useState</code>返回的第一个值，<code>setFruit</code>是第二个。等同于下面的代码：</p>
+<figure class="highlight js"><table><tr><td class="code"><pre><span class="line"><span class="keyword">var</span> fruitStateVariable = <span class="title function_">useState</span>(<span class="string">&#x27;banana&#x27;</span>);</span><br><span class="line"><span class="keyword">var</span> fruit = fruitStateVariable[<span class="number">0</span>];</span><br><span class="line"><span class="keyword">var</span> setFruit = fruitStateVariable[<span class="number">1</span>];</span><br></pre></td></tr></table></figure>
+<p>当我们使用<code>useState</code>声明一个状态变量时，它返回一对 - 一个包含两个项的数组。第一项是当前值，第二项是允许我们更新第一项值的函数。使用<code>[0]</code>和<code>[1]</code>访问它们有点令人困惑，因为它们具有特定含义。这就是我们使用数组解构的原因。</p>
+<blockquote>
+<p><strong>注意:</strong> 你可能很好奇<code>React</code>如何知道哪个组件<code>useState</code>对应，因为我们没有将这样的任何内容传递给<code>React</code>。我们将在FAQ部分回答<a href="https://reactjs.org/docs/hooks-faq.html#how-does-react-associate-hook-calls-with-components">这个问题</a>和许多其他问题。</p>
+</blockquote>
+<h3 id="提示：使用多个状态变量">提示：使用多个状态变量</h3>
+<p>将状态变量声明为一对<code>[something，setSomething]</code>也很方便，因为如果我们想要使用多个状态变量，它可以让我们为不同的状态变量赋予不同的名称：</p>
+<figure class="highlight js"><table><tr><td class="code"><pre><span class="line"><span class="keyword">function</span> <span class="title function_">ExampleWithManyStates</span>(<span class="params"></span>) &#123;</span><br><span class="line">  <span class="comment">// Declare multiple state variables!</span></span><br><span class="line">  <span class="keyword">const</span> [age, setAge] = <span class="title function_">useState</span>(<span class="number">42</span>);</span><br><span class="line">  <span class="keyword">const</span> [fruit, setFruit] = <span class="title function_">useState</span>(<span class="string">&#x27;banana&#x27;</span>);</span><br><span class="line">  <span class="keyword">const</span> [todos, setTodos] = <span class="title function_">useState</span>([&#123; <span class="attr">text</span>: <span class="string">&#x27;Learn Hooks&#x27;</span> &#125;]);</span><br><span class="line">  <span class="comment">//...</span></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p>在上面的组件中，我们将<code>age</code>，<code>fruit</code>和<code>todos</code>作为局部变量，我们可以单独更新它们：</p>
+<figure class="highlight js"><table><tr><td class="code"><pre><span class="line"><span class="keyword">function</span> <span class="title function_">handleOrangeClick</span>(<span class="params"></span>) &#123;</span><br><span class="line">    <span class="comment">// Similar to this.setState(&#123; fruit: &#x27;orange&#x27; &#125;)</span></span><br><span class="line">    <span class="title function_">setFruit</span>(<span class="string">&#x27;orange&#x27;</span>);</span><br><span class="line">  &#125;</span><br></pre></td></tr></table></figure>
+<p>你 <strong>不必使用</strong> 许多状态变量。 状态变量可以很好地保存对象和数组，因此仍然可以将相关数据组合在一起。但是，与类中的this.setState不同，<strong>更新状态变量总是替换它而不是合并它。</strong></p>
+]]></content>
+      <categories>
+        <category>react</category>
+        <category>react-hooks</category>
+      </categories>
+      <tags>
+        <tag>react</tag>
+        <tag>react-hooks</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>【hexo + github pages】搭建属于自己的博客网站</title>
+    <url>/posts/53595.html</url>
+    <content><![CDATA[<p>今天在翻看自己GitHub的时候，忽然发现了那会刚开始做前端的时候搭建的博客，好几年前了，看到新奇的东西就想自己动手鼓捣一下，回想起那会搭建的时候也是费了老鼻子的劲了，最近一年也会偶尔在CSDN写博客记录点东西，那便记录一下怎么利用GitHub和hexo来搭建一个属于自己的博客网站。</p>
+<a id="more"></a>
+<h2 id="用Hexo-GitHub-搭建自己的博客网站">用Hexo + GitHub 搭建自己的博客网站</h2>
+<h3 id="什么是hexo"><strong>什么是<a href="https://hexo.io/zh-cn/">hexo</a></strong></h3>
+<p>官方给我们的描述是快速、简洁且高效的博客框架。Hexo是一款基于Node.js的静态博客框架，依赖少易于安装使用，支持 <strong>Markdown</strong> 的所有功能，一键部署，只需要一个指令就可以部署到<code>github pages</code>或者其他平台，支持多种模板引擎和工具。</p>
+<h3 id="安装搭建hexo">安装搭建hexo</h3>
+<p>要用GitHub 和 hexo 搭建个人的博客网站，首先必须有自己的github账号没什么问题吧，其次需要提前准备的环境：下载安装<code>git</code>, <code>nodeJs</code>，这个怎么去安装我想应该不用说了吧（真不知道的话分别百度nodejs， git去官网点击下载安装即可）。准备好环境后我们还要安装 <code>hexo</code>:</p>
+<figure class="highlight js"><table><tr><td class="code"><pre><span class="line">npm install hexo-cli -g</span><br></pre></td></tr></table></figure>
+<p>前面安装了<code>nodejs</code>，现在就i可以直接用 <code>npm</code>安装 <code>hexo</code>，同时按下 <code>window + R</code> 键，输入 <code>cmd</code> 打开终端，执行上面的命令，等待安装完成，完成以后可用</p>
+<p><code>hexo -v</code> 查看版本，同时也是验证是否安装完成。</p>
+<p><img src="https://img-blog.csdnimg.cn/b53f0798d69b4162a5d94b8d43fbb7be.png" alt="hexo"></p>
+<p>如上图说明我们已经安装完成了，然后我们来初始化我们的hexo项目:</p>
+<figure class="highlight js"><table><tr><td class="code"><pre><span class="line"><span class="comment">// blog 是你的项目名字，取什么名字都行您随意</span></span><br><span class="line">hexo init blog</span><br></pre></td></tr></table></figure>
+<p>然后进入你的项目中，安装依赖：</p>
+<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">cd blog // 进入项目中</span><br><span class="line">npm install // 安装依赖包</span><br></pre></td></tr></table></figure>
+<p>完成后你的项目目录应该包含：</p>
+<ul>
+<li>node_modules：依赖包</li>
+<li>scaffolds：生成文章的模板</li>
+<li>source：存放你写的文章</li>
+<li>themes：主题</li>
+<li>_config.yml：博客的配置文件</li>
+</ul>
+<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">hexo server</span><br></pre></td></tr></table></figure>
+<p>打开hexo的服务，在浏览器输入http://localhost:4000/就可以打开你的博客了。</p>
+<h3 id="GitHub创建个人仓库">GitHub创建个人仓库</h3>
+<p>前面说过你要有自己的 <code>github</code> 账号，如果你还没有，去注册一个吧，注册完成后登录到GitHub页面，你会看到一个 <code>New repository</code>， 创建一个和你用户名<strong>同名</strong>的仓库，后面加上<code>.github.io</code>， 只有这样将来部署到 Github Page 的时候， 才会被识别， 也就是 <a href="http://xn--eqr924avxo.github.io">用户名.github.io</a>， 我已经创建过了，再次创建会提示 <code>The repository **xxx.github.io** already exists on this account.</code>，表示我这个账户已经创建过这个仓库。</p>
+<p>如果你已经创建完成了和你注册GitHub同名的仓库，下面我们来生成ssh密钥：</p>
+<p>在你项目文件夹点击鼠标右键，点击 <code>git base hero</code>, 打开你的 git base 后，在base中分别输入：</p>
+<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">git config --global user.name &quot;yourname&quot; // yourname输入你的github用户名</span><br><span class="line">git config --global user.email &quot;youremail&quot; // youremail输入你GitHub的邮箱</span><br></pre></td></tr></table></figure>
+<p>可以检查一下你有没有输对</p>
+<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">git config user.name</span><br><span class="line">git config user.email</span><br></pre></td></tr></table></figure>
+<h3 id="配置GitHub-ssh密钥">配置GitHub ssh密钥</h3>
+<p>创建ssh密钥，一路回车，可以不设置密码</p>
+<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">ssh -keygen -t rsa -C &quot;youremail&quot;</span><br></pre></td></tr></table></figure>
+<p>生成完成后，进入你的用户名文件夹下，找到<code>.ssh</code> 文件夹，里面有两个文件。这个就是密钥，其中 <code>id_rsa</code>是你电脑的私人密钥，<code>id_rsa.pub</code> 是公共密钥。我们要做的就是把公钥配置到GitHub中，这样当你访问链接自己的GitHub账号时，它就会根据公钥配到你的私钥，当能达到匹配的时候，你就能通过git上传你的项目到GitHub中了。</p>
+<p>下面我们来配置自己的ssh密钥，进入你的GitHub页面，点击右上角你的账号头像，在下拉菜单中找到 <code>settings</code> 菜单，点击进入设置页面，然后在设置页面左边的菜单分类中找到 <code>Access</code> 下面的 <code>SSH and GPG keys</code> 菜单，然后点击 <code>New SSH key</code> 按钮，把你本地创建的公钥复制后粘贴到<code>key</code> 的输入框中， <code>title</code> 随便输都行，然后保存。在gitbase中查看是否成功</p>
+<figure class="highlight js"><table><tr><td class="code"><pre><span class="line">ssh -T git@github.<span class="property">com</span></span><br></pre></td></tr></table></figure>
+<h3 id="将hexo部署到GitHub">将hexo部署到GitHub</h3>
+<p>如何将hexo和github关联起来呢，那就要把hexo生成文章部署到GitHub上，打开站点配置文件<code>_config.yml</code>, 翻到最后，修改配置：xxx为你的github账户</p>
+<figure class="highlight yaml"><table><tr><td class="code"><pre><span class="line"><span class="comment"># Deployment</span></span><br><span class="line"><span class="comment">## Docs: https://hexo.io/docs/deployment.html</span></span><br><span class="line"><span class="attr">deploy:</span></span><br><span class="line">  <span class="attr">type:</span> <span class="string">git</span></span><br><span class="line">  <span class="attr">repo:</span> <span class="string">https://github.com/xxx/xxx.github.io.git</span></span><br><span class="line">  <span class="attr">branch:</span> <span class="string">master</span></span><br></pre></td></tr></table></figure>
+<p>要完成部署操作，你还需要安装 <code>deploy-git </code>：</p>
+<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">npm install hexo-deployer-git --save</span><br></pre></td></tr></table></figure>
+<p>然后我们需要了解一下hexo的常用命令：</p>
+<figure class="highlight js"><table><tr><td class="code"><pre><span class="line"><span class="comment">// 新建一个网站，如果没设置 floder hexo默认在当前文件夹下创建网站</span></span><br><span class="line">hexo init [flolder]    </span><br><span class="line"><span class="comment">// 新建一篇文章，如果没有设置 layout 的话，默认使用 _config.yml 中的 default_layout 参数代替。如果标题包含空格的话，请使用引号括起来。</span></span><br><span class="line">hexo <span class="keyword">new</span> [layout] &lt;title&gt; </span><br><span class="line"><span class="comment">// 生成静态文件。</span></span><br><span class="line">hexo generate  <span class="comment">//  hexo g -d, 文件生成后立即部署网站</span></span><br><span class="line"><span class="comment">// 发表草稿</span></span><br><span class="line">hexo publish [layout] &lt;filename&gt;</span><br><span class="line"><span class="comment">// 启动服务器。默认情况下，访问网址为： http://localhost:4000</span></span><br><span class="line">hexo server  </span><br><span class="line"><span class="comment">// 部署网站, 可以简写为hexo d</span></span><br><span class="line">hexo deploy </span><br><span class="line"><span class="comment">// 清除缓存文件 (db.json) 和已生成的静态文件 (public)</span></span><br><span class="line">hexo clean</span><br></pre></td></tr></table></figure>
+<p><code>hexo generate</code> 顾名思义，生成静态文章，可以用 <code>hexo g</code>缩写<br>
+<code>hexo deploy</code> 部署文章，可以用<code>hexo d</code>缩写</p>
+<p>当然你也可以用 <code>hexo g -d</code> 一步完成部署。</p>
+<blockquote>
+<p>如果在执行部署网站的时候出现下列错误: ”Software caused connection abort  fatal: Could not read from remote repository.”, 很可能是dns解析问题，用 <code>ssh -T git@github.com</code> 在gitbase中检测是否正常，打开cmd输入<code>ping github.com</code>是否能连接，配置本地的<code>hosts</code> 文件， 文件路径 <code>c:\windows\system32\drivers\etc\hosts</code>,在末尾添加上：</p>
+<figure class="highlight js"><table><tr><td class="code"><pre><span class="line"><span class="number">140.82</span><span class="number">.112</span><span class="number">.4</span>  github.<span class="property">com</span> git </span><br><span class="line"><span class="number">140.31</span><span class="number">.16</span><span class="number">.184</span> github.<span class="property">global</span>.<span class="property">ssl</span>.<span class="property">fastly</span>.<span class="property">net</span></span><br></pre></td></tr></table></figure>
+<p>gitbase 再次<code>ssh -T git@github.com</code>成功。</p>
+</blockquote>
+<h2 id="hexo的基本配置">hexo的基本配置</h2>
+<h3 id="网站-site">网站 (# site)</h3>
+<table>
+<thead>
+<tr>
+<th>参数</th>
+<th>描述</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>title</td>
+<td>网站标题</td>
+</tr>
+<tr>
+<td>subtitle</td>
+<td>网站的副标题</td>
+</tr>
+<tr>
+<td>description</td>
+<td>网站描述</td>
+</tr>
+<tr>
+<td>keywords</td>
+<td>网站的关键词。支持多个关键词。</td>
+</tr>
+<tr>
+<td>author</td>
+<td>作者名字</td>
+</tr>
+<tr>
+<td>language</td>
+<td>网站使用的语言。对于简体中文用户来说，使用不同的主题可能需要设置成不同的值，请参考你的主题的文档自行设置，常见的有 <code>zh-Hans</code>和 <code>zh-CN</code>。</td>
+</tr>
+<tr>
+<td>timezone</td>
+<td>网站时区。Hexo 默认使用您电脑的时区。般的，对于中国大陆地区可以使用 <code>Asia/Shanghai</code>。</td>
+</tr>
+</tbody>
+</table>
+<h3 id="网址-URL">网址(#URL)</h3>
+<table>
+<thead>
+<tr>
+<th>参数</th>
+<th>描述</th>
+<th>默认值</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>url</td>
+<td>网址, 必须以 <code>http://</code> 或 <code>https://</code> 开头</td>
+<td></td>
+</tr>
+<tr>
+<td>root</td>
+<td>网站根目录</td>
+<td>/</td>
+</tr>
+<tr>
+<td>permalink</td>
+<td>文章的 <a href="https://hexo.io/zh-cn/docs/permalinks">永久链接</a> 格式</td>
+<td>:year/:month/:day/:title/</td>
+</tr>
+<tr>
+<td>permalink_defaults</td>
+<td>永久链接中各部分的默认值</td>
+<td></td>
+</tr>
+<tr>
+<td>pretty_urls</td>
+<td>改写 <a href="https://hexo.io/zh-cn/docs/variables"><code>permalink</code></a> 的值来美化 URL</td>
+<td></td>
+</tr>
+<tr>
+<td>pretty_urls.trailing_index</td>
+<td>是否在永久链接中保留尾部的 <code>index.html</code>，设置为 <code>false</code> 时去除</td>
+<td>true</td>
+</tr>
+<tr>
+<td>pretty_urls.trailing_html</td>
+<td>是否在永久链接中保留尾部的 <code>.html</code>, 设置为 <code>false</code> 时去除 (<em>对尾部的 <code>index.html</code>无效</em>）</td>
+<td>true</td>
+</tr>
+</tbody>
+</table>
+<p>我们在配置文件中将url改成自己的网站域名，permalink是我们生成文章时候的那个链接格式。链接的变量很多，可以点击上面的永久链接去官方文档查找配置。</p>
+<h3 id="目录-Directory">目录#Directory</h3>
+<figure class="highlight yaml"><table><tr><td class="code"><pre><span class="line"><span class="comment"># Directory</span></span><br><span class="line"><span class="attr">source_dir:</span> <span class="string">source</span> <span class="comment"># 资源文件夹，这个文件夹用来存放内容。</span></span><br><span class="line"><span class="attr">public_dir:</span> <span class="string">public</span> <span class="comment"># 公共文件夹，这个文件夹用于存放生成的站点文件。</span></span><br><span class="line"><span class="attr">tag_dir:</span> <span class="string">tags</span>			<span class="comment"># 标签文件夹</span></span><br><span class="line"><span class="attr">archive_dir:</span> <span class="string">archives</span> <span class="comment"># 归档文件夹</span></span><br><span class="line"><span class="attr">category_dir:</span> <span class="string">categories</span> <span class="comment"># 分类文件夹</span></span><br><span class="line"><span class="attr">code_dir:</span> <span class="string">downloads/code</span> <span class="comment"># Include code 文件夹，source_dir 下的子目录</span></span><br><span class="line"><span class="attr">i18n_dir:</span> <span class="string">:lang</span>    <span class="comment"># 国际化（i18n）文件夹</span></span><br><span class="line"><span class="attr">skip_render:</span> 				<span class="comment"># 跳过指定文件的渲染</span></span><br></pre></td></tr></table></figure>
+<blockquote>
+<p>如果您刚刚开始接触 Hexo，通常没有必要修改这一部分的值。</p>
+</blockquote>
+<h3 id="文章-Writing">文章#Writing</h3>
+<figure class="highlight yaml"><table><tr><td class="code"><pre><span class="line"><span class="comment"># Writing</span></span><br><span class="line"><span class="attr">new_post_name:</span> <span class="string">:title.md</span>  <span class="comment"># 新文章的文件名称</span></span><br><span class="line"><span class="attr">default_layout:</span> <span class="string">post</span>     <span class="comment"># 预设布局</span></span><br><span class="line"><span class="attr">titlecase:</span> <span class="literal">false</span>       <span class="comment"># 把标题转换为 title case</span></span><br><span class="line"><span class="attr">auto_spacing:</span> <span class="literal">false</span>     <span class="comment"># 在中文和英文之间加入空格</span></span><br><span class="line"><span class="attr">external_link:</span></span><br><span class="line">  <span class="attr">enable:</span> <span class="literal">true</span> <span class="comment"># Open external links in new tab</span></span><br><span class="line">  <span class="attr">field:</span> <span class="string">site</span> <span class="comment"># Apply to the whole site</span></span><br><span class="line">  <span class="attr">exclude:</span> <span class="string">&#x27;&#x27;</span> <span class="comment"># 需要排除的域名</span></span><br><span class="line"><span class="attr">filename_case:</span> <span class="number">0</span>  <span class="comment"># 把文件名称转换为 (1) 小写或 (2) 大写</span></span><br><span class="line"><span class="attr">render_drafts:</span> <span class="literal">false</span> 	<span class="comment"># 显示草稿</span></span><br><span class="line"><span class="attr">post_asset_folder:</span> <span class="literal">false</span> <span class="comment"># 启动 Asset 文件夹</span></span><br><span class="line"><span class="attr">relative_link:</span> <span class="literal">false</span> <span class="comment"># 把链接改为与根目录的相对位址</span></span><br><span class="line"><span class="attr">future:</span> <span class="literal">true</span> <span class="comment"># 显示未来的文章</span></span><br><span class="line"><span class="attr">highlight:</span> <span class="comment"># 代码块的设置, 请参考 Highlight.js 进行设置</span></span><br><span class="line">  <span class="attr">enable:</span> <span class="literal">true</span></span><br><span class="line">  <span class="attr">line_number:</span> <span class="literal">true</span></span><br><span class="line">  <span class="attr">auto_detect:</span> <span class="literal">false</span></span><br><span class="line">  <span class="attr">tab_replace:</span> <span class="string">&#x27;&#x27;</span></span><br><span class="line">  <span class="attr">wrap:</span> <span class="literal">true</span></span><br><span class="line">  <span class="attr">hljs:</span> <span class="literal">false</span></span><br><span class="line"><span class="attr">prismjs:</span> <span class="comment"># 代码块的设置, 请参考 PrismJS 进行设置</span></span><br><span class="line">  <span class="attr">enable:</span> <span class="literal">false</span></span><br><span class="line">  <span class="attr">preprocess:</span> <span class="literal">true</span></span><br><span class="line">  <span class="attr">line_number:</span> <span class="literal">true</span></span><br><span class="line">  <span class="attr">tab_replace:</span> <span class="string">&#x27;&#x27;</span></span><br></pre></td></tr></table></figure>
+<h3 id="分类-标签">分类 &amp; 标签</h3>
+<figure class="highlight yaml"><table><tr><td class="code"><pre><span class="line"><span class="comment"># Category &amp; Tag</span></span><br><span class="line"><span class="attr">default_category:</span> <span class="string">uncategorized</span> <span class="comment"># 默认分类</span></span><br><span class="line"><span class="attr">category_map:</span> <span class="comment"># 分类别名	</span></span><br><span class="line"><span class="attr">tag_map:</span> <span class="comment"># 标签别名	</span></span><br></pre></td></tr></table></figure>
+<h3 id="分页">分页</h3>
+<figure class="highlight yaml"><table><tr><td class="code"><pre><span class="line"><span class="comment"># Pagination</span></span><br><span class="line"><span class="attr">per_page:</span> <span class="number">10</span> <span class="comment"># 每页显示的文章量 (0 = 关闭分页功能)	</span></span><br><span class="line"><span class="attr">pagination_dir:</span> <span class="string">page</span> <span class="comment"># 分页目录</span></span><br></pre></td></tr></table></figure>
+<h3 id="主题">主题</h3>
+<p>通常情况下，Hexo 主题是一个独立的项目，并拥有一个独立的 <code>_config.yml</code> 配置文件。</p>
+<p>除了自行维护独立的主题配置文件，你也可以在其它地方对主题进行配置。</p>
+<p>hexo官网有300多个<a href="https://hexo.io/themes/">主题</a>，在这里下载你喜欢的主题进行修改就可以了。直接在github链接上下载下来，然后放到<code>theme</code>文件夹下就行了，然后再在刚才说的配置文件中把<code>theme</code>换成那个主题文件夹的名字，它就会自动在<code>theme</code>文件夹中搜索你配置的主题。</p>
+<p>我们也可以自定义自己的主题，或者修改已经安装的主题的样式。</p>
+]]></content>
+      <categories>
+        <category>Hexo</category>
+      </categories>
+      <tags>
+        <tag>Hexo</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>react-native简介</title>
+    <url>/posts/34135.html</url>
+    <content><![CDATA[<h3 id="用-React-编写移动应用-React-Native-img-src-https-www-oschina-net-build-oschina-project-stylesheets-imgs-badge-recommend-svg-width-20-height-20">用 React 编写移动应用 React Native <img src='https://www.oschina.net/build/oschina/project/stylesheets/imgs/badge_recommend.svg' width="20" height="20"/></h3>
+<p>**ReactNative ** 可以基于目前大热的开源JavaScript库React.js来开发iOS和Android原生App。而且React Native已经用于生产环境——Facebook Groups iOS 应用就是基于它开发的。</p>
+ <a id="more"></a>
+<p><img src="http://static.oschina.net/uploads/img/201503/28132016_EqCq.jpg" alt="react-native"></p>
+<p>React Native的原理是在JavaScript中用React抽象操作系统原生的UI组件，代替DOM元素来渲染，比如以 <code>&lt;View&gt;</code> 取代 <code>&lt;div&gt;</code>，以<code>&lt;Image&gt;</code>替代<code>&lt;img&gt;</code>等。</p>
+<p>在幕后，React Native在主线程之外，在另一个背景线程里运行JavaScript引擎，两个线程之间通过一批量化的async消息协议来通信（有一个专门的React插件）。</p>
+<p>UI方面React Native提供跨平台的类似Flexbox的布局系统，还支持CSS子集。可以用JSX或者普通JavaScript语言，还有<a href="https://coffeescript.org/" title="CoffeeScript">CoffeeScript</a> 和 <a href="http://www.typescriptlang.org/" title="TypeScript">TypeScript</a> 来开发。</p>
+<p>更好的是，由于基于Web技术，开发起来可以像在浏览器里那样随时在仿真程序中查看应用运行情况，刷新一下就行，无需编译，爽吧。</p>
+<p>React Native比起标准Web开发或原生开发能够带来的三大好处：<br>
+1.手势识别：基于Web技术（HTML5/JavaScript）构建的移动应用经常被抱怨缺乏及时响应。而基于原生UI的React Native能避免这些问题从而实现实时响应。<br>
+2.原生组件：使用HTML5/JavaScript实现的组件比起原生组件总是让人感觉差一截，而React Native由于采用了原生UI组件自然没有此问题。<br>
+3.样式和布局：iOS、Android和基于Web的应用各自有不同的样式和布局机制。React Native通过一个基于FlexBox的布局引擎在所有移动平台上实现了一致的跨平台样式和布局方案。</p>
+<p>触摸事件处理：</p>
+<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">import React, &#123; Component &#125; from &#x27;react&#x27;;</span><br><span class="line">import &#123; ScrollView, TouchableHighlight, Text, StyleSheet &#125; from &#x27;react-native&#x27;;</span><br><span class="line"></span><br><span class="line">class TouchDemo extends Component&#123;</span><br><span class="line">  render() &#123;</span><br><span class="line">    return (</span><br><span class="line">      &lt;ScrollView&gt;</span><br><span class="line">        &lt;TouchableHighlight onPress=&#123;() =&gt; console.log(&#x27;pressed&#x27;)&#125;&gt;</span><br><span class="line">          &lt;Text style=&#123;styles.txt&#125;&gt;Proper Touch Handling&lt;/Text&gt;</span><br><span class="line">        &lt;/TouchableHighlight&gt;</span><br><span class="line">      &lt;/ScrollView&gt;</span><br><span class="line">    );</span><br><span class="line">  &#125;,</span><br><span class="line">&#125;;</span><br><span class="line">const styles = StyleSheet.create(&#123;</span><br><span class="line">  txt:&#123;</span><br><span class="line">    fontSize: 14,</span><br><span class="line">    color: &#x27;#333333&#x27;</span><br><span class="line">  &#125;</span><br><span class="line">&#125;)</span><br><span class="line"></span><br></pre></td></tr></table></figure>
+]]></content>
+      <categories>
+        <category>react-native</category>
+      </categories>
+      <tags>
+        <tag>react-native</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>Effect-Hook</title>
+    <url>/posts/3932.html</url>
+    <content><![CDATA[<h2 id="effect-hook">effect-hook</h2>
+<p><code>Effect Hook</code> 可以使得你在函数组件中执行一些带有副作用的方法。</p>
+ <a id="more"></a>
+<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">import &#123;useState, useEffect&#125; from &#x27;react&#x27;;</span><br><span class="line">function Example ()&#123;</span><br><span class="line">  const [count, setCount] = useState(0);</span><br><span class="line">  useEffect(()=&gt;&#123;</span><br><span class="line">    document.title = `You click $&#123;count&#125; times`</span><br><span class="line">  &#125;);</span><br><span class="line">  </span><br><span class="line">  return(</span><br><span class="line">    &lt;div&gt;</span><br><span class="line">        &lt;p&gt; you click &#123;count&#125; times &lt;/p&gt;</span><br><span class="line">        &lt;button onClick=&#123;() =&gt; setCount(count + 1)&#125;&gt;点击我&lt;/button&gt;</span><br><span class="line">    &lt;/div&gt;</span><br><span class="line">  )</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p>上面这段代码是基于上个 <a href="http://www.baidu.com">state hook计数器的例子</a> 的例子，但是我们现在添加了新的功能，我么讲文档的标题设置为自定义消息，包含了点击次数。</p>
+<p>数据获取，设置订阅及先手动更改 <code>React</code> 组件中的 <code>DOM</code> 都是副作用的示例。无论你是否习惯与将这些操作成为“副作用”或者仅仅是“效果”，但之前你可能已经在组件中执行了这些操作。</p>
+<blockquote>
+<p><strong>提示：</strong> 如果你熟悉<code>React</code>类组件生命周期方法，你就可以将<code>useEffect Hook</code>视为<code>componentDidMount</code>,<code>componentDidUpdate</code>和<code>componentWillUnmount</code>的组合。</p>
+</blockquote>
+<p>React组件中有两种常见的副作用：那些需要清理的副作用和不需要清理的副作用。让我们详细的看一下两者的区别。</p>
+<hr>
+<h2 id="无需清理的副作用">无需清理的副作用</h2>
+<p>有时，我们希望在<code>React</code>更新<code>DOM</code>之后运行一些额外的代码。网络请求， 手动改变<code>DOM</code>和日志记录是不需要清理的效果（副作用，简称“效果”）的常见示例。我们这样说是因为我们可以运行他们并立即忘记他们。让我们比较一下<code>class</code>和<code>hooks</code>是如何让我们表达这样的副作用。</p>
+<h3 id="使用class的例子">使用class的例子</h3>
+<p>在<code>react</code>类组件中，<code>render</code>方法本身不应该导致副作用。这太早了，我们通常希望<code>React</code>更新<code>DOM</code>之后执行我们的效果。这就是为啥在<code>React</code>类中，我们将副作用放到<code>componentDidMount</code>和<code>componentDidUpdate</code>中。看我们的例子，这是一个<code>React</code>计数器类的组件，它在react对DOM进行更改后立即更新文档的标题。</p>
+<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">import React,&#123;Component&#125; from &#x27;react&#x27;;</span><br><span class="line"></span><br><span class="line">export default class Example extends Component &#123;</span><br><span class="line">    constructor(props)&#123;</span><br><span class="line">        super(props);</span><br><span class="line">        this.state = &#123;</span><br><span class="line">            count: 0</span><br><span class="line">        &#125;;</span><br><span class="line">    &#125;</span><br><span class="line">    </span><br><span class="line">    componentDidMount() &#123;</span><br><span class="line">        document.title = `You click $&#123;this.state.count&#125; times`</span><br><span class="line">    &#125;</span><br><span class="line">    </span><br><span class="line">    componentDidUpdate() &#123;</span><br><span class="line">        document.title = `You clicked $&#123;this.state.count&#125; times`;</span><br><span class="line">    &#125;</span><br><span class="line">    </span><br><span class="line">    render() &#123;</span><br><span class="line">        return (</span><br><span class="line">          &lt;div&gt;</span><br><span class="line">            &lt;p&gt;You clicked &#123;this.state.count&#125; times&lt;/p&gt;</span><br><span class="line">            &lt;button onClick=&#123;() =&gt; this.setState(&#123; count: this.state.count + 1 &#125;)&#125;&gt;</span><br><span class="line">              Click me</span><br><span class="line">            &lt;/button&gt;</span><br><span class="line">          &lt;/div&gt;</span><br><span class="line">        );</span><br><span class="line">  &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p>请注意<strong>我们如何在类中复制这两个生命周期方法之间的代码</strong><br>
+这是因为在许多的情况下，我们希望执行相同的副作用，无论组件是刚安装还是已经更新。从概念上讲，我们希望它在每次渲染之后发生，但是在React类组件中没有这样的方法（render方法应该避免更重要）。我们可以提取一个单独的方法，但是我们仍然需要在这两个地方调用它。</p>
+<p>现在让我们回头再看看我们如何使用<code>useEffect Hook</code>做同样的事情。</p>
+<p><code>useEffect</code><strong>有什么作用？</strong><br>
+通过使用这个Hook，你告诉React你的组件需要在渲染后执行某些操作。React将记住你传递的函数（我们将其称为“效果”），并在执行DOM更新后稍后调用它。在这个效果中，我们设置文档标题，但我们也可以执行数据提取或调用其他命令式API。</p>
+<p><strong>为什么在组件内调用<code>useEffect</code>？</strong><br>
+在组件中使用<code>useEffect</code>让我们可以直接从效果中访问状态变量（如count或任何道具）。我们不需要特殊的API来读取它 - 它已经在函数范围内了。Hooks拥抱<code>JavaScript</code><strong>闭包</strong>，并避免在JavaScript已经提供解决方案的情况下引入特定于React的API。</p>
+<p><strong>每次渲染后useEffect都会运行吗？</strong><br>
+是的。默认情况下，它在第一次渲染之后和每次更新之后运行。 （我们稍后会讨论如何自定义它。）你可能会发现更容易认为效果发生在“渲染之后”，而不是考虑“挂载”和“更新”。React保证DOM在运行‘效果’时已更新。</p>
+<h3 id="详细说明">详细说明</h3>
+<p>现在我们对这个<code>hook</code>更加的了解了，那再看看下面这个例子：</p>
+<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">function Example() &#123;</span><br><span class="line">    const[count, setCount] = useState(0);</span><br><span class="line">    </span><br><span class="line">    useEffect(() =&gt; &#123;</span><br><span class="line">        document.title = `You clicked $&#123;count&#125; times`;</span><br><span class="line">    &#125;);</span><br><span class="line">&#125;    </span><br></pre></td></tr></table></figure>
+<p>我们声明了<code>count</code>状态变量，然后告诉<code>React</code>我们需要使用效果。我们将一个函数传递给<code>useEffect Hook</code>，这个函数式就是效果（副作用）。在我们的效果中，我们使用<code>document.title</code>浏览器<code>API</code>设置文档标题。我们可以读取效果中的最新<code>count</code>，因为它在我们的函数范围内。当<code>React</code>渲染我们的组件时，它会记住我们是用的效果，然后在更新<code>DOM</code>后运行我们的效果。每次渲染都会发生这种情况，包括第一次渲染。</p>
+<blockquote>
+<p><strong>注意：</strong> 与<code>componentDidMount</code>或<code>componentDidUpdate</code>不同，使用<code>useEffect</code>的效果不会阻止浏览器更新屏幕。这使应用感觉更具响应性。大多数效果不需要同步发生。在他们这样做的不常见情况下（例如测量布局），有一个单独的<code>useLayoutEffect Hook</code>，其<code>API</code>与<code>useEffect</code>相同。</p>
+</blockquote>
+<h2 id="需要清理的副作用">需要清理的副作用</h2>
+<p>之前，我们研究了如何表达不需要任何清理的副作用。但是，有些效果需要清理。例如，我们可能希望设置对某些外部数据源的订阅。在这种情况下，清理是非常重要的，这样我们就不会引入内存泄漏！让我们比较一下我们如何使用类和<code>Hooks</code>来实现它。</p>
+<h3 id="使用-class-的例子">使用 **<code>class</code>**的例子</h3>
+<p>在<code>React</code>类中，通常会在<code>componentDidMount</code>中设置订阅，并在<code>componentWillUnmount</code>中清除它。例如，假设我们有一个ChatAPI`模块，可以让我们订阅朋友的在线状态。以下是我们如何使用类订阅和显示该状态：</p>
+<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">class FriendStatus extends React.Component &#123;</span><br><span class="line">  constructor(props) &#123;</span><br><span class="line">    super(props);</span><br><span class="line">    this.state = &#123; </span><br><span class="line">        isOnline: null </span><br><span class="line">    &#125;;</span><br><span class="line">    this.handleStatusChange = this.handleStatusChange.bind(this);</span><br><span class="line">  &#125;</span><br><span class="line">​</span><br><span class="line">  componentDidMount() &#123;</span><br><span class="line">    ChatAPI.subscribeToFriendStatus(</span><br><span class="line">      this.props.friend.id,</span><br><span class="line">      this.handleStatusChange</span><br><span class="line">    );</span><br><span class="line">  &#125;</span><br><span class="line">​</span><br><span class="line">  componentWillUnmount() &#123;</span><br><span class="line">    ChatAPI.unsubscribeFromFriendStatus(</span><br><span class="line">      this.props.friend.id,</span><br><span class="line">      this.handleStatusChange</span><br><span class="line">    );</span><br><span class="line">  &#125;</span><br><span class="line">​</span><br><span class="line">  handleStatusChange(status) &#123;</span><br><span class="line">    this.setState(&#123;</span><br><span class="line">      isOnline: status.isOnline</span><br><span class="line">    &#125;);</span><br><span class="line">  &#125;</span><br><span class="line">​</span><br><span class="line">  render() &#123;</span><br><span class="line">    if (this.state.isOnline === null) &#123;</span><br><span class="line">      return &#x27;Loading...&#x27;;</span><br><span class="line">    &#125;</span><br><span class="line">    return this.state.isOnline ? &#x27;Online&#x27; : &#x27;Offline&#x27;;</span><br><span class="line">  &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p>请注意<code>componentDidMount</code>和<code>componentWillUnmount</code>如何相互作用。生命周期方法迫使我们拆分这个逻辑，即使它们中的概念代码都与相同的效果有关。</p>
+<blockquote>
+<p><strong>注意：</strong> 眼尖的你可能会注意到这个例子还需要一个<code>componentDidUpdate</code>方法才能完全正确。我们暂时忽略这一点，但会在本页的后面部分再回过头来讨论它。</p>
+</blockquote>
+<h3 id="使用-hooks-的例子">使用**<code>hooks</code>**的例子</h3>
+<p>你可能认为我们需要单独的效果来执行清理。但是添加和删除订阅的代码是如此紧密相关，以至于<code>useEffect</code>旨在将它保持在一起。如果你的效果返回一个函数，<code>React</code>将在清理时运行它：</p>
+<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">import &#123; useState, useEffect &#125; from &#x27;react&#x27;;</span><br><span class="line">​</span><br><span class="line">function FriendStatus(props) &#123;</span><br><span class="line">  const [isOnline, setIsOnline] = useState(null);</span><br><span class="line">​</span><br><span class="line">  function handleStatusChange(status) &#123;</span><br><span class="line">    setIsOnline(status.isOnline);</span><br><span class="line">  &#125;</span><br><span class="line">​</span><br><span class="line">  useEffect(() =&gt; &#123;</span><br><span class="line">    ChatAPI.subscribeToFriendStatus(props.friend.id, handleStatusChange);</span><br><span class="line">    // 指定如何在这种效果之后清理</span><br><span class="line">    return function cleanup() &#123;</span><br><span class="line">      ChatAPI.unsubscribeFromFriendStatus(props.friend.id, handleStatusChange);</span><br><span class="line">    &#125;;</span><br><span class="line">  &#125;);</span><br><span class="line">​</span><br><span class="line">  if (isOnline === null) &#123;</span><br><span class="line">    return &#x27;Loading...&#x27;;</span><br><span class="line">  &#125;</span><br><span class="line">  return isOnline ? &#x27;Online&#x27; : &#x27;Offline&#x27;;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p><strong>为什么我们从效果中返回一个函数？</strong> 这是效果的可选清理机制。每个效果都可能返回一个在它之后清理的函数。这使我们可以保持添加和删除彼此接近的订阅的逻辑。</p>
+<p><strong>React什么时候清理效果？</strong> 当组件卸载时，React执行清理。但是，正如我们之前所了解的那样，效果会针对每个渲染运行而不仅仅是一次。这就是React在下次运行效果之前还清除前一渲染效果的原因。我们将讨论为什么这有助于避免错误以及如何在以后发生性能问题时选择退出此行为。</p>
+<blockquote>
+<p><strong>注意:</strong> 我们不必从效果中返回命名函数。我们在这里只是为了说明才加的命名，但你可以返回箭头函数。</p>
+</blockquote>
+<h2 id="概述-2">概述</h2>
+<p>我们已经了解到useEffect让我们在组件渲染后表达不同类型的副作用。某些效果可能需要清理，因此它们返回一个函数：</p>
+<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">useEffect(() =&gt; &#123;</span><br><span class="line">    ChatAPI.subscribeToFriendStatus(props.friend.id, handleStatusChange);</span><br><span class="line">    return () =&gt; &#123;</span><br><span class="line">      ChatAPI.unsubscribeFromFriendStatus(props.friend.id, handleStatusChange);</span><br><span class="line">    &#125;;</span><br><span class="line">&#125;);</span><br></pre></td></tr></table></figure>
+<p>其他效果可能没有清理阶段，也不会返回任何内容。比如：</p>
+<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">useEffect(() =&gt; &#123;</span><br><span class="line">    document.title = `You clicked $&#123;count&#125; times`;</span><br><span class="line">&#125;);</span><br></pre></td></tr></table></figure>
+<p>如果你觉得你对Effect Hook的工作方式有了很好的把握，或者你感到不知所措，那么现在就可以跳转到关于Hooks规则。</p>
+<hr>
+<h2 id="使用效果的提示">使用效果的提示</h2>
+<p>我们将继续深入了解使用<code>React</code>用户可能会产生好奇心的<code>useEffect</code>的某些方面。</p>
+<blockquote>
+<p><strong>提示：使用多重效果分离问题</strong></p>
+</blockquote>
+<p>这是一个组合了前面示例中的计数器和朋友状态指示器逻辑的组件:</p>
+<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">class FriendStatusWithCounter extends React.Component &#123;</span><br><span class="line">  constructor(props) &#123;</span><br><span class="line">    super(props);</span><br><span class="line">    this.state = &#123; count: 0, isOnline: null &#125;;</span><br><span class="line">    this.handleStatusChange = this.handleStatusChange.bind(this);</span><br><span class="line">  &#125;</span><br><span class="line">​</span><br><span class="line">  componentDidMount() &#123;</span><br><span class="line">    document.title = `You clicked $&#123;this.state.count&#125; times`;</span><br><span class="line">    ChatAPI.subscribeToFriendStatus(</span><br><span class="line">      this.props.friend.id,</span><br><span class="line">      this.handleStatusChange</span><br><span class="line">    );</span><br><span class="line">  &#125;</span><br><span class="line">​</span><br><span class="line">  componentDidUpdate() &#123;</span><br><span class="line">    document.title = `You clicked $&#123;this.state.count&#125; times`;</span><br><span class="line">  &#125;</span><br><span class="line">​</span><br><span class="line">  componentWillUnmount() &#123;</span><br><span class="line">    ChatAPI.unsubscribeFromFriendStatus(</span><br><span class="line">      this.props.friend.id,</span><br><span class="line">      this.handleStatusChange</span><br><span class="line">    );</span><br><span class="line">  &#125;</span><br><span class="line">​</span><br><span class="line">  handleStatusChange(status) &#123;</span><br><span class="line">    this.setState(&#123;</span><br><span class="line">      isOnline: status.isOnline</span><br><span class="line">    &#125;);</span><br><span class="line">  &#125;</span><br><span class="line">  // ...</span><br></pre></td></tr></table></figure>
+<p>请注意设置 <code>document.title</code> 的逻辑如何在<code>componentDidMount</code> 和<code>componentDidUpdate</code> 之间拆分。订阅逻辑也在<code>componentDidMount</code> 和 <code>componentWillUnmount</code>之间传播。<code>componentDidMount</code> 包含两个任务的代码。</p>
+<p>那么，<code>Hooks</code>如何解决这个问题呢？就像你可以多次使用状态挂钩一样，你也可以使用多种效果。这让我们将不相关的逻辑分成不同的效果：</p>
+<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">function FriendStatusWithCounter(props) &#123;</span><br><span class="line">  const [count, setCount] = useState(0);</span><br><span class="line">  useEffect(() =&gt; &#123;</span><br><span class="line">    document.title = `You clicked $&#123;count&#125; times`;</span><br><span class="line">  &#125;);</span><br><span class="line">​</span><br><span class="line">  const [isOnline, setIsOnline] = useState(null);</span><br><span class="line">  useEffect(() =&gt; &#123;</span><br><span class="line">    ChatAPI.subscribeToFriendStatus(props.friend.id, handleStatusChange);</span><br><span class="line">    return () =&gt; &#123;</span><br><span class="line">      ChatAPI.unsubscribeFromFriendStatus(props.friend.id, handleStatusChange);</span><br><span class="line">    &#125;;</span><br><span class="line">  &#125;);</span><br><span class="line">​</span><br><span class="line">  function handleStatusChange(status) &#123;</span><br><span class="line">    setIsOnline(status.isOnline);</span><br><span class="line">  &#125;</span><br><span class="line">  // ...</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p>**<code>Hooks</code>**允许我们根据它正在做的事情而不是生命周期方法名称来拆分代码。 React将按照指定的顺序应用组件使用的每个效果。</p>
+<p><strong>说明：为什么效果在每个更新上运行</strong><br>
+如果你习惯了类，你可能想知道为什么每次重新渲染后效果的清理阶段都会发生，而不是在卸载过程中只发生一次。让我们看一个实际的例子，看看为什么这个设计可以帮助我们创建更少bug的组件。</p>
+<p>在上面介绍了一个示例FriendStatus组件，该组件显示朋友是否在线。<a href="http://xn--this-z25f8fm33kvg8axhl.xn--propsfriend-x82s6259c.id">我们的类从this.props读取friend.id</a>，在组件挂载后订阅朋友状态，并在卸载期间取消订阅：</p>
+<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">componentDidMount() &#123;</span><br><span class="line">    ChatAPI.subscribeToFriendStatus(</span><br><span class="line">      this.props.friend.id,</span><br><span class="line">      this.handleStatusChange</span><br><span class="line">    );</span><br><span class="line">  &#125;</span><br><span class="line">​</span><br><span class="line">  componentWillUnmount() &#123;</span><br><span class="line">    ChatAPI.unsubscribeFromFriendStatus(</span><br><span class="line">      this.props.friend.id,</span><br><span class="line">      this.handleStatusChange</span><br><span class="line">    );</span><br><span class="line">  &#125;</span><br></pre></td></tr></table></figure>
+<p><strong>但是如果friend prop在组件出现在屏幕上时发生了变化，会发生什么？</strong> 我们的组件将继续显示不同朋友的在线状态。这是一个错误。卸载时我们还会导致内存泄漏或崩溃，因为取消订阅会使用错误的朋友ID。</p>
+<p>在类组件中，我们需要添加componentDidUpdate来处理这种情况:</p>
+<pre><code>componentDidMount() &#123;
+    ChatAPI.subscribeToFriendStatus(
+      this.props.friend.id,
+      this.handleStatusChange
+    );
+  &#125;
+​
+  componentDidUpdate(prevProps) &#123;
+    // 取消之前订阅的朋友
+    ChatAPI.unsubscribeFromFriendStatus(
+      prevProps.friend.id,
+      this.handleStatusChange
+    );
+    // 订阅下一个朋友
+    ChatAPI.subscribeToFriendStatus(
+      this.props.friend.id,
+      this.handleStatusChange
+    );
+  &#125;
+​
+  componentWillUnmount() &#123;
+    ChatAPI.unsubscribeFromFriendStatus(
+      this.props.friend.id,
+      this.handleStatusChange
+    );
+  &#125;
+  
+</code></pre>
+<p>忘记正确处理<code>componentDidUpdate</code>是<code>React</code>应用程序中常见的<code>bug</code>漏洞。<br>
+现在考虑使用Hooks的这个组件的版本：</p>
+<pre><code>function FriendStatus(props) &#123;
+  // ...
+  useEffect(() =&gt; &#123;
+	ChatAPI.subscribeToFriendStatus(props.friend.id, handleStatusChange);
+	return () =&gt; &#123;
+	  ChatAPI.unsubscribeFromFriendStatus(props.friend.id, handleStatusChange);
+	&#125;;
+  &#125;);
+</code></pre>
+<p>它不会受到这个bug的影响。 （但我们也没有对它做任何改动。）</p>
+<p>没有用于处理更新的特殊代码，因为默认情况下useEffect会处理它们。它会在应用下一个效果之前清除之前的效果。为了说明这一点，这里是一个订阅和取消订阅调用的序列，该组件可以随着时间的推移产生：</p>
+<pre><code>// Mount with &#123; friend: &#123; id: 100 &#125; &#125; props
+ChatAPI.subscribeToFriendStatus(100, handleStatusChange);     // Run first effect
+​
+// Update with &#123; friend: &#123; id: 200 &#125; &#125; props
+ChatAPI.unsubscribeFromFriendStatus(100, handleStatusChange); // Clean up previous effect
+ChatAPI.subscribeToFriendStatus(200, handleStatusChange);     // Run next effect
+​
+// Update with &#123; friend: &#123; id: 300 &#125; &#125; props
+ChatAPI.unsubscribeFromFriendStatus(200, handleStatusChange); // Clean up previous effect
+ChatAPI.subscribeToFriendStatus(300, handleStatusChange);     // Run next effect
+​
+// Unmount
+ChatAPI.unsubscribeFromFriendStatus(300, handleStatusChange); // Clean up last effect
+</code></pre>
+<p>此行为默认确保一致性，并防止由于缺少更新逻辑而导致类组件中常见的错误。</p>
+<p><strong>提示：通过跳过效果优化性能</strong></p>
+<p>在某些情况下，在每次渲染后清理或应用效果可能会产生性能问题。在类组件中，我们可以通过在<code>componentDidUpdate</code>中编写与<code>prevProps</code>或<code>prevState</code>的额外比较来解决这个问题：</p>
+<pre><code>componentDidUpdate(prevProps, prevState) &#123;
+  if (prevState.count !== this.state.count) &#123;
+	document.title = `You clicked $&#123;this.state.count&#125; times`;
+  &#125;
+&#125;
+</code></pre>
+<p>这个要求很常见，它被内置到<code>useEffect Hook</code> API中。如果在重新渲染之间没有更改某些值，则可以告诉<code>React</code>跳过应用效果。为此，将数组作为可选的第二个参数传递给useEffect：</p>
+<pre><code>useEffect(() =&gt; &#123;
+  document.title = `You clicked $&#123;count&#125; times`;
+&#125;, [count]); // 当count改变的时候回再次运行这个效果
+</code></pre>
+<p>在上面的例子中，我们传递<code>[count]</code>作为第二个参数。这是什么意思？如果 <code>count</code> 为5，然后我们的组件重新渲染，<code>count</code>仍然等于5，则<code>React</code>将比较前一个渲染的[5]和下一个渲染的[5]。因为数组中的所有项都是相同的（<code>5 === 5</code>），所以<code>React</code>会跳过这个效果。这是我们的优化。</p>
+<p>当我们使用<code>count</code>更新为6渲染时，React会将前一渲染中[5]数组中的项目与下一渲染中[6]数组中的项目进行比较。这次，<code>React</code>将重新运行效果，因为<code>5！== 6</code>。<strong>如果数组中有多个项目，<code>React</code>将重新运行效果，即使其中只有一个不同。</strong></p>
+<p>这也适用于具有清理阶段的效果：</p>
+<pre><code>useEffect(() =&gt; &#123;
+  ChatAPI.subscribeToFriendStatus(props.friend.id, handleStatusChange);
+  return () =&gt; &#123;
+	ChatAPI.unsubscribeFromFriendStatus(props.friend.id, handleStatusChange);
+  &#125;;
+&#125;, [props.friend.id]); // 只有朋友id改变重新订阅
+</code></pre>
+<p>将来， 第二个参数可能会通过构建时转换自动添加。</p>
+<blockquote>
+<p><strong>注意:</strong> 如果使用此优化，请确保该数组包含外部作用域中随时间变化且效果使用的任何值，换句话说就是要在这个效果函数里有意义。 否则，代码将引用先前渲染中的旧值。我们还将讨论<code>Hooks API</code>参考中的其他优化选项。</p>
+</blockquote>
+<blockquote>
+<p>如果要<strong>运行效果并仅将其清理一次（在装载和卸载时），则可以将空数组（[]）作为第二个参数传递。</strong> 这告诉React你的效果不依赖于来自props或 state的任何值，所以它永远不需要重新运行。这不作为特殊情况处理 - 它直接遵循输入数组的工作方式。虽然传递[]更接近熟悉的<code>componentDidMount</code>和 <code>componentWillUnmount</code>生命周期，但我们建议不要将它作为一种习惯，因为它经常会导致错误，除非你明确你自己在做什么， 如上所述。 不要忘记<code>React</code>推迟运行<code>useEffect</code>直到浏览器绘制完成后，所以做额外的工作不是问题。</p>
+</blockquote>
+]]></content>
+      <categories>
+        <category>react</category>
+        <category>react-hooks</category>
+      </categories>
+      <tags>
+        <tag>react</tag>
+        <tag>react-hooks</tag>
+      </tags>
+  </entry>
+</search>
